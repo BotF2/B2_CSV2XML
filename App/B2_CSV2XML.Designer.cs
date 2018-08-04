@@ -1,4 +1,4 @@
-﻿namespace CSV_XML
+﻿namespace CSV2XML
 {
     partial class Data
     {

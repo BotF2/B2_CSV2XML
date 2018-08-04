@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSV_XML
+namespace CSV2XML
 {
     static class Program
     {
