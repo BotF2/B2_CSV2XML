@@ -57,6 +57,7 @@ namespace CSV_XML
             {
                 strHeader += dataGridView1.Columns[i].HeaderText + _separatorstring;
             }
+            strHeader = " ";   // just output an empty line as head line
 
             strHeader = strHeader.TrimEnd(_separator);
 
@@ -108,7 +109,7 @@ namespace CSV_XML
         }
 
         void ReadCSV(String infile)
-        {
+               {
             //   later: more xml-files ... just use in/out     
             infile = "C:/_B2/in.xml"; // 
 
@@ -123,7 +124,7 @@ namespace CSV_XML
 
 
             var outfile = infile + "_OUT_SHIPS_TechObjectDatabase.xml";
-
+            
             Clear_all();
 
             int count = 0;  // counting lines
@@ -168,7 +169,7 @@ namespace CSV_XML
                 ////rowValue = streamReader.ReadLine().TrimStart('h');
 
                 //rowValue = streamReader.ReadLine();     // head not builded out of infile
-
+                
                 ////string newrowValue = rowValue.TrimStart(MyChar);
 
                 //rowValue = "First_Line_" + rowValue;
@@ -221,23 +222,28 @@ namespace CSV_XML
 
                     rowValue = rowValue.Replace("<PossibleNames>", "<ShipNames>" + Environment.NewLine + "    <ShipName>");
                     rowValue = rowValue.Replace("</PossibleNames>", "</ShipName>" + Environment.NewLine + "    </ShipNames>");
+                    rowValue = rowValue.Replace("</ShipName></ShipNames>", "</ShipName>" + Environment.NewLine + "    </ShipNames>");
+                    rowValue = rowValue.Replace("<ShipNames><ShipName>", "<ShipNames>" + Environment.NewLine + " <ShipName>");
+                    rowValue = rowValue.Replace(" <ShipName>", "      <ShipName>");
 
-                    rowValue = rowValue.Replace("Crew", "CrewSize");
+                    rowValue = rowValue.Replace("CrewSize", "Crew");
 
-                    //<BeamType Count="3" Damage="29" Refire="84%" />
-                    // new - first Refire //<BeamType Count="3" Refire="84%" Damage="29" />
+                    //<BeamType Count="3" Refire="84%" Damage="29" />
 
                     // <Beam_Count>0</Beam_Count>
+                    // <Refire>0.01</Refire>   // 1%
                     // <Damage>0</Damage>
-                    // <Refire>0%percent</Refire>
+
                     rowValue = rowValue.Replace("</Beam_Count>", "\" ");  // first this !!
+
                     rowValue = rowValue.Replace("<Beam_Count>", "<BeamType Count=\"");
 
-                    rowValue = rowValue.Replace("%percent</Refire>", "% ");
-                    rowValue = rowValue.Replace("<Refire>", " Refire=\"");
+                    rowValue = rowValue.Replace("</Refire>", "%\" ");
+
+                    rowValue = rowValue.Replace("<Refire>", "   Refire=\"");
 
                     rowValue = rowValue.Replace("</Damage>", "\" />");
-                    rowValue = rowValue.Replace("<Damage>", "\" Damage=\"");
+                    rowValue = rowValue.Replace("<Damage>", "   Damage=\"");
 
 
 
@@ -245,9 +251,13 @@ namespace CSV_XML
 
                     //<Torpedo_Count>0</Torpedo_Count>
                     //<Damage>0</Damage>
-                    rowValue = rowValue.Replace("</Torpedo_Count>", " ");  // first this !!
+                    rowValue = rowValue.Replace("</Torpedo_Count>", "\" ");  // first this !!
                     //rowValue = rowValue.Replace("<Damage>", "\" Damage = \"");   
                     rowValue = rowValue.Replace("<Torpedo_Count>", "<TorpedoType Count=\"");
+
+                    // Cleanup NewLines 
+                    rowValue = rowValue.Replace(Environment.NewLine + "    Refire"," Refire");
+                    rowValue = rowValue.Replace(Environment.NewLine + "   \" Damage", " Damage");
 
                     //rowValue = rowValue.Replace("</Damage>", " ");
 
@@ -439,8 +449,8 @@ namespace CSV_XML
 
                     // Type 5
 
-                    rowValue = rowValue.Replace("FED_CRUISER_VI", "");
-                    rowValue = rowValue.Replace("TERRAN_CRUISER_VI", "");
+                    rowValue = rowValue.Replace("FED_CRUISER_VI","");
+                    rowValue = rowValue.Replace("TERRAN_CRUISER_VI","");
 
                     // no Type 2
                     rowValue = rowValue.Replace("CARD_CONSTRUCTION_SHIPI", "");
@@ -478,12 +488,12 @@ namespace CSV_XML
                     rowValue = rowValue.TrimEnd(' ');
 
                     cellValue = rowValue.Split(_separator);   // just one column ??
-
+                    
                     //if (rowValue != "ok")
                     //{
-                    count = count + 1;
-                    dataGridView1.Rows.Add(cellValue);
-                    Console.WriteLine(c + ":  " + rowValue);
+                        count = count + 1;
+                        dataGridView1.Rows.Add(cellValue);
+                        Console.WriteLine(c + ":  " + rowValue);
                     //}
 
                 }
