@@ -4102,8 +4102,8 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_II",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> ACAMARIAN_RAIDER 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ACAMARIAN_RAIDER 2  </ShipName>" + Environment.NewLine);
 
 
 
@@ -4115,9 +4115,11 @@ namespace CSV2XML
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> ANDORIAN_CRUISER 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANDORIAN_CRUISER 2 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANDORIAN_CRUISER 3 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANDORIAN_CRUISER 4 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANDORIAN_CRUISER 5 </ShipName>" + Environment.NewLine);
 
 
 
@@ -4136,9 +4138,12 @@ namespace CSV2XML
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesANKARI_CRUISER",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> ANKARI_CRUISER 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANKARI_CRUISER 2 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANKARI_CRUISER 3 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANKARI_CRUISER 4 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANKARI_CRUISER 5 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> ANKARI_CRUISER 6  </ShipName>" + Environment.NewLine);
 
 
 
