@@ -223,7 +223,7 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("</Beam_Count>", "\" ");  // first this !!
                     rowValue = rowValue.Replace("<Beam_Count>", "<BeamType Count=\"");
 
-                    rowValue = rowValue.Replace("</Refire>", "%\" ");
+                    rowValue = rowValue.Replace("</Refire>", "\" ");
                     rowValue = rowValue.Replace("<Refire>", "   Refire=\"");
 
                     rowValue = rowValue.Replace("</Damage>", "\" />");
@@ -251,7 +251,7 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.07", "7%");
                     rowValue = rowValue.Replace("0.08", "8%");
                     rowValue = rowValue.Replace("0.09", "9%");
-                    rowValue = rowValue.Replace("0.10", "10%");
+
                     rowValue = rowValue.Replace("0.11", "11%");
                     rowValue = rowValue.Replace("0.12", "12%");
                     rowValue = rowValue.Replace("0.13", "13%");
@@ -261,7 +261,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.17", "17%");
                     rowValue = rowValue.Replace("0.18", "18%");
                     rowValue = rowValue.Replace("0.19", "19%");
-                    rowValue = rowValue.Replace("0.20", "20%");
+                    rowValue = rowValue.Replace("0.1", "10%");
+
                     rowValue = rowValue.Replace("0.21", "21%");
                     rowValue = rowValue.Replace("0.22", "22%");
                     rowValue = rowValue.Replace("0.23", "23%");
@@ -271,7 +272,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.27", "27%");
                     rowValue = rowValue.Replace("0.28", "28%");
                     rowValue = rowValue.Replace("0.29", "29%");
-                    rowValue = rowValue.Replace("0.30", "30%");
+                    rowValue = rowValue.Replace("0.2", "20%");
+
                     rowValue = rowValue.Replace("0.31", "31%");
                     rowValue = rowValue.Replace("0.32", "32%");
                     rowValue = rowValue.Replace("0.33", "33%");
@@ -281,7 +283,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.37", "37%");
                     rowValue = rowValue.Replace("0.38", "38%");
                     rowValue = rowValue.Replace("0.39", "39%");
-                    rowValue = rowValue.Replace("0.40", "40%");
+                    rowValue = rowValue.Replace("0.3", "30%");
+
                     rowValue = rowValue.Replace("0.41", "41%");
                     rowValue = rowValue.Replace("0.42", "42%");
                     rowValue = rowValue.Replace("0.43", "43%");
@@ -291,7 +294,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.47", "47%");
                     rowValue = rowValue.Replace("0.48", "48%");
                     rowValue = rowValue.Replace("0.49", "49%");
-                    rowValue = rowValue.Replace("0.50", "50%");
+                    rowValue = rowValue.Replace("0.4", "40%");
+
                     rowValue = rowValue.Replace("0.51", "51%");
                     rowValue = rowValue.Replace("0.52", "52%");
                     rowValue = rowValue.Replace("0.53", "53%");
@@ -301,7 +305,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.57", "57%");
                     rowValue = rowValue.Replace("0.58", "58%");
                     rowValue = rowValue.Replace("0.59", "59%");
-                    rowValue = rowValue.Replace("0.60", "60%");
+                    rowValue = rowValue.Replace("0.5", "50%");
+
                     rowValue = rowValue.Replace("0.61", "61%");
                     rowValue = rowValue.Replace("0.62", "62%");
                     rowValue = rowValue.Replace("0.63", "63%");
@@ -311,7 +316,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.67", "67%");
                     rowValue = rowValue.Replace("0.68", "68%");
                     rowValue = rowValue.Replace("0.69", "69%");
-                    rowValue = rowValue.Replace("0.70", "70%");
+                    rowValue = rowValue.Replace("0.6", "60%");
+
                     rowValue = rowValue.Replace("0.71", "71%");
                     rowValue = rowValue.Replace("0.72", "72%");
                     rowValue = rowValue.Replace("0.73", "73%");
@@ -321,7 +327,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.77", "77%");
                     rowValue = rowValue.Replace("0.78", "78%");
                     rowValue = rowValue.Replace("0.79", "79%");
-                    rowValue = rowValue.Replace("0.80", "80%");
+                    rowValue = rowValue.Replace("0.7", "70%");
+
                     rowValue = rowValue.Replace("0.81", "81%");
                     rowValue = rowValue.Replace("0.82", "82%");
                     rowValue = rowValue.Replace("0.83", "83%");
@@ -331,7 +338,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.87", "87%");
                     rowValue = rowValue.Replace("0.88", "88%");
                     rowValue = rowValue.Replace("0.89", "89%");
-                    rowValue = rowValue.Replace("0.90", "90%");
+                    rowValue = rowValue.Replace("0.8", "80%");
+
                     rowValue = rowValue.Replace("0.91", "91%");
                     rowValue = rowValue.Replace("0.92", "92%");
                     rowValue = rowValue.Replace("0.93", "93%");
@@ -341,6 +349,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.97", "97%");
                     rowValue = rowValue.Replace("0.98", "98%");
                     rowValue = rowValue.Replace("0.99", "99%");
+                    rowValue = rowValue.Replace("0.9", "90%");
+
                     //rowValue = rowValue.Replace("1", "100%");
                     #endregion
 
@@ -3323,6 +3333,13 @@ namespace CSV2XML
                     "        <ShipName> c Intruder </ShipName>" + Environment.NewLine);
 
 
+                    rowValue = rowValue.Replace("PossibleShipNamesCARD_CONSTRUCTION_SHIP",
+                              Environment.NewLine +
+                    "        <ShipName> cs Construction 1 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> cs Construction 2  </ShipName>" + Environment.NewLine);
+
+
+
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COMMAND_SHIP_III",
                               Environment.NewLine +
                     "        <ShipName> oc Merciless </ShipName>" + Environment.NewLine +
@@ -3843,7 +3860,1250 @@ namespace CSV2XML
 
                     #endregion
 
-                    
+                    #region AdditionalShipnames
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCARD_MEDICAL_SHIP",
+
+                    "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_CONSTRUCTION_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_TACTICAL_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFED_CRUISER_V",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFED_STRIKE_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFED_TACTICAL_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKLING_CONSTRUCTION_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_III",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_TRANSPORT_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_CONSTRUCTION_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_III",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_III",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CRUISER_V",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TACTICAL_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTION_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTION_SHIP_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_FUSION_CUBE",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesAKRITIRIAN_ATTACK_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesANGOSIAN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesANKARI_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesANKARI_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesATREAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesAXANAR_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBENZITE_EXPLORER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBETAZOID_STARCRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBILANAIAN_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBOMAR_COLONY_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBOTHAN_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_III",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBREKKIAN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBYNAR_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCAIRN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCALDONIAN_EXPLORER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCORIDAN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCORIDAN_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCORVALLEN_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCORVALLEN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDELTAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDENOBULAN_FRIGATE",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDEVORE_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDEVORE_HEAVY_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDEVORE_HEAVY_SCOUT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOSI_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOSI_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesELAYSIAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesENTHARAN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesEVORA_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesHAAKONIAN_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesHAZARI_ATTACK_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesHAZARI_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesHEKARAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_III",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesIYAARAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesJNAII_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKAREMMA_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKAREMMA_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKAZON_ATTACK_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKELLERUN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKESPRYTT_FRIGATE",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKLAESTRONIAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKRADIN_FIGHTER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKREETASSAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKRESSARI_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKRIOSIAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKTARIAN_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesKTARIAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesLEDOSIAN_SCOUT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesLEDOSIAN_FRIGATE",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesLISSEPIAN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesLOKIRRIM_SCOUT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesLOKIRRIM_LIGHT_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesLURIAN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMALCORIAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_III",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMARKALIAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMIRADORN_FIGHTER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMIRADORN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesMONEAN_FIGHTER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesNAUSICAAN_FIGHTER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesNEZU_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesNYRIAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesORION_SCOUT_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesORION_SCOUT_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesPAKLED_LIGHT_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesPAKLED_LIGHT_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesSHELIAK_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesSHELIAK_HEAVY_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesSONA_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesSONA_HEAVY_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesSULIBAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesSULIBAN_LIGHT_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTLANI_HEAVY_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTLANI_HEAVY_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTROGORAN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTROGORAN_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTAK_TAK_DESTROYER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTAK_TAK_DESTROYER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTALARIAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTALARIAN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTALAXIAN_ATTACK_SHIP",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTALAXIAN_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTAMARIAN_LIGHT_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTAMARIAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTAMARIAN_COMMAND_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTELLARITE_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTELLARITE_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTRABE_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVAADWAUR_COLONY_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVAADWAUR_DESTROYER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVAADWAUR_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVISSIAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVORGON_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVULCAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVULCAN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVULCAN_HEAVY_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesXANTHAN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesXEPOLITE_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesXINDI_SCOUT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesXINDI_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesXYRILLIAN_SURVEYOR",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesYRIDIAN_TRANSPORT",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesYRIDIAN_SURVEYOR_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesZAHL_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesZAKDORN_CRUISER",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesZALKONIAN_CRUISER_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesZALKONIAN_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesZIBALIAN_TRANSPORT_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesZIBALIAN_TRANSPORT_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    #endregion
+
+
                     rowValue = rowValue.Replace(Environment.NewLine + Environment.NewLine, Environment.NewLine);
                     
                     // more in NOTEPAD++
