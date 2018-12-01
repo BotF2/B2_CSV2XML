@@ -218,6 +218,7 @@ namespace CSV2XML
                     rowValue = rowValue.Replace(" <ShipName>", "      <ShipName>");
 
                     rowValue = rowValue.Replace("CrewSize", "Crew");
+                    rowValue = rowValue.Replace("</InterceptAbility>", "%</InterceptAbility>");
 
                     //<BeamType Count="3" Refire="84%" Damage="29" />
                     rowValue = rowValue.Replace("</Beam_Count>", "\" ");  // first this !!
@@ -2739,6 +2740,14 @@ namespace CSV2XML
                     "        <ShipName> 017A01077 </ShipName>" + Environment.NewLine);
 
 
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_SPY_SHIP_III",
+                              Environment.NewLine +
+                    "        <ShipName> 019SP00037 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 019SP00038 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 019SP00075 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 019SP00113 </ShipName>" + Environment.NewLine);
+
+
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SPY_SHIP_II",
                               Environment.NewLine +
                     "        <ShipName> 019SP00037 </ShipName>" + Environment.NewLine +
@@ -2828,6 +2837,22 @@ namespace CSV2XML
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_III",
+                              Environment.NewLine +
+                    "        <ShipName> 023DP00052 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00084 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00136 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00220 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00356 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_II",
+                              Environment.NewLine +
+                    "        <ShipName> 023DP00052 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00084 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00136 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00220 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 023DP00356 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_I",
                               Environment.NewLine +
                     "        <ShipName> 023DP00052 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 023DP00084 </ShipName>" + Environment.NewLine +
@@ -3869,14 +3894,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -3890,14 +3915,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -3946,7 +3971,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_III",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -3960,7 +3985,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -3981,7 +4006,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_III",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -3995,14 +4020,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_III",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
-                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4016,7 +4034,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_III",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4030,7 +4055,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4058,13 +4083,6 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTION_SHIP_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTION_SHIP_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
@@ -4072,7 +4090,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTION_SHIP_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4086,6 +4104,13 @@ namespace CSV2XML
 
 
 
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_I",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_FUSION_CUBE",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
@@ -4093,14 +4118,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_I",
 
                                         "        <ShipName> ACAMARIAN_RAIDER 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> ACAMARIAN_RAIDER 2  </ShipName>" + Environment.NewLine);
@@ -4114,7 +4139,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_II",
                                         "        <ShipName> ANDORIAN_CRUISER 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> ANDORIAN_CRUISER 2 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> ANDORIAN_CRUISER 3 </ShipName>" + Environment.NewLine +
@@ -4123,7 +4148,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4168,14 +4193,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4203,14 +4228,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4224,14 +4249,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4245,7 +4270,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_III",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4259,7 +4284,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4294,17 +4319,17 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesCORIDAN_CRUISER_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesCORIDAN_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCORIDAN_CRUISER_I",
+
+                                        "        <ShipName> CORIDAN 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> CORIDAN 2  </ShipName>" + Environment.NewLine);
 
 
 
@@ -4392,21 +4417,28 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_II",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Marauder 3 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Marauder 4  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_I",
+
+                                        "        <ShipName> Marauder 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Marauder 2  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER",
+
+                                        "        <ShipName> Marauder 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Marauder 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4414,13 +4446,6 @@ namespace CSV2XML
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
-                    rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4455,7 +4480,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_III",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4469,7 +4494,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4511,14 +4536,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4637,7 +4662,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_III",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4651,7 +4676,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4679,14 +4704,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4714,14 +4739,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4735,13 +4760,6 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesORION_SCOUT_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesORION_SCOUT_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
@@ -4749,7 +4767,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesPAKLED_LIGHT_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesORION_SCOUT_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4757,6 +4775,13 @@ namespace CSV2XML
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesPAKLED_LIGHT_CRUISER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesPAKLED_LIGHT_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4805,13 +4830,6 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTLANI_HEAVY_CRUISER_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTLANI_HEAVY_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
@@ -4819,7 +4837,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTROGORAN_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesTLANI_HEAVY_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4833,7 +4851,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTAK_TAK_DESTROYER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesTROGORAN_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4841,6 +4859,13 @@ namespace CSV2XML
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesTAK_TAK_DESTROYER_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesTAK_TAK_DESTROYER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4910,14 +4935,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4931,14 +4956,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -4966,14 +4991,14 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -5078,13 +5103,6 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesZALKONIAN_CRUISER_I",
-
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesZALKONIAN_CRUISER_II",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
@@ -5092,7 +5110,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesZIBALIAN_TRANSPORT_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesZALKONIAN_CRUISER_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
@@ -5100,6 +5118,13 @@ namespace CSV2XML
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesZIBALIAN_TRANSPORT_II",
+
+                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesZIBALIAN_TRANSPORT_I",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
