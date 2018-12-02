@@ -7,7 +7,7 @@
     <ProjectGuid>{DC8B6BCE-0047-4884-84D1-39988268BF73}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Checks</RootNamespace>
-    <AssemblyName>XML2CSV</AssemblyName>
+    <AssemblyName>B2_SHEET2CSV</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,16 +52,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="B2_CSV2XML.cs">
+    <Compile Include="B2_SHEET2XML.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="B2_CSV2XML.Designer.cs">
-      <DependentUpon>B2_CSV2XML.cs</DependentUpon>
+    <Compile Include="B2_SHEET2XML.Designer.cs">
+      <DependentUpon>B2_SHEET2XML.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="B2_CSV2XML.resx">
-      <DependentUpon>B2_CSV2XML.cs</DependentUpon>
+    <EmbeddedResource Include="B2_SHEET2XML.resx">
+      <DependentUpon>B2_SHEET2XML.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

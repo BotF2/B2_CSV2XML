@@ -242,7 +242,7 @@ namespace CSV2XML
                     rowValue = rowValue.Replace(" <ShipName>", "      <ShipName>");
 
                     rowValue = rowValue.Replace("CrewSize", "Crew");
-                    rowValue = rowValue.Replace("</InterceptAbility>", "%</InterceptAbility>");
+                    // no     rowValue = rowValue.Replace("</InterceptAbility>", "%</InterceptAbility>");
 
                     //<BeamType Count="3" Refire="84%" Damage="29" />
                     rowValue = rowValue.Replace("</Beam_Count>", "\" ");  // first this !!
@@ -2763,6 +2763,19 @@ namespace CSV2XML
                     "        <ShipName> 017A01070 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 017A01077 </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_STRIKE_CRUISER",
+                              Environment.NewLine +
+                    "        <ShipName> 005AC00017 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00034 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00051 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00068 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00085 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00102 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00119 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00136 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00153 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> 005AC00170 </ShipName>" + Environment.NewLine);
+
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SPY_SHIP_III",
                               Environment.NewLine +
@@ -3068,6 +3081,7 @@ namespace CSV2XML
                     "        <ShipName> 007A00077 </ShipName>" + Environment.NewLine);
 
 
+
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_III",
                               Environment.NewLine +
                     "        <ShipName> t Fatherland </ShipName>" + Environment.NewLine +
@@ -3081,26 +3095,26 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_II",
                               Environment.NewLine +
-                    "        <ShipName> tHomestead </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tInheritor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tLegacy </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tLineage </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tNamesake </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tNative Son </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tNoble Line </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tOffspring </ShipName>" + Environment.NewLine);
+                    "        <ShipName> t Homestead </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Inheritor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Legacy </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Lineage </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Namesake </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Native Son </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Noble Line </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Offspring </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_I",
                               Environment.NewLine +
-                    "        <ShipName> tParentage </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tProgenitor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tProgeny </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tRegent </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tSeventh Son </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tSuccessor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tTradition </ShipName>" + Environment.NewLine +
-                    "        <ShipName> tWayward Son </ShipName>" + Environment.NewLine);
+                    "        <ShipName> t Parentage </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Progenitor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Progeny </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Regent </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Seventh Son </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Successor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Tradition </ShipName>" + Environment.NewLine +
+                    "        <ShipName> t Wayward Son </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_STRIKE_CRUISER_II",
