@@ -9,6 +9,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+// infile is  "C:/_B2/Balance - Export_New.xml";
+// outfile is "C:/_B2/Balance - Export_New.xml-out.csv" (just added -out.csv.  csv for easy opening in Excel)
+
+/* Description
+ 
+- in Google Sheet we have ship values (from TechobjectDatabase.xml) with formulas created/modified
+- we export this to a basic part of TechobjectDatabase.xml - file name is mostly "Balance - Export_New.xml" (Balance = File, Export_New is sheet)
+
+- this basic we modify with this code .... e.g. 
+--- modify Percent-Values from "0.12" to "12"
+--- build stuff e.g. for Weapons from cells to XML-Element 
+--- place in Shipnames
+
+
+HOW THIS IS WORKING
+
+- most is done at * ReadCSV *  (sorry, it is copied from another project handling with csv-files. 
+- it is doing a head line and than a cell for each value, and a new line at some place
+- when done it is opening an app, but before it was writing to "outfile" - the app dosn't do anything, but "tells" about being ready and giving a first preview
+
+ End of Description */
+
+// old info: (mostly saying the same, bt I wanna keep it)
+// infile is "C:/_B2/Balance - Export_New.xml"
 // how it works
 // reading file, splitting lines into cells by "separator" like ";", writting cells to output file (automatically), showing App (as "is finished and preview".. just close the App
 // head line is separat and done before "all lines"
