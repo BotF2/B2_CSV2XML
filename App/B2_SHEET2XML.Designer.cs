@@ -83,8 +83,8 @@
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_Open);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "GEDxlateTransform";
-            this.Text = "GEDxlateTransform by Reg";
+            this.Name = "B2_SHEET2XML";
+            this.Text = "B2_SHEET2XML";
             this.Load += new System.EventHandler(this.btn_Open_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -26,9 +26,9 @@ using System.IO;
 
 HOW THIS IS WORKING, HOW THIS IS DONE
 
-- most is done at * ReadCSV *  (sorry, it is copied from another project handling with csv-files. 
+- most is done at * ReadCSV *  (sorry, it is copied from another project handling with csv-files). 
 - it is doing a head line and than a cell for each value, and a new line at some place
-- when done it is opening an app, but before it was writing to "outfile" - the app dosn't do anything, but "tells" about being ready and giving a first preview
+- when done it is opening an app, but before it was writing to "outfile" - the app doesn't do anything, but "tells" about being ready and giving a first preview
 
  End of Description */
 
@@ -1443,666 +1443,666 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_TRANSPORT_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF Hovpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Klothos </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Le'Hov </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Mullagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngojporgh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Noyqech </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QarmIn </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Dogh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Qagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQveS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF TlheDwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Y'tem </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF B'iJik </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Boreth </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DajDuS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hovpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Klothos </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Le'Hov </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Mullagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngojporgh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Noyqech </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QarmIn </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Dogh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Qagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQveS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> TlheDwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Y'tem </ShipName>" + Environment.NewLine +
+                    "        <ShipName> B'iJik </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Boreth </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DajDuS </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Drovna </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Drovna </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_TRANSPORT_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF HubwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'mpec </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Le'qorDu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MulQogh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgongwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NoyvI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QarnuH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Doy' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'QIv </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQvI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Toh'Kaht </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF YotwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIrHegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Bortas </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dajghol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HubwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'mpec </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Le'qorDu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MulQogh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgongwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NoyvI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QarnuH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Doy' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'QIv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQvI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Toh'Kaht </ShipName>" + Environment.NewLine +
+                    "        <ShipName> YotwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIrHegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bortas </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dajghol </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF DughDuy </ShipName>" + Environment.NewLine);
+                    "        <ShipName> DughDuy </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_TRANSPORT_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Gr'oth </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HujwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'nera </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF LI'wI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MulSaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngotlhbe' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Nu'Daq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qarpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Duy' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'SaH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qutbe' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF T'Ong </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIrHom </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoSwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dajghu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gr'oth </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HujwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'nera </ShipName>" + Environment.NewLine +
+                    "        <ShipName> LI'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MulSaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngotlhbe' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nu'Daq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qarpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Duy' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'SaH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qutbe' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> T'Ong </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIrHom </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoSwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dajghu' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Dughjup </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Dughjup </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_STRIKE_CRUISER_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF DughQu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Gre'thor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HurghSan </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Koloth </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF LoHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Mulyagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgotlhchoH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NuQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qaw'wI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Haj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'SIH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QutHol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VangwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIrruv </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BotwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DughQu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gre'thor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HurghSan </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Koloth </ShipName>" + Environment.NewLine +
+                    "        <ShipName> LoHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Mulyagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgotlhchoH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NuQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qaw'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Haj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'SIH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QutHol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VangwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIrruv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BotwI' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF DaqwI' </ShipName>" + Environment.NewLine);
+                    "        <ShipName> DaqwI' </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_STRIKE_CRUISER_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Divok </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dughro' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Hegh'ta </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Husghaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Konmel </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Lorgh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MulyaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgotlhDa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Orantho </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QeHtIn </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Haw' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tlheD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qutqempa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQbach </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIvwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Divok </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dughro' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hegh'ta </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Husghaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Konmel </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Lorgh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MulyaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgotlhDa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Orantho </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QeHtIn </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Haw' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tlheD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qutqempa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQbach </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIvwI' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF B'rel </ShipName>" + Environment.NewLine);
+                    "        <ShipName> B'rel </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SPY_SHIP_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF Buruk </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dochbeq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DughwoQ </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HeghwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Jaqbeq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Koord </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Lursor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NajwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgotlhDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Pagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QeHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Hegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QutSa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQDoch </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Buruk </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dochbeq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DughwoQ </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HeghwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Jaqbeq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Koord </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Lursor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NajwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgotlhDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Pagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QeHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Hegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QutSa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQDoch </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF BochbaS </ShipName>" + Environment.NewLine);
+                    "        <ShipName> BochbaS </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SPY_SHIP_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF BochHov </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BuvwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dochqup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DughyaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Hembu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Jaqbutlh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Maht-H'a </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSbutlh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngotlhpuq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF PejwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QemwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'jegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tun </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qu'Vat </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BochHov </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BuvwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dochqup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DughyaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hembu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Jaqbutlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Maht-H'a </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSbutlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngotlhpuq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> PejwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QemwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'jegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tun </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qu'Vat </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF VaQDol </ShipName>" + Environment.NewLine);
+                    "        <ShipName> VaQDol </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SPY_SHIP_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF VaQpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BochlIy </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Chang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DojHoH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DujqaD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HemDuy </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF JaqDup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Koraga </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Malpara </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ning'tao </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF P'Rang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QengwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'joD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tuv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BochlIy </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Chang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DojHoH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DujqaD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HemDuy </ShipName>" + Environment.NewLine +
+                    "        <ShipName> JaqDup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Koraga </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Malpara </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ning'tao </ShipName>" + Environment.NewLine +
+                    "        <ShipName> P'Rang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QengwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'joD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tuv </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Ro'kegh </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Ro'kegh </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCOUT_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF Rotarran </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQto' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Bochqu </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF CharghwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DojqIvon </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DujQeH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Hemghol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF JaqHoq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Korinar </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Maltz </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSDup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NIvDup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Praxis </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QeSwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'jot </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Rotarran </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQto' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bochqu </ShipName>" + Environment.NewLine +
+                    "        <ShipName> CharghwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DojqIvon </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DujQeH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hemghol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> JaqHoq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Korinar </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Maltz </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSDup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NIvDup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Praxis </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QeSwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'jot </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Qo'yon </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Qo'yon </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCOUT_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF Quin'lat </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF SeHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Bochtev </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChavwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dojquv </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Erikang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Hemlom </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF JaqtIq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Korris </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF M'Char </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSgho </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Niv'etlh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QabwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIchwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Quin'lat </ShipName>" + Environment.NewLine +
+                    "        <ShipName> SeHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bochtev </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChavwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dojquv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Erikang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hemlom </ShipName>" + Environment.NewLine +
+                    "        <ShipName> JaqtIq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Korris </ShipName>" + Environment.NewLine +
+                    "        <ShipName> M'Char </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSgho </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Niv'etlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QabwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIchwI' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Qo'leS </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Qo'leS </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCOUT_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qo'lobHa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qui'Tu </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF SepwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQyaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHcha </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChelwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dojvan </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Etam </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HeQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF JaqwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'Ratak </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Melota </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSghong </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Nivjech </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QaDwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'lobHa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qui'Tu </ShipName>" + Environment.NewLine +
+                    "        <ShipName> SepwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQyaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChelwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dojvan </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Etam </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HeQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> JaqwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'Ratak </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Melota </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSghong </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nivjech </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QaDwI' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QIjbaS </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QIjbaS </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCIENCE_SHIP_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF QIjHegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'lum </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuprIp </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Slivin </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VerghwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHDegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChenwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DoqbaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Fek'lhr </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HIvwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF J'Ddan </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kri'stak </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MeQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaStaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NIvleSSov </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjHegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'lum </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuprIp </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Slivin </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VerghwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHDegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChenwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DoqbaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Fek'lhr </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HIvwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> J'Ddan </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kri'stak </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MeQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaStaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NIvleSSov </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QaHwI' </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QaHwI' </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCIENCE_SHIP_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qanmang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIjHo' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QolwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQlaH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Somraw </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VI'wI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChoHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Doqcha </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhoHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSbatlh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF JonwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kruge </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MIywI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Negh'Var </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qanmang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjHo' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QolwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQlaH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Somraw </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VI'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChoHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Doqcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhoHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSbatlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> JonwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kruge </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MIywI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Negh'Var </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Nivqempa' </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Nivqempa' </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCIENCE_SHIP_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF QuQngat </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Sto'Vo'Kor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VorcaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHDuS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChopwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DoqghuH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhorwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSbegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kahless </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'Temoc </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MobwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgIlwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NIvQu' </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QuQngat </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Sto'Vo'Kor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VorcaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHDuS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChopwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DoqghuH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhorwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSbegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kahless </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'Temoc </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MobwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgIlwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NIvQu' </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_MEDICAL_SHIP_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF BoHpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChovwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DoqHegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhuHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSDuj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K't'inga </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MolwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngojcha </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Nivta' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qanvaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIjmaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'magh </ShipName>" + Environment.NewLine);
+                    "        <ShipName> BoHpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChovwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DoqHegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhuHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSDuj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K't'inga </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MolwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngojcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nivta' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qanvaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjmaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'magh </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_MEDICAL_SHIP_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qo'moS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQqaD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF T'Acog </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Vorn </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Aktuh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHtIq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ch'Tang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DoqHo' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhungDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSjagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'Ehleyr </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kurn </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Morath </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgojDegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF No'Mat </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'moS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQqaD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> T'Acog </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Vorn </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Aktuh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHtIq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ch'Tang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DoqHo' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhungDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSjagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'Ehleyr </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kurn </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Morath </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgojDegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> No'Mat </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QarbeH </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QarbeH </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DIPLOMATIC_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qo'ngeD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQSogh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ta'wI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Vornak </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Amar </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHyaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChungwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DoqmaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ghunglom </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSloD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Khitomer </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'Vort </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Morska </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgojDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Noycha'puj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'ngeD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQSogh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ta'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Vornak </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Amar </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHyaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChungwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DoqmaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ghunglom </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSloD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Khitomer </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'Vort </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Morska </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgojDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Noycha'puj </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QarchetvI' </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QarchetvI' </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DIPLOMATIC_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qo'noS Wa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQvaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF TaymoHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Yavang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Azetbur </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Chu'wI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Doqram </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhungQa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSmu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kirom </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Le'batlh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Mulbe'Hom </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgojDuS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NoyDaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'noS Wa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQvaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> TaymoHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Yavang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Azetbur </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Chu'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Doqram </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhungQa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSmu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kirom </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Le'batlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Mulbe'Hom </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgojDuS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NoyDaS </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QarDuS </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QarDuS </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DIPLOMATIC_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qo'Qagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQveS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF TlheDwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Y'tem </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF B'iJik </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Boreth </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DajDuS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Drovna </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhungQogh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSqempa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Klag </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Le'chav </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Mulchom </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngojpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NoyDuj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Qagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQveS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> TlheDwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Y'tem </ShipName>" + Environment.NewLine +
+                    "        <ShipName> B'iJik </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Boreth </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DajDuS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Drovna </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhungQogh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSqempa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Klag </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Le'chav </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Mulchom </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngojpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NoyDuj </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QarHIch </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QarHIch </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_IV",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qo'QIv </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQvI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Toh'Kaht </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF YotwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIrHegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Bortas </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dajghol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DughDuy </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Gi'ral </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Hovpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Klothos </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Le'Hov </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Mullagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngojporgh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Noyqech </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'QIv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQvI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Toh'Kaht </ShipName>" + Environment.NewLine +
+                    "        <ShipName> YotwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIrHegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bortas </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dajghol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DughDuy </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gi'ral </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hovpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Klothos </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Le'Hov </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Mullagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngojporgh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Noyqech </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QarmIn </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QarmIn </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qo'Duy' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'SaH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qutbe' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF T'Ong </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIrHom </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoSwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dajghu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dughjup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Gorkon </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HubwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'mpec </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Le'qorDu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MulQogh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgongwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NoyvI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Duy' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'SaH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qutbe' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> T'Ong </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIrHom </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoSwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dajghu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dughjup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gorkon </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HubwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'mpec </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Le'qorDu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MulQogh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgongwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NoyvI' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF QarnuH </ShipName>" + Environment.NewLine);
+                    "        <ShipName> QarnuH </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF Qaw'wI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Haj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'SIH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QutHol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VangwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIrruv </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BotwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DaqwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dughla' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Gr'oth </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HujwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'nera </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF LI'wI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MulSaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngotlhbe' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qaw'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Haj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'SIH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QutHol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VangwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIrruv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BotwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DaqwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dughla' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gr'oth </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HujwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'nera </ShipName>" + Environment.NewLine +
+                    "        <ShipName> LI'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MulSaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngotlhbe' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Nu'Daq </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Nu'Daq </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Orantho </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QeHtIn </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Haw' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tlheD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qutqempa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQbach </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BIvwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF B'rel </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DighreS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DughQu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Gre'thor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HurghSan </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Koloth </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF LoHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Mulyagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Orantho </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QeHtIn </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Haw' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tlheD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qutqempa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQbach </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BIvwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> B'rel </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DighreS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DughQu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gre'thor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HurghSan </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Koloth </ShipName>" + Environment.NewLine +
+                    "        <ShipName> LoHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Mulyagh </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF NgotlhchoH </ShipName>" + Environment.NewLine);
+                    "        <ShipName> NgotlhchoH </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_IV",
                               Environment.NewLine +
-                    "        <ShipName> KDF NgotlhDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Pagh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QeHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'Hegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tor </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QutSa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQDoch </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BochbaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF B'Moth </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Divok </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dughro' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Hegh'ta </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Husghaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Konmel </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Lorgh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgotlhDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Pagh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QeHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'Hegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QutSa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQDoch </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BochbaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> B'Moth </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Divok </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dughro' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hegh'ta </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Husghaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Konmel </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Lorgh </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF MulyaS </ShipName>" + Environment.NewLine);
+                    "        <ShipName> MulyaS </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF NaSbutlh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngotlhpuq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF PejwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QemwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'jegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tun </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qu'Vat </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BochHeH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Buruk </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dochbeq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DughwoQ </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HeghwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Jaqbeq </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Koord </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSbutlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngotlhpuq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> PejwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QemwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'jegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tun </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qu'Vat </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BochHeH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Buruk </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dochbeq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DughwoQ </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HeghwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Jaqbeq </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Koord </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Lursor </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Lursor </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF Malpara </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSDol </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ning'tao </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF P'Rang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QengwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'joD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'tuv </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ro'kegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQDup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BochHov </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BuvwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dochqup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DughyaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Hembu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Jaqbutlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Malpara </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSDol </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ning'tao </ShipName>" + Environment.NewLine +
+                    "        <ShipName> P'Rang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QengwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'joD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'tuv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ro'kegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQDup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BochHov </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BuvwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dochqup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DughyaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hembu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Jaqbutlh </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Kor </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Kor </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Korinar </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Maltz </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSDup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NIvDup </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Praxis </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QeSwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'jot </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'yon </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ro'kegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BochlIy </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Chang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DojHoH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DujqaD </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HemDuy </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Korinar </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Maltz </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSDup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NIvDup </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Praxis </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QeSwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'jot </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'yon </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ro'kegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BochlIy </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Chang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DojHoH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DujqaD </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HemDuy </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF JaqDup </ShipName>" + Environment.NewLine);
+                    "        <ShipName> JaqDup </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COMMAND_SHIP_III",
                               Environment.NewLine +
-                    "        <ShipName> KDF HeQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF JaqwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'Ratak </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Melota </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaSghong </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Nivjech </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QaDwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIjbaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'lIm </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Quin'lat </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF SeHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Bochtev </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChavwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Dojquv </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HeQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> JaqwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'Ratak </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Melota </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaSghong </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nivjech </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QaDwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjbaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'lIm </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Quin'lat </ShipName>" + Environment.NewLine +
+                    "        <ShipName> SeHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bochtev </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChavwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dojquv </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Erikang </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Erikang </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COMMAND_SHIP_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF Fek'lhr </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HIvwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF J'Ddan </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kri'stak </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MeQwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NaStaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NIvleSSov </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QaHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIjcha </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'lobHa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qui'Tu </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF SepwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VaQyaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHcha </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChelwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Fek'lhr </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HIvwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> J'Ddan </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kri'stak </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MeQwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NaStaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NIvleSSov </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QaHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'lobHa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qui'Tu </ShipName>" + Environment.NewLine +
+                    "        <ShipName> SepwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VaQyaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChelwI' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF Dojvan </ShipName>" + Environment.NewLine);
+                    "        <ShipName> Dojvan </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COMMAND_SHIP_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF Doqcha </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhoHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSbatlh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF JonwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kruge </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MIywI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Negh'Var </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Nivqempa' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QalIa'pe' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIjHegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'lum </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuprIp </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Slivin </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VerghwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF BoHDegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Doqcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhoHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSbatlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> JonwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kruge </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MIywI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Negh'Var </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nivqempa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QalIa'pe' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjHegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'lum </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuprIp </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Slivin </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VerghwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHDegh </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF ChenwI' </ShipName>" + Environment.NewLine);
+                    "        <ShipName> ChenwI' </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COLONY_SHIP_II",
                               Environment.NewLine +
-                    "        <ShipName> KDF ChopwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DoqghuH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhorwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSbegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kahless </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K'Temoc </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MobwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NgIlwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF NIvQu' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qanmang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIjHo' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QolwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQlaH </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Somraw </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF VI'wI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChopwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DoqghuH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhorwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSbegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kahless </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K'Temoc </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MobwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NgIlwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> NIvQu' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qanmang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjHo' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QolwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQlaH </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Somraw </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VI'wI' </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF BoHDol </ShipName>" + Environment.NewLine);
+                    "        <ShipName> BoHDol </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COLONY_SHIP_I",
                               Environment.NewLine +
-                    "        <ShipName> KDF BoHpeng </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF ChovwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF DoqHegh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF GhuHwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF HoSDuj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Kang </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF K't'inga </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF MolwI' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Ngojcha </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Nivta' </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qanvaj </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QIjmaS </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Qo'magh </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF QuQngat </ShipName>" + Environment.NewLine +
-                    "        <ShipName> KDF Sto'Vo'Kor </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHpeng </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ChovwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DoqHegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> GhuHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> HoSDuj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kang </ShipName>" + Environment.NewLine +
+                    "        <ShipName> K't'inga </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MolwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ngojcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nivta' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qanvaj </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjmaS </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'magh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuQngat </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Sto'Vo'Kor </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> KDF VorcaS </ShipName>" + Environment.NewLine);
+                    "        <ShipName> VorcaS </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_III",
