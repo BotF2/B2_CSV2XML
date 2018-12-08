@@ -4531,10 +4531,16 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER",
+                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER_II",
 
                                         "        <ShipName> Perabac </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Marauder 2  </ShipName>" + Environment.NewLine);
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER_I",
+
+                                        "        <ShipName> Perabac </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Marauder 1  </ShipName>" + Environment.NewLine);
 
 
 
