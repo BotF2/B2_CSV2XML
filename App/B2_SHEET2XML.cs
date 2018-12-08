@@ -14,16 +14,17 @@ using System.IO;
 
 /* Description
  
-- in Google Sheet we have ship values (from TechobjectDatabase.xml) with formulas created/modified
-- we export this to a basic part of TechobjectDatabase.xml - file name is mostly "Balance - Export_New.xml" (Balance = File, Export_New is sheet)
+- in Google Sheet we have ship values (from TechobjectDatabase.xml) with formulas created/modified to determin ship values 
+- we export this to a basic part of TechobjectDatabase.xml - file name is "Balance - Export_New.xml" (Balance = name of File, Export_New is the sheet tab)
+- download the sheet export, do not copy and past.
 
-- this basic we modify with this code .... e.g. 
+- this basic we will modify with this code .... e.g. 
 --- modify Percent-Values from "0.12" to "12"
 --- build stuff e.g. for Weapons from cells to XML-Element 
 --- place in Shipnames
 
 
-HOW THIS IS WORKING
+HOW THIS IS WORKING, HOW THIS IS DONE
 
 - most is done at * ReadCSV *  (sorry, it is copied from another project handling with csv-files. 
 - it is doing a head line and than a cell for each value, and a new line at some place
@@ -2809,7 +2810,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCOUT_III",
                               Environment.NewLine +
-                    "        <ShipName> 021A00144 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Igata'dak </ShipName>" + Environment.NewLine +
                     "        <ShipName> 021A00233 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 021A00377 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 021A00610 </ShipName>" + Environment.NewLine +
@@ -2823,7 +2824,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCOUT_II",
                               Environment.NewLine +
-                    "        <ShipName> 009A00111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Ikotok'sezok </ShipName>" + Environment.NewLine +
                     "        <ShipName> 009A00112 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 009A00223 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 009A00335 </ShipName>" + Environment.NewLine +
@@ -2837,7 +2838,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCOUT_I",
                               Environment.NewLine +
-                    "        <ShipName> 001A00001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Zadan'kogok </ShipName>" + Environment.NewLine +
                     "        <ShipName> 001A00002 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 001A00003 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 001A00005 </ShipName>" + Environment.NewLine +
@@ -2914,7 +2915,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DESTROYER_III",
                               Environment.NewLine +
-                    "        <ShipName> 011D00019 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gegnat </ShipName>" + Environment.NewLine +
                     "        <ShipName> 011D00067 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 011D00083 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 011D00134 </ShipName>" + Environment.NewLine +
@@ -2928,7 +2929,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DESTROYER_II",
                               Environment.NewLine +
-                    "        <ShipName> 006D00500 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nirgod </ShipName>" + Environment.NewLine +
                     "        <ShipName> 006D00809 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 006D01309 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 006D01613 </ShipName>" + Environment.NewLine +
@@ -2941,7 +2942,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DESTROYER_I",
                               Environment.NewLine +
-                    "        <ShipName> 002D00005 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Gevan </ShipName>" + Environment.NewLine +
                     "        <ShipName> 002D00006 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 002D00011 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 002D00017 </ShipName>" + Environment.NewLine +
@@ -2955,7 +2956,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CRUISER_IV",
                               Environment.NewLine +
-                    "        <ShipName> 035AC00017 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Onazad'tatet </ShipName>" + Environment.NewLine +
                     "        <ShipName> 035AC00034 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 035AC00051 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 035AC00068 </ShipName>" + Environment.NewLine +
@@ -2969,7 +2970,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CRUISER_III",
                               Environment.NewLine +
-                    "        <ShipName> 025AC00009 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Takak'luzi </ShipName>" + Environment.NewLine +
                     "        <ShipName> 025AC00018 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 025AC00027 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 025AC00036 </ShipName>" + Environment.NewLine +
@@ -2983,7 +2984,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CRUISER_II",
                               Environment.NewLine +
-                    "        <ShipName> 016AC00013 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dudona'kaned </ShipName>" + Environment.NewLine +
                     "        <ShipName> 016AC00026 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 016AC00039 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 016AC00052 </ShipName>" + Environment.NewLine +
@@ -2997,7 +2998,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CRUISER_I",
                               Environment.NewLine +
-                    "        <ShipName> 005AC00017 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Sakota'dun </ShipName>" + Environment.NewLine +
                     "        <ShipName> 005AC00034 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 005AC00051 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 005AC00068 </ShipName>" + Environment.NewLine +
@@ -3011,7 +3012,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COMMAND_SHIP_III",
                               Environment.NewLine +
-                    "        <ShipName> 023CS00004 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Raroka'yad </ShipName>" + Environment.NewLine +
                     "        <ShipName> 023CS00008 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 023CS00012 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 023CS00020 </ShipName>" + Environment.NewLine +
@@ -3025,7 +3026,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COMMAND_SHIP_II",
                               Environment.NewLine +
-                    "        <ShipName> 019CS00037 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tikug'kletad </ShipName>" + Environment.NewLine +
                     "        <ShipName> 019CS00038 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 019CS00075 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 019CS00113 </ShipName>" + Environment.NewLine +
@@ -3039,7 +3040,7 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COMMAND_SHIP_I",
                               Environment.NewLine +
-                    "        <ShipName> 017CS00029 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kanud'yiki </ShipName>" + Environment.NewLine +
                     "        <ShipName> 017CS00577 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 017CS00606 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 017CS01183 </ShipName>" + Environment.NewLine +
@@ -4198,15 +4199,15 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_II",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Research 11 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Research 12  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_I",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Research 01 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Research 02  </ShipName>" + Environment.NewLine);
 
 
 
@@ -4219,8 +4220,8 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_II",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Kankō Maru </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Kanrin Maru  </ShipName>" + Environment.NewLine);
 
 
 
@@ -4233,31 +4234,31 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesAKRITIRIAN_ATTACK_SHIP",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Chōyō </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Kaiyō Maru </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_II",
-                                        "        <ShipName> ANDORIAN_CRUISER 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> ANDORIAN_CRUISER 2 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> ANDORIAN_CRUISER 3 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> ANDORIAN_CRUISER 4 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> ANDORIAN_CRUISER 5 </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Bis Th'vilross </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Itil Ch'otilreth </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ryv Ch'qianol </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Osheb Th'erolloq </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Teb Th'othevass </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_I",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Kaiten </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Banryu </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesANGOSIAN_TRANSPORT",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Chogei </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ikavo Ch'veth  </ShipName>" + Environment.NewLine);
 
 
 
@@ -4280,43 +4281,43 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesATREAN_CRUISER",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Shinsoku </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Mikaho  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesAXANAR_DESTROYER",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Yoshun ja </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Kasuga  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_II",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Chiyodagata </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Hiryū </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_I",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Teibo </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Ryujo </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBENZITE_EXPLORER",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Unyo </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Unyo ja  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBETAZOID_STARCRUISER",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Nisshin </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Takao </ShipName>" + Environment.NewLine);
 
 
 
@@ -4518,43 +4519,43 @@ namespace CSV2XML
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_II",
 
-                                        "        <ShipName> Marauder 3 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Marauder 4  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Lepak </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Pizar  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_I",
 
-                                        "        <ShipName> Marauder 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Grood </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Marauder 2  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER",
 
-                                        "        <ShipName> Marauder 1 </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Perabac </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Marauder 2  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_II",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Gegin </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Prala  </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_I",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Dirad </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Zenog </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesHAAKONIAN_DESTROYER",
 
-                                        "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Berpax </ShipName>" + Environment.NewLine +
+                                        "        <ShipName> Gnarpax  </ShipName>" + Environment.NewLine);
 
 
 
