@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 
 // infile is  "C:/_B2/Balance - Export_New.xml";
-// outfile is "C:/_B2/Balance - Export_New.xml-out.csv" (just added -out.csv.  csv for easy opening in Excel)
+// outfile is "C:/_B2/Balance - Export_New.xml_OUT_SHIPS_TechObjectDatabase.xml" (just added -out.csv.  csv for easy opening in Excel)
 
 /* Description
  
@@ -3603,6 +3603,67 @@ namespace CSV2XML
                     "        <ShipName> Tactical Cube 1.10111 </ShipName>" + Environment.NewLine +
 
                     "        <ShipName> Tactical Cube 1.11001 </ShipName>" + Environment.NewLine);
+
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_III",
+                              Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.1010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.1100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.1110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.1111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.10001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.10010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.10100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.10110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.10111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.11001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.11010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.11011 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.11100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.11101 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 3.11110 </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> Strike Diamond 3.11111 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_II",
+                              Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.1010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.1100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.1110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.1111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.10001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.10010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.10100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.10110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.10111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.11001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.11010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.11011 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.11100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.11101 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 2.11110 </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> Strike Diamond 2.11111 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_I",
+                              Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.1010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.1100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.1110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.1111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.10001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.10010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.10100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.10110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.10111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.11001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.11010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.11011 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.11100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.11101 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Strike Diamond 1.11110 </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> Strike Diamond 1.11111 </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCOUT_III",
