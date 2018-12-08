@@ -4527,20 +4527,20 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_I",
 
                                         "        <ShipName> Grood </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Marauder 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Pruna </ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER_II",
 
                                         "        <ShipName> Perabac </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Marauder 2  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Xites  </ShipName>" + Environment.NewLine);
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER_I",
 
                                         "        <ShipName> Perabac </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Marauder 1  </ShipName>" + Environment.NewLine);
+                                        "        <ShipName> Troomp  </ShipName>" + Environment.NewLine);
 
 
 
