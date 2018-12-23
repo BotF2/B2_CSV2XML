@@ -665,6 +665,25 @@ namespace CSV2XML
 
                     "        <ShipName> Spaker </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_FRIGATE_IV",
+                              Environment.NewLine +
+                    "        <ShipName> Billings </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bozeman </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Champlain </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Charybdis </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Devout </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Golden Hind </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Halley </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hobart </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Huron </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kyushu </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Lazarus </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Lisbon </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Louisiana </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Musashi </ShipName>" + Environment.NewLine +
+                    "        <ShipName> New Orleans </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> North Wind </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_FRIGATE_III",
                               Environment.NewLine +
@@ -770,6 +789,25 @@ namespace CSV2XML
 
                     "        <ShipName> Washington </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_IV",
+                              Environment.NewLine +
+                    "        <ShipName> Arrogant </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Battleaxe </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bold </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Centurion </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Colossal </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Comet </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Constellation </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Daredevil </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Daring </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dauntless </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Defiant </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Devastator </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Divine Wind </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dreadnought </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Endurance </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> Gladiator </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_III",
                               Environment.NewLine +
@@ -1074,6 +1112,23 @@ namespace CSV2XML
                     "        <ShipName> Lohist </ShipName>" + Environment.NewLine +
                     "        <ShipName> Maist </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_TACTICAL_CRUISER",
+                              Environment.NewLine +
+                    "        <ShipName> Red Crane </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Dove </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Finch </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Robin </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Shriek </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Stork </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Swan </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Tail </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Red Wren </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Redbill </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Redfeather </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Redwing </ShipName>" + Environment.NewLine +
+                    "        <ShipName> White Crane </ShipName>" + Environment.NewLine +
+                    "        <ShipName> White Dove </ShipName>" + Environment.NewLine +
+                    "        <ShipName> White Swan </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_STRIKE_CRUISER_III",
                               Environment.NewLine +
@@ -2365,6 +2420,24 @@ namespace CSV2XML
                     "        <ShipName> Wallis </ShipName>" + Environment.NewLine +
                     "        <ShipName> Wilder </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesFED_FRIGATE_IV",
+                              Environment.NewLine +
+                    "        <ShipName> Billings </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bozeman </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Champlain </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Charybdis </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Devout </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Golden Hind </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Halley </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Hobart </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Huron </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Kyushu </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Lazarus </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Lisbon </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Louisiana </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Musashi </ShipName>" + Environment.NewLine +
+                    "        <ShipName> New Orleans </ShipName>" + Environment.NewLine +
+                     "        <ShipName> North Wind </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_FRIGATE_III",
                               Environment.NewLine +
@@ -2458,6 +2531,25 @@ namespace CSV2XML
                     "        <ShipName> Spock </ShipName>" + Environment.NewLine +
                     "        <ShipName> Trump </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_IV",
+                              Environment.NewLine +
+                    "        <ShipName> Arrogant </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Battleaxe </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Bold </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Centurion </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Colossal </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Comet </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Constellation </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Daredevil </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Daring </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dauntless </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Defiant </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Devastator </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Divine Wind </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Dreadnought </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Endurance </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> Gladiator </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_III",
                               Environment.NewLine +
@@ -3771,6 +3863,25 @@ namespace CSV2XML
 
                     "        <ShipName> Drone Repair 1.11001 </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_DESTROYER_IV",
+                              Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.1010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.1100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.1110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.1111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.10001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.10010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.10100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.10110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.10111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.11001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.11010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.11011 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.11100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.11101 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Tactical Sphere 3.11110 </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> Tactical Sphere 3.11111 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_DESTROYER_III",
                               Environment.NewLine +
@@ -5277,6 +5388,9 @@ namespace CSV2XML
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
