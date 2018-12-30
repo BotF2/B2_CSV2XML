@@ -2117,6 +2117,25 @@ namespace CSV2XML
 
                     "        <ShipName> ChenwI' </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesKLING_TACTICAL_CRUISER",
+                              Environment.NewLine +
+                    "        <ShipName> Hoqcha </ShipName>" + Environment.NewLine +
+                    "        <ShipName> AhoHwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> KoSbatlh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> RonwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Chruge </ShipName>" + Environment.NewLine +
+                    "        <ShipName> MywI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Negh'Var </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Nivqempa' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QalIa'pe' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QIjHegh </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Qo'lum </ShipName>" + Environment.NewLine +
+                    "        <ShipName> QuprIp </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Slivin </ShipName>" + Environment.NewLine +
+                    "        <ShipName> VerghwI' </ShipName>" + Environment.NewLine +
+                    "        <ShipName> BoHDegh </ShipName>" + Environment.NewLine +
+
+                    "        <ShipName> ChenwI' </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COLONY_SHIP_II",
                               Environment.NewLine +
@@ -3635,49 +3654,68 @@ namespace CSV2XML
                     "        <ShipName> Transport 1.11001 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_TACTICAL_CUBE_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_III",
                               Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.1010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.1100 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.1110 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.1111 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.10001 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.10010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.10100 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.10110 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.10111 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.11001 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.11010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.11011 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.11100 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.11101 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 3.11110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.1010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.1100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.1110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.1111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.10001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.10010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.10100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.10110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.10111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.11001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.11010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.11011 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.11100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.11101 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 3.11110 </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> Tactical Cube 3.11111 </ShipName>" + Environment.NewLine);
+                    "        <ShipName>  Cube 3.11111 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_TACTICAL_CUBE_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_II",
                               Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.111 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.1001 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.1010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.1100 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.1110 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.1111 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.10001 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.10010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.10100 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.10110 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.10111 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.11001 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.11010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.11011 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Tactical Cube 2.11100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.1001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.1010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.1100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.1110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.1111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.10001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.10010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.10100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.10110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.10111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.11001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.11010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.11011 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 2.11100 </ShipName>" + Environment.NewLine +
 
-                    "        <ShipName> Tactical Cube 2.11101 </ShipName>" + Environment.NewLine);
+                    "        <ShipName>  Cube 2.11101 </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_I",
+                              Environment.NewLine +
+                    "        <ShipName>  Cube 1.1 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.10 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.11 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.101 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.1001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.1010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.1100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.1110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.1111 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.10001 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.10010 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.10100 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.10110 </ShipName>" + Environment.NewLine +
+                    "        <ShipName>  Cube 1.10111 </ShipName>" + Environment.NewLine +
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_TACTICAL_CUBE_I",
+                    "        <ShipName>  Cube 1.11001 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_TACTICAL_CUBE",
                               Environment.NewLine +
                     "        <ShipName> Tactical Cube 1.1 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Tactical Cube 1.10 </ShipName>" + Environment.NewLine +
@@ -3696,7 +3734,6 @@ namespace CSV2XML
                     "        <ShipName> Tactical Cube 1.10111 </ShipName>" + Environment.NewLine +
 
                     "        <ShipName> Tactical Cube 1.11001 </ShipName>" + Environment.NewLine);
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_III",
                               Environment.NewLine +
@@ -3863,7 +3900,7 @@ namespace CSV2XML
 
                     "        <ShipName> Drone Repair 1.11001 </ShipName>" + Environment.NewLine);
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_DESTROYER_IV",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_IV",
                               Environment.NewLine +
                     "        <ShipName> Tactical Sphere 3.1010 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Tactical Sphere 3.1100 </ShipName>" + Environment.NewLine +
@@ -3883,7 +3920,7 @@ namespace CSV2XML
 
                     "        <ShipName> Tactical Sphere 3.11111 </ShipName>" + Environment.NewLine);
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_DESTROYER_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_III",
                               Environment.NewLine +
                     "        <ShipName> Tactical Sphere 3.1010 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Tactical Sphere 3.1100 </ShipName>" + Environment.NewLine +
@@ -3904,7 +3941,7 @@ namespace CSV2XML
                     "        <ShipName> Tactical Sphere 3.11111 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_DESTROYER_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_II",
                               Environment.NewLine +
                     "        <ShipName> Sphere 2.101 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Sphere 2.111 </ShipName>" + Environment.NewLine +
@@ -3925,7 +3962,7 @@ namespace CSV2XML
                     "        <ShipName> Sphere 2.11100 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_DESTROYER_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_I",
                               Environment.NewLine +
                     "        <ShipName> Sphere 1.1 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Sphere 1.10 </ShipName>" + Environment.NewLine +
@@ -3945,7 +3982,7 @@ namespace CSV2XML
                     "        <ShipName> Sphere 1.11001 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_SPHERE_III",
                               Environment.NewLine +
                     "        <ShipName> Cube 3.1010 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Cube 3.1100 </ShipName>" + Environment.NewLine +
@@ -3965,7 +4002,7 @@ namespace CSV2XML
                     "        <ShipName> Cube 3.11111 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_SPHERE_II",
                               Environment.NewLine +
                     "        <ShipName> Cube 2.1100 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Cube 2.1110 </ShipName>" + Environment.NewLine +
@@ -3985,7 +4022,7 @@ namespace CSV2XML
                     "        <ShipName> Cube 2.1010 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_SPHERE_I",
                               Environment.NewLine +
                     "        <ShipName> Cube 1.1 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Cube 1.10 </ShipName>" + Environment.NewLine +
@@ -4032,7 +4069,7 @@ namespace CSV2XML
                     "        <ShipName> Construction 1.11100 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_COMMAND_DIAMOND_III",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_III",
                               Environment.NewLine +
                     "        <ShipName> Diamond 3.1010 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Diamond 3.1100 </ShipName>" + Environment.NewLine +
@@ -4052,7 +4089,7 @@ namespace CSV2XML
                     "        <ShipName> Diamond 3.11111 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_COMMAND_DIAMOND_II",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_II",
                               Environment.NewLine +
                     "        <ShipName> Diamond 2.1010 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Diamond 2.1100 </ShipName>" + Environment.NewLine +
@@ -4072,7 +4109,7 @@ namespace CSV2XML
                     "        <ShipName> Diamond 2.11111 </ShipName>" + Environment.NewLine);
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_COMMAND_DIAMOND_I",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_I",
                               Environment.NewLine +
                     "        <ShipName> Diamond 1.1 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Diamond 1.10 </ShipName>" + Environment.NewLine +
@@ -4322,7 +4359,7 @@ namespace CSV2XML
 
 
 
-                    rowValue = rowValue.Replace("PossibleShipNamesBORG_FUSION_CUBE",
+                    rowValue = rowValue.Replace("PossibleShipNamesBORG_TACTICAL_CUBE",
 
                                         "        <ShipName> Ship 1 </ShipName>" + Environment.NewLine +
                                         "        <ShipName> Ship 2  </ShipName>" + Environment.NewLine);
