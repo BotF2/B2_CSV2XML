@@ -2875,7 +2875,20 @@ namespace CSV2XML
                     "        <ShipName> 017A01070 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 017A01077 </ShipName>" + Environment.NewLine);
 
-                    rowValue = rowValue.Replace("PossibleShipNamesDOM_STRIKE_CRUISER",
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_STRIKE_CRUISER_II",
+                              Environment.NewLine +
+                    "        <ShipName> DST200017 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200034 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200051 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200068 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200085 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200102 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200119 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200136 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200153 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> DST200170 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_STRIKE_CRUISER_I",
                               Environment.NewLine +
                     "        <ShipName> 005AC00017 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 005AC00034 </ShipName>" + Environment.NewLine +
@@ -2887,7 +2900,6 @@ namespace CSV2XML
                     "        <ShipName> 005AC00136 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 005AC00153 </ShipName>" + Environment.NewLine +
                     "        <ShipName> 005AC00170 </ShipName>" + Environment.NewLine);
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SPY_SHIP_III",
                               Environment.NewLine +
