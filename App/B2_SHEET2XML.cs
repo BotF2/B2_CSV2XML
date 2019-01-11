@@ -3560,6 +3560,13 @@ namespace CSV2XML
                     "        <ShipName> oc Cunning </ShipName>" + Environment.NewLine +
                     "        <ShipName> oc Worthy </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesCARD_AUTOMATED_MISSILE",
+                              Environment.NewLine +
+                    "        <ShipName> ATR-4107 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ATR-4108 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ATR-4109 </ShipName>" + Environment.NewLine +
+                    "        <ShipName> ATR-4110 </ShipName>" + Environment.NewLine);
+
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COLONY_SHIP_III",
                               Environment.NewLine +
