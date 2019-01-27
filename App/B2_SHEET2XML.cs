@@ -1208,6 +1208,13 @@ namespace CSV2XML
                     "        <ShipName> Vail </ShipName>" + Environment.NewLine +
                     "        <ShipName> Vaper </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesROM_SPY_SHIP_II",
+                              Environment.NewLine +
+                    "        <ShipName> Fog </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Mist </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Smoke </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Vail </ShipName>" + Environment.NewLine +
+                    "        <ShipName> Vaper </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SCOUT_III",
                               Environment.NewLine +
