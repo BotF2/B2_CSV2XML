@@ -384,7 +384,7 @@ namespace CSV2XML
                     //(only a few)
 
                     rowValue = rowValue.Replace("BORG_CUBE_IIII", "BORG_CUBE_IV");
-                    rowValue = rowValue.Replace("BORG_DESTROYER_IIII", "");
+                    rowValue = rowValue.Replace("BORG_PROBE_IIII", "BORG_CUBE_IV");
                     rowValue = rowValue.Replace("BORG_SCOUT_IIII", "");
                     rowValue = rowValue.Replace("BORG_TACTICAL_CUBE_IIII", "BORG_TACTICAL_CUBE_IV");
                     rowValue = rowValue.Replace("BORG_TRANSPORT_IIII", "");
