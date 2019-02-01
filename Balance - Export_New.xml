@@ -20,7 +20,7 @@
     <Crew>24</Crew>
     <HullStrength>29</HullStrength>
     <ShieldStrength>114</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.03</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship I Obsidian</ClassName>
     <ShipNames>PossibleShipNamesCARD_SPY_SHIP_I</ShipNames>
@@ -61,7 +61,7 @@
     <Crew>48</Crew>
     <HullStrength>57</HullStrength>
     <ShieldStrength>229</ShieldStrength>
-    <ShieldRecharge>0.15</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship II Garak</ClassName>
     <ShipNames>PossibleShipNamesCARD_SPY_SHIP_II</ShipNames>
@@ -101,7 +101,7 @@
     <Crew>72</Crew>
     <HullStrength>86</HullStrength>
     <ShieldStrength>343</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship III Tain</ClassName>
     <ShipNames>PossibleShipNamesCARD_SPY_SHIP_III</ShipNames>
@@ -141,7 +141,7 @@
     <Crew>19</Crew>
     <HullStrength>23</HullStrength>
     <ShieldStrength>92</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy I Evek</ClassName>
     <ShipNames>PossibleShipNamesCARD_DIPLOMATIC_I</ShipNames>
@@ -182,7 +182,7 @@
     <Crew>38</Crew>
     <HullStrength>46</HullStrength>
     <ShieldStrength>183</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy II Dukat</ClassName>
     <ShipNames>PossibleShipNamesCARD_DIPLOMATIC_II</ShipNames>
@@ -222,7 +222,7 @@
     <Crew>57</Crew>
     <HullStrength>69</HullStrength>
     <ShieldStrength>275</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy III Tora Ziyal</ClassName>
     <ShipNames>PossibleShipNamesCARD_DIPLOMATIC_III</ShipNames>
@@ -262,7 +262,7 @@
     <Crew>38</Crew>
     <HullStrength>46</HullStrength>
     <ShieldStrength>183</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship I Kureal</ClassName>
     <ShipNames>PossibleShipNamesCARD_COLONY_SHIP_I</ShipNames>
@@ -303,7 +303,7 @@
     <Crew>77</Crew>
     <HullStrength>92</HullStrength>
     <ShieldStrength>366</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship II Ranol</ClassName>
     <ShipNames>PossibleShipNamesCARD_COLONY_SHIP_II</ShipNames>
@@ -343,7 +343,7 @@
     <Crew>143</Crew>
     <HullStrength>172</HullStrength>
     <ShieldStrength>686</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship III Kornal</ClassName>
     <ShipNames>PossibleShipNamesCARD_COLONY_SHIP_III</ShipNames>
@@ -383,7 +383,7 @@
     <Crew>34</Crew>
     <HullStrength>40</HullStrength>
     <ShieldStrength>160</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport I Arimat</ClassName>
     <ShipNames>PossibleShipNamesCARD_TRANSPORT_I</ShipNames>
@@ -424,7 +424,7 @@
     <Crew>66</Crew>
     <HullStrength>80</HullStrength>
     <ShieldStrength>320</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport II Toran</ClassName>
     <ShipNames>PossibleShipNamesCARD_TRANSPORT_II</ShipNames>
@@ -464,7 +464,7 @@
     <Crew>134</Crew>
     <HullStrength>160</HullStrength>
     <ShieldStrength>641</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport III Bok'Nor</ClassName>
     <ShipNames>PossibleShipNamesCARD_TRANSPORT_III</ShipNames>
@@ -503,7 +503,7 @@
     <Crew>37</Crew>
     <HullStrength>44</HullStrength>
     <ShieldStrength>177</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Construction Ship Enel</ClassName>
     <ShipNames>PossibleShipNamesCARD_CONSTRUCTION_SHIP</ShipNames>
@@ -542,7 +542,7 @@
     <Crew>27</Crew>
     <HullStrength>32</HullStrength>
     <ShieldStrength>129</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Ship Kivirok</ClassName>
     <ShipNames>PossibleShipNamesCARD_MEDICAL_SHIP</ShipNames>
@@ -582,7 +582,7 @@
     <Crew>18</Crew>
     <HullStrength>21</HullStrength>
     <ShieldStrength>86</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science I Nerevok</ClassName>
     <ShipNames>PossibleShipNamesCARD_SCIENCE_SHIP_I</ShipNames>
@@ -623,7 +623,7 @@
     <Crew>36</Crew>
     <HullStrength>43</HullStrength>
     <ShieldStrength>172</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science II Dorza</ClassName>
     <ShipNames>PossibleShipNamesCARD_SCIENCE_SHIP_II</ShipNames>
@@ -663,7 +663,7 @@
     <Crew>72</Crew>
     <HullStrength>86</HullStrength>
     <ShieldStrength>343</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science III Praxon</ClassName>
     <ShipNames>PossibleShipNamesCARD_SCIENCE_SHIP_III</ShipNames>
@@ -703,7 +703,7 @@
     <Crew>18</Crew>
     <HullStrength>21</HullStrength>
     <ShieldStrength>86</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout I Drexoran</ClassName>
     <ShipNames>PossibleShipNamesCARD_SCOUT_I</ShipNames>
@@ -745,7 +745,7 @@
     <Crew>36</Crew>
     <HullStrength>43</HullStrength>
     <ShieldStrength>172</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout II Komax</ClassName>
     <ShipNames>PossibleShipNamesCARD_SCOUT_II</ShipNames>
@@ -786,7 +786,7 @@
     <Crew>72</Crew>
     <HullStrength>86</HullStrength>
     <ShieldStrength>343</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout III Tra'Kor</ClassName>
     <ShipNames>PossibleShipNamesCARD_SCOUT_III</ShipNames>
@@ -827,7 +827,7 @@
     <Crew>36</Crew>
     <HullStrength>43</HullStrength>
     <ShieldStrength>172</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer I Ari</ClassName>
     <ShipNames>PossibleShipNamesCARD_DESTROYER_I</ShipNames>
@@ -869,7 +869,7 @@
     <Crew>54</Crew>
     <HullStrength>71</HullStrength>
     <ShieldStrength>283</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer II Hideki</ClassName>
     <ShipNames>PossibleShipNamesCARD_DESTROYER_II</ShipNames>
@@ -911,7 +911,7 @@
     <Crew>72</Crew>
     <HullStrength>94</HullStrength>
     <ShieldStrength>378</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer III Hideki II</ClassName>
     <ShipNames>PossibleShipNamesCARD_DESTROYER_III</ShipNames>
@@ -952,7 +952,7 @@
     <Crew>143</Crew>
     <HullStrength>172</HullStrength>
     <ShieldStrength>686</ShieldStrength>
-    <ShieldRecharge>0.29</ShieldRecharge>
+    <ShieldRecharge>0.15</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer IV Jurdek</ClassName>
     <ShipNames>PossibleShipNamesCARD_DESTROYER_IV</ShipNames>
@@ -993,7 +993,7 @@
     <Crew>107</Crew>
     <HullStrength>129</HullStrength>
     <ShieldStrength>515</ShieldStrength>
-    <ShieldRecharge>0.17</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser I Dolak</ClassName>
     <ShipNames>PossibleShipNamesCARD_CRUISER_I</ShipNames>
@@ -1035,7 +1035,7 @@
     <Crew>217</Crew>
     <HullStrength>261</HullStrength>
     <ShieldStrength>1042</ShieldStrength>
-    <ShieldRecharge>0.19</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser II Galor I</ClassName>
     <ShipNames>PossibleShipNamesCARD_CRUISER_II</ShipNames>
@@ -1077,7 +1077,7 @@
     <Crew>257</Crew>
     <HullStrength>309</HullStrength>
     <ShieldStrength>1236</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser III Galor II</ClassName>
     <ShipNames>PossibleShipNamesCARD_CRUISER_III</ShipNames>
@@ -1114,11 +1114,11 @@
     <SensorRange>170</SensorRange>
     <BuildCost>9009</BuildCost>
     <RawMaterials>360</RawMaterials>
-    <MaintenanceCost>#VALUE!</MaintenanceCost>
+    <MaintenanceCost>282</MaintenanceCost>
     <Crew>300</Crew>
     <HullStrength>360</HullStrength>
     <ShieldStrength>1441</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser IV Galor III</ClassName>
     <ShipNames>PossibleShipNamesCARD_CRUISER_IV</ShipNames>
@@ -1159,7 +1159,7 @@
     <Crew>772</Crew>
     <HullStrength>927</HullStrength>
     <ShieldStrength>3707</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser I Keldon</ClassName>
     <ShipNames>PossibleShipNamesCARD_STRIKE_CRUISER_I</ShipNames>
@@ -1200,7 +1200,7 @@
     <Crew>515</Crew>
     <HullStrength>618</HullStrength>
     <ShieldStrength>2471</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser II Keldon Advanced</ClassName>
     <ShipNames>PossibleShipNamesCARD_STRIKE_CRUISER_II</ShipNames>
@@ -1241,7 +1241,7 @@
     <Crew>230</Crew>
     <HullStrength>277</HullStrength>
     <ShieldStrength>1104</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship I Monak</ClassName>
     <ShipNames>PossibleShipNamesCARD_COMMAND_SHIP_I</ShipNames>
@@ -1283,9 +1283,9 @@
     <Crew>460</Crew>
     <HullStrength>552</HullStrength>
     <ShieldStrength>2207</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Command</ShipType>
-    <ClassName>Command Ship II Hutut</ClassName>
+    <ClassName>Command Ship II Hutet</ClassName>
     <ShipNames>PossibleShipNamesCARD_COMMAND_SHIP_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -1324,7 +1324,7 @@
     <Crew>526</Crew>
     <HullStrength>631</HullStrength>
     <ShieldStrength>2523</ShieldStrength>
-    <ShieldRecharge>0.32</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship III Ranor</ClassName>
     <ShipNames>PossibleShipNamesCARD_COMMAND_SHIP_III</ShipNames>
@@ -1364,7 +1364,7 @@
     <Crew>1</Crew>
     <HullStrength>618</HullStrength>
     <ShieldStrength>2471</ShieldStrength>
-    <ShieldRecharge>0.35</ShieldRecharge>
+    <ShieldRecharge>0.17</ShieldRecharge>
     <ShipType>HeavyCruiser</ShipType>
     <ClassName>Missile, Automaton ATR-4107</ClassName>
     <ShipNames>PossibleShipNamesCARD_AUTOMATED_MISSILE</ShipNames>
@@ -1405,7 +1405,7 @@
     <Crew>55</Crew>
     <HullStrength>67</HullStrength>
     <ShieldStrength>267</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.03</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship I Trexor</ClassName>
     <ShipNames>PossibleShipNamesDOM_SPY_SHIP_I</ShipNames>
@@ -1446,7 +1446,7 @@
     <Crew>112</Crew>
     <HullStrength>133</HullStrength>
     <ShieldStrength>533</ShieldStrength>
-    <ShieldRecharge>0.15</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship II Retex</ClassName>
     <ShipNames>PossibleShipNamesDOM_SPY_SHIP_II</ShipNames>
@@ -1486,7 +1486,7 @@
     <Crew>167</Crew>
     <HullStrength>200</HullStrength>
     <ShieldStrength>800</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship III Vetor</ClassName>
     <ShipNames>PossibleShipNamesDOM_SPY_SHIP_III</ShipNames>
@@ -1526,7 +1526,7 @@
     <Crew>45</Crew>
     <HullStrength>53</HullStrength>
     <ShieldStrength>213</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomatic I Changeling</ClassName>
     <ShipNames>PossibleShipNamesDOM_DIPLOMATIC_I</ShipNames>
@@ -1567,7 +1567,7 @@
     <Crew>88</Crew>
     <HullStrength>107</HullStrength>
     <ShieldStrength>427</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomatic II Vorta</ClassName>
     <ShipNames>PossibleShipNamesDOM_DIPLOMATIC_II</ShipNames>
@@ -1607,7 +1607,7 @@
     <Crew>133</Crew>
     <HullStrength>160</HullStrength>
     <ShieldStrength>640</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomatic III Weyoun</ClassName>
     <ShipNames>PossibleShipNamesDOM_DIPLOMATIC_III</ShipNames>
@@ -1647,7 +1647,7 @@
     <Crew>88</Crew>
     <HullStrength>107</HullStrength>
     <ShieldStrength>427</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship I Gecko</ClassName>
     <ShipNames>PossibleShipNamesDOM_COLONY_SHIP_I</ShipNames>
@@ -1687,7 +1687,7 @@
     <Crew>333</Crew>
     <HullStrength>400</HullStrength>
     <ShieldStrength>1600</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship II Salamander</ClassName>
     <ShipNames>PossibleShipNamesDOM_COLONY_SHIP_II</ShipNames>
@@ -1727,7 +1727,7 @@
     <Crew>78</Crew>
     <HullStrength>93</HullStrength>
     <ShieldStrength>373</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport I Storm</ClassName>
     <ShipNames>PossibleShipNamesDOM_TRANSPORT_I</ShipNames>
@@ -1768,7 +1768,7 @@
     <Crew>155</Crew>
     <HullStrength>187</HullStrength>
     <ShieldStrength>747</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport II Tempest</ClassName>
     <ShipNames>PossibleShipNamesDOM_TRANSPORT_II</ShipNames>
@@ -1808,7 +1808,7 @@
     <Crew>312</Crew>
     <HullStrength>373</HullStrength>
     <ShieldStrength>1493</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport III Typhoon</ClassName>
     <ShipNames>PossibleShipNamesDOM_TRANSPORT_III</ShipNames>
@@ -1847,7 +1847,7 @@
     <Crew>87</Crew>
     <HullStrength>103</HullStrength>
     <ShieldStrength>413</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Constructor Asp</ClassName>
     <ShipNames>PossibleShipNamesDOM_CONSTRUCTION_SHIP</ShipNames>
@@ -1887,7 +1887,7 @@
     <Crew>63</Crew>
     <HullStrength>75</HullStrength>
     <ShieldStrength>300</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical White</ClassName>
     <ShipNames>PossibleShipNamesDOM_MEDICAL_SHIP_I</ShipNames>
@@ -1927,7 +1927,7 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Clone</ClassName>
     <ShipNames>PossibleShipNamesDOM_MEDICAL_SHIP_II</ShipNames>
@@ -1967,7 +1967,7 @@
     <Crew>42</Crew>
     <HullStrength>50</HullStrength>
     <ShieldStrength>200</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science I Serpent</ClassName>
     <ShipNames>PossibleShipNamesDOM_SCIENCE_SHIP_I</ShipNames>
@@ -2007,7 +2007,7 @@
     <Crew>167</Crew>
     <HullStrength>200</HullStrength>
     <ShieldStrength>800</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science II Viper</ClassName>
     <ShipNames>PossibleShipNamesDOM_SCIENCE_SHIP_II</ShipNames>
@@ -2047,7 +2047,7 @@
     <Crew>42</Crew>
     <HullStrength>50</HullStrength>
     <ShieldStrength>200</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout I Monitor</ClassName>
     <ShipNames>PossibleShipNamesDOM_SCOUT_I</ShipNames>
@@ -2089,7 +2089,7 @@
     <Crew>83</Crew>
     <HullStrength>100</HullStrength>
     <ShieldStrength>400</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout II Cobra</ClassName>
     <ShipNames>PossibleShipNamesDOM_SCOUT_II</ShipNames>
@@ -2130,7 +2130,7 @@
     <Crew>167</Crew>
     <HullStrength>200</HullStrength>
     <ShieldStrength>800</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout III Naja</ClassName>
     <ShipNames>PossibleShipNamesDOM_SCOUT_III</ShipNames>
@@ -2171,7 +2171,7 @@
     <Crew>83</Crew>
     <HullStrength>100</HullStrength>
     <ShieldStrength>400</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer I Chameleon</ClassName>
     <ShipNames>PossibleShipNamesDOM_DESTROYER_I</ShipNames>
@@ -2213,7 +2213,7 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer II Oberon</ClassName>
     <ShipNames>PossibleShipNamesDOM_DESTROYER_II</ShipNames>
@@ -2255,7 +2255,7 @@
     <Crew>200</Crew>
     <HullStrength>240</HullStrength>
     <ShieldStrength>960</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer III Vulture</ClassName>
     <ShipNames>PossibleShipNamesDOM_DESTROYER_III</ShipNames>
@@ -2296,7 +2296,7 @@
     <Crew>333</Crew>
     <HullStrength>440</HullStrength>
     <ShieldStrength>1760</ShieldStrength>
-    <ShieldRecharge>0.29</ShieldRecharge>
+    <ShieldRecharge>0.15</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer IV Darkhawk</ClassName>
     <ShipNames>PossibleShipNamesDOM_DESTROYER_IV</ShipNames>
@@ -2337,7 +2337,7 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.17</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Battle Cruiser I Medusa</ClassName>
     <ShipNames>PossibleShipNamesDOM_CRUISER_I</ShipNames>
@@ -2379,7 +2379,7 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Battle Cruiser III Corona</ClassName>
     <ShipNames>PossibleShipNamesDOM_CRUISER_II</ShipNames>
@@ -2420,7 +2420,7 @@
     <Crew>500</Crew>
     <HullStrength>600</HullStrength>
     <ShieldStrength>2400</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Battle Cruiser IV Aurora</ClassName>
     <ShipNames>PossibleShipNamesDOM_CRUISER_III</ShipNames>
@@ -2461,7 +2461,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser I Irkon</ClassName>
     <ShipNames>PossibleShipNamesDOM_STRIKE_CRUISER_I</ShipNames>
@@ -2502,7 +2502,7 @@
     <Crew>399.99999984</Crew>
     <HullStrength>479.999999808</HullStrength>
     <ShieldStrength>1919.999999232</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Crusier II D'Irkon</ClassName>
     <ShipNames>PossibleShipNamesDOM_STRIKE_CRUISER_II</ShipNames>
@@ -2543,7 +2543,7 @@
     <Crew>307</Crew>
     <HullStrength>368</HullStrength>
     <ShieldStrength>1470</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship I Vanguard</ClassName>
     <ShipNames>PossibleShipNamesDOM_COMMAND_SHIP_I</ShipNames>
@@ -2585,7 +2585,7 @@
     <Crew>368</Crew>
     <HullStrength>441</HullStrength>
     <ShieldStrength>1764</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship II Penumbra</ClassName>
     <ShipNames>PossibleShipNamesDOM_COMMAND_SHIP_II</ShipNames>
@@ -2626,7 +2626,7 @@
     <Crew>490</Crew>
     <HullStrength>588</HullStrength>
     <ShieldStrength>2352</ShieldStrength>
-    <ShieldRecharge>0.32</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship III Messiah</ClassName>
     <ShipNames>PossibleShipNamesDOM_COMMAND_SHIP_III</ShipNames>
@@ -2666,7 +2666,7 @@
     <Crew>1080</Crew>
     <HullStrength>1296</HullStrength>
     <ShieldStrength>5184</ShieldStrength>
-    <ShieldRecharge>0.35</ShieldRecharge>
+    <ShieldRecharge>0.17</ShieldRecharge>
     <ShipType>HeavyCruiser</ShipType>
     <ClassName>Tactical Battelship</ClassName>
     <ShipNames>PossibleShipNamesDOM_TACTICAL_CRUISER</ShipNames>
@@ -2707,7 +2707,7 @@
     <Crew>33</Crew>
     <HullStrength>40</HullStrength>
     <ShieldStrength>160</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.03</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship I NX-Sarajevo</ClassName>
     <ShipNames>PossibleShipNamesFED_SPY_SHIP_I</ShipNames>
@@ -2717,7 +2717,7 @@
     <Range>5</Range>
     <Speed>1</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>2</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>30</WorkCapacity>
     <Beam_Count>2</Beam_Count>
@@ -2748,7 +2748,7 @@
     <Crew>67</Crew>
     <HullStrength>80</HullStrength>
     <ShieldStrength>320</ShieldStrength>
-    <ShieldRecharge>0.15</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship II Danube</ClassName>
     <ShipNames>PossibleShipNamesFED_SPY_SHIP_II</ShipNames>
@@ -2758,7 +2758,7 @@
     <Range>7</Range>
     <Speed>2</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>6</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>40</WorkCapacity>
     <Beam_Count>3</Beam_Count>
@@ -2788,7 +2788,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship III Venture</ClassName>
     <ShipNames>PossibleShipNamesFED_SPY_SHIP_III</ShipNames>
@@ -2798,7 +2798,7 @@
     <Range>9</Range>
     <Speed>3</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>7</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>50</WorkCapacity>
     <Beam_Count>4</Beam_Count>
@@ -2828,7 +2828,7 @@
     <Crew>27</Crew>
     <HullStrength>32</HullStrength>
     <ShieldStrength>256</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy I Sarak</ClassName>
     <ShipNames>PossibleShipNamesFED_DIPLOMATIC_I</ShipNames>
@@ -2869,7 +2869,7 @@
     <Crew>53</Crew>
     <HullStrength>64</HullStrength>
     <ShieldStrength>512</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy II Norway</ClassName>
     <ShipNames>PossibleShipNamesFED_DIPLOMATIC_II</ShipNames>
@@ -2909,7 +2909,7 @@
     <Crew>80</Crew>
     <HullStrength>96</HullStrength>
     <ShieldStrength>768</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy III Bashir</ClassName>
     <ShipNames>PossibleShipNamesFED_DIPLOMATIC_III</ShipNames>
@@ -2949,7 +2949,7 @@
     <Crew>53</Crew>
     <HullStrength>64</HullStrength>
     <ShieldStrength>256</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship I Conestoga</ClassName>
     <ShipNames>PossibleShipNamesFED_COLONY_SHIP_I</ShipNames>
@@ -2990,7 +2990,7 @@
     <Crew>107</Crew>
     <HullStrength>128</HullStrength>
     <ShieldStrength>512</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship II Edwards</ClassName>
     <ShipNames>PossibleShipNamesFED_COLONY_SHIP_II</ShipNames>
@@ -3030,7 +3030,7 @@
     <Crew>200</Crew>
     <HullStrength>240</HullStrength>
     <ShieldStrength>960</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship III Quebec</ClassName>
     <ShipNames>PossibleShipNamesFED_COLONY_SHIP_III</ShipNames>
@@ -3070,7 +3070,7 @@
     <Crew>47</Crew>
     <HullStrength>56</HullStrength>
     <ShieldStrength>224</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport I Bonjour</ClassName>
     <ShipNames>PossibleShipNamesFED_TRANSPORT_I</ShipNames>
@@ -3111,7 +3111,7 @@
     <Crew>93</Crew>
     <HullStrength>112</HullStrength>
     <ShieldStrength>448</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport II Kon'nichiwa</ClassName>
     <ShipNames>PossibleShipNamesFED_TRANSPORT_II</ShipNames>
@@ -3151,7 +3151,7 @@
     <Crew>187</Crew>
     <HullStrength>224</HullStrength>
     <ShieldStrength>896</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport III York</ClassName>
     <ShipNames>PossibleShipNamesFED_TRANSPORT_III</ShipNames>
@@ -3191,7 +3191,7 @@
     <Crew>52</Crew>
     <HullStrength>62</HullStrength>
     <ShieldStrength>248</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Construction Ship I Berlin</ClassName>
     <ShipNames>PossibleShipNamesFED_CONSTRUCTION_SHIP_I</ShipNames>
@@ -3231,7 +3231,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Construction Ship II Stuttgart 21</ClassName>
     <ShipNames>PossibleShipNamesFED_CONSTRUCTION_SHIP_II</ShipNames>
@@ -3271,7 +3271,7 @@
     <Crew>38</Crew>
     <HullStrength>45</HullStrength>
     <ShieldStrength>180</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Ship I Daedalus</ClassName>
     <ShipNames>PossibleShipNamesFED_MEDICAL_SHIP_I</ShipNames>
@@ -3311,7 +3311,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Ship II Olympic</ClassName>
     <ShipNames>PossibleShipNamesFED_MEDICAL_SHIP_II</ShipNames>
@@ -3351,7 +3351,7 @@
     <Crew>25</Crew>
     <HullStrength>30</HullStrength>
     <ShieldStrength>120</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Ship I Hermes</ClassName>
     <ShipNames>PossibleShipNamesFED_SCIENCE_SHIP_I</ShipNames>
@@ -3392,7 +3392,7 @@
     <Crew>50</Crew>
     <HullStrength>60</HullStrength>
     <ShieldStrength>240</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Ship II Oberth</ClassName>
     <ShipNames>PossibleShipNamesFED_SCIENCE_SHIP_II</ShipNames>
@@ -3432,7 +3432,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Ship III Nova</ClassName>
     <ShipNames>PossibleShipNamesFED_SCIENCE_SHIP_III</ShipNames>
@@ -3472,7 +3472,7 @@
     <Crew>25</Crew>
     <HullStrength>30</HullStrength>
     <ShieldStrength>120</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout I NX-Delta</ClassName>
     <ShipNames>PossibleShipNamesFED_SCOUT_I</ShipNames>
@@ -3514,7 +3514,7 @@
     <Crew>50</Crew>
     <HullStrength>60</HullStrength>
     <ShieldStrength>240</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout II Soyuz</ClassName>
     <ShipNames>PossibleShipNamesFED_SCOUT_II</ShipNames>
@@ -3555,7 +3555,7 @@
     <Crew>110</Crew>
     <HullStrength>132</HullStrength>
     <ShieldStrength>528</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout III Saber</ClassName>
     <ShipNames>PossibleShipNamesFED_SCOUT_III</ShipNames>
@@ -3596,7 +3596,7 @@
     <Crew>38</Crew>
     <HullStrength>45</HullStrength>
     <ShieldStrength>180</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate I NX-Enterpirse</ClassName>
     <ShipNames>PossibleShipNamesFED_FRIGATE_I</ShipNames>
@@ -3638,7 +3638,7 @@
     <Crew>75</Crew>
     <HullStrength>90</HullStrength>
     <ShieldStrength>360</ShieldStrength>
-    <ShieldRecharge>0.19</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate II Miranda</ClassName>
     <ShipNames>PossibleShipNamesFED_FRIGATE_II</ShipNames>
@@ -3680,7 +3680,7 @@
     <Crew>124</Crew>
     <HullStrength>149</HullStrength>
     <ShieldStrength>594</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.11</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate III Miranda Refit</ClassName>
     <ShipNames>PossibleShipNamesFED_FRIGATE_III</ShipNames>
@@ -3721,7 +3721,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate IV New Orleans</ClassName>
     <ShipNames>PossibleShipNamesFED_FRIGATE_IV</ShipNames>
@@ -3762,7 +3762,7 @@
     <Crew>45</Crew>
     <HullStrength>54</HullStrength>
     <ShieldStrength>216</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer I NX-Intrepid</ClassName>
     <ShipNames>PossibleShipNamesFED_DESTROYER_I</ShipNames>
@@ -3804,7 +3804,7 @@
     <Crew>75</Crew>
     <HullStrength>90</HullStrength>
     <ShieldStrength>360</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer II Constellation</ClassName>
     <ShipNames>PossibleShipNamesFED_DESTROYER_II</ShipNames>
@@ -3846,7 +3846,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer III Steamrunner</ClassName>
     <ShipNames>PossibleShipNamesFED_DESTROYER_III</ShipNames>
@@ -3887,7 +3887,7 @@
     <Crew>420</Crew>
     <HullStrength>504</HullStrength>
     <ShieldStrength>2016</ShieldStrength>
-    <ShieldRecharge>0.29</ShieldRecharge>
+    <ShieldRecharge>0.15</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer IV Defiant</ClassName>
     <ShipNames>PossibleShipNamesFED_DESTROYER_IV</ShipNames>
@@ -3928,7 +3928,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.17</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser I Constituion</ClassName>
     <ShipNames>PossibleShipNamesFED_CRUISER_I</ShipNames>
@@ -3970,7 +3970,7 @@
     <Crew>225</Crew>
     <HullStrength>270</HullStrength>
     <ShieldStrength>1080</ShieldStrength>
-    <ShieldRecharge>0.19</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser II Constitution Refit</ClassName>
     <ShipNames>PossibleShipNamesFED_CRUISER_II</ShipNames>
@@ -4012,7 +4012,7 @@
     <Crew>330</Crew>
     <HullStrength>396</HullStrength>
     <ShieldStrength>1584</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser III Excelsior</ClassName>
     <ShipNames>PossibleShipNamesFED_CRUISER_III</ShipNames>
@@ -4054,7 +4054,7 @@
     <Crew>405</Crew>
     <HullStrength>486</HullStrength>
     <ShieldStrength>1944</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser IV Intrepid</ClassName>
     <ShipNames>PossibleShipNamesFED_CRUISER_IV</ShipNames>
@@ -4095,7 +4095,7 @@
     <Crew>510</Crew>
     <HullStrength>612</HullStrength>
     <ShieldStrength>2448</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser V Akira</ClassName>
     <ShipNames>PossibleShipNamesFED_CRUISER_V</ShipNames>
@@ -4136,7 +4136,7 @@
     <Crew>60</Crew>
     <HullStrength>72</HullStrength>
     <ShieldStrength>288</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser I Decatur</ClassName>
     <ShipNames>PossibleShipNamesFED_STRIKE_CRUISER_I</ShipNames>
@@ -4178,7 +4178,7 @@
     <Crew>120</Crew>
     <HullStrength>144</HullStrength>
     <ShieldStrength>576</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser II Niagara</ClassName>
     <ShipNames>PossibleShipNamesFED_STRIKE_CRUISER_II</ShipNames>
@@ -4219,7 +4219,7 @@
     <Crew>240</Crew>
     <HullStrength>288</HullStrength>
     <ShieldStrength>1152</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser III Nebula</ClassName>
     <ShipNames>PossibleShipNamesFED_STRIKE_CRUISER_III</ShipNames>
@@ -4260,7 +4260,7 @@
     <Crew>350</Crew>
     <HullStrength>420</HullStrength>
     <ShieldStrength>882</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship I Ambassador</ClassName>
     <ShipNames>PossibleShipNamesFED_COMMAND_SHIP_I</ShipNames>
@@ -4302,7 +4302,7 @@
     <Crew>405</Crew>
     <HullStrength>595</HullStrength>
     <ShieldStrength>2381</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship II Galaxy</ClassName>
     <ShipNames>PossibleShipNamesFED_COMMAND_SHIP_II</ShipNames>
@@ -4343,7 +4343,7 @@
     <Crew>809</Crew>
     <HullStrength>970</HullStrength>
     <ShieldStrength>3881</ShieldStrength>
-    <ShieldRecharge>0.32</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship III Sovereign</ClassName>
     <ShipNames>PossibleShipNamesFED_COMMAND_SHIP_III</ShipNames>
@@ -4383,7 +4383,7 @@
     <Crew>720</Crew>
     <HullStrength>864</HullStrength>
     <ShieldStrength>3456</ShieldStrength>
-    <ShieldRecharge>1.1</ShieldRecharge>
+    <ShieldRecharge>0.35</ShieldRecharge>
     <ShipType>HeavyCruiser</ShipType>
     <ClassName>Tactical Cruiser Prometheus</ClassName>
     <ShipNames>PossibleShipNamesFED_TACTICAL_CRUISER</ShipNames>
@@ -4424,7 +4424,7 @@
     <Crew>33</Crew>
     <HullStrength>40</HullStrength>
     <ShieldStrength>160</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.03</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship I Q'Xand</ClassName>
     <ShipNames>PossibleShipNamesKLING_SPY_SHIP_I</ShipNames>
@@ -4465,7 +4465,7 @@
     <Crew>67</Crew>
     <HullStrength>80</HullStrength>
     <ShieldStrength>320</ShieldStrength>
-    <ShieldRecharge>0.15</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship II Q'Retext</ClassName>
     <ShipNames>PossibleShipNamesKLING_SPY_SHIP_II</ShipNames>
@@ -4505,7 +4505,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship III Q'Thetor</ClassName>
     <ShipNames>PossibleShipNamesKLING_SPY_SHIP_III</ShipNames>
@@ -4545,7 +4545,7 @@
     <Crew>27</Crew>
     <HullStrength>32</HullStrength>
     <ShieldStrength>128</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomstic Qach Na</ClassName>
     <ShipNames>PossibleShipNamesKLING_DIPLOMATIC_I</ShipNames>
@@ -4586,7 +4586,7 @@
     <Crew>53</Crew>
     <HullStrength>64</HullStrength>
     <ShieldStrength>256</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomstic M'Toch</ClassName>
     <ShipNames>PossibleShipNamesKLING_DIPLOMATIC_II</ShipNames>
@@ -4626,7 +4626,7 @@
     <Crew>80</Crew>
     <HullStrength>96</HullStrength>
     <ShieldStrength>384</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomstic Vor'La</ClassName>
     <ShipNames>PossibleShipNamesKLING_DIPLOMATIC_III</ShipNames>
@@ -4666,7 +4666,7 @@
     <Crew>53</Crew>
     <HullStrength>64</HullStrength>
     <ShieldStrength>256</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colony I M'Char</ClassName>
     <ShipNames>PossibleShipNamesKLING_COLONY_SHIP_I</ShipNames>
@@ -4706,7 +4706,7 @@
     <Crew>200</Crew>
     <HullStrength>240</HullStrength>
     <ShieldStrength>960</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colony II LI'WI'</ClassName>
     <ShipNames>PossibleShipNamesKLING_COLONY_SHIP_II</ShipNames>
@@ -4746,7 +4746,7 @@
     <Crew>47</Crew>
     <HullStrength>56</HullStrength>
     <ShieldStrength>224</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport I Vor'Chang</ClassName>
     <ShipNames>PossibleShipNamesKLING_TRANSPORT_I</ShipNames>
@@ -4787,7 +4787,7 @@
     <Crew>93</Crew>
     <HullStrength>112</HullStrength>
     <ShieldStrength>448</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport II CharghwI'</ClassName>
     <ShipNames>PossibleShipNamesKLING_TRANSPORT_II</ShipNames>
@@ -4827,7 +4827,7 @@
     <Crew>187</Crew>
     <HullStrength>224</HullStrength>
     <ShieldStrength>896</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport III K'Toch</ClassName>
     <ShipNames>PossibleShipNamesKLING_TRANSPORT_III</ShipNames>
@@ -4866,7 +4866,7 @@
     <Crew>52</Crew>
     <HullStrength>62</HullStrength>
     <ShieldStrength>248</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Construction Pod Chen Qach</ClassName>
     <ShipNames>PossibleShipNamesKLING_CONSTRUCTION_SHIP</ShipNames>
@@ -4906,7 +4906,7 @@
     <Crew>38</Crew>
     <HullStrength>45</HullStrength>
     <ShieldStrength>180</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Ship Chel'Vort</ClassName>
     <ShipNames>PossibleShipNamesKLING_MEDICAL_SHIP_I</ShipNames>
@@ -4946,7 +4946,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Ship Fek'La</ClassName>
     <ShipNames>PossibleShipNamesKLING_MEDICAL_SHIP_II</ShipNames>
@@ -4986,7 +4986,7 @@
     <Crew>25</Crew>
     <HullStrength>30</HullStrength>
     <ShieldStrength>120</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Pod Vornak</ClassName>
     <ShipNames>PossibleShipNamesKLING_SCIENCE_SHIP_I</ShipNames>
@@ -5027,7 +5027,7 @@
     <Crew>50</Crew>
     <HullStrength>60</HullStrength>
     <ShieldStrength>240</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Pod E3</ClassName>
     <ShipNames>PossibleShipNamesKLING_SCIENCE_SHIP_II</ShipNames>
@@ -5067,7 +5067,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Pod CheI'WI'</ClassName>
     <ShipNames>PossibleShipNamesKLING_SCIENCE_SHIP_III</ShipNames>
@@ -5107,7 +5107,7 @@
     <Crew>25</Crew>
     <HullStrength>30</HullStrength>
     <ShieldStrength>120</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout I R'Kuf</ClassName>
     <ShipNames>PossibleShipNamesKLING_SCOUT_I</ShipNames>
@@ -5149,7 +5149,7 @@
     <Crew>50</Crew>
     <HullStrength>60</HullStrength>
     <ShieldStrength>240</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout II K3</ClassName>
     <ShipNames>PossibleShipNamesKLING_SCOUT_II</ShipNames>
@@ -5190,7 +5190,7 @@
     <Crew>110</Crew>
     <HullStrength>132</HullStrength>
     <ShieldStrength>528</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout III B'Rel</ClassName>
     <ShipNames>PossibleShipNamesKLING_SCOUT_III</ShipNames>
@@ -5231,7 +5231,7 @@
     <Crew>50</Crew>
     <HullStrength>60</HullStrength>
     <ShieldStrength>240</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer I Raptor</ClassName>
     <ShipNames>PossibleShipNamesKLING_DESTROYER_I</ShipNames>
@@ -5273,7 +5273,7 @@
     <Crew>75</Crew>
     <HullStrength>90</HullStrength>
     <ShieldStrength>360</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer II Scorpion</ClassName>
     <ShipNames>PossibleShipNamesKLING_DESTROYER_II</ShipNames>
@@ -5315,7 +5315,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer III D12</ClassName>
     <ShipNames>PossibleShipNamesKLING_DESTROYER_III</ShipNames>
@@ -5356,7 +5356,7 @@
     <Crew>374</Crew>
     <HullStrength>449</HullStrength>
     <ShieldStrength>1795</ShieldStrength>
-    <ShieldRecharge>0.29</ShieldRecharge>
+    <ShieldRecharge>0.15</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer IV K'Vort</ClassName>
     <ShipNames>PossibleShipNamesKLING_DESTROYER_IV</ShipNames>
@@ -5397,7 +5397,7 @@
     <Crew>90</Crew>
     <HullStrength>108</HullStrength>
     <ShieldStrength>432</ShieldStrength>
-    <ShieldRecharge>0.17</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser I D4</ClassName>
     <ShipNames>PossibleShipNamesKLING_CRUISER_I</ShipNames>
@@ -5439,7 +5439,7 @@
     <Crew>135</Crew>
     <HullStrength>162</HullStrength>
     <ShieldStrength>648</ShieldStrength>
-    <ShieldRecharge>0.19</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser II D6</ClassName>
     <ShipNames>PossibleShipNamesKLING_CRUISER_II</ShipNames>
@@ -5481,7 +5481,7 @@
     <Crew>163</Crew>
     <HullStrength>196</HullStrength>
     <ShieldStrength>784</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser III D7</ClassName>
     <ShipNames>PossibleShipNamesKLING_CRUISER_III</ShipNames>
@@ -5522,7 +5522,7 @@
     <Crew>290</Crew>
     <HullStrength>348</HullStrength>
     <ShieldStrength>1394</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser IV K'Tinga</ClassName>
     <ShipNames>PossibleShipNamesKLING_CRUISER_IV</ShipNames>
@@ -5563,7 +5563,7 @@
     <Crew>120</Crew>
     <HullStrength>144</HullStrength>
     <ShieldStrength>576</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser I Sunzi</ClassName>
     <ShipNames>PossibleShipNamesKLING_STRIKE_CRUISER_I</ShipNames>
@@ -5604,7 +5604,7 @@
     <Crew>240</Crew>
     <HullStrength>288</HullStrength>
     <ShieldStrength>1152</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser II SoH'a'</ClassName>
     <ShipNames>PossibleShipNamesKLING_STRIKE_CRUISER_II</ShipNames>
@@ -5645,7 +5645,7 @@
     <Crew>59</Crew>
     <HullStrength>71</HullStrength>
     <ShieldStrength>282</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship I D5</ClassName>
     <ShipNames>PossibleShipNamesKLING_COMMAND_SHIP_I</ShipNames>
@@ -5687,7 +5687,7 @@
     <Crew>118</Crew>
     <HullStrength>485</HullStrength>
     <ShieldStrength>1940</ShieldStrength>
-    <ShieldRecharge>0.30800000000000005</ShieldRecharge>
+    <ShieldRecharge>0.07700000000000001</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship II Vor'Cha</ClassName>
     <ShipNames>PossibleShipNamesKLING_COMMAND_SHIP_II</ShipNames>
@@ -5728,7 +5728,7 @@
     <Crew>753</Crew>
     <HullStrength>882</HullStrength>
     <ShieldStrength>3528</ShieldStrength>
-    <ShieldRecharge>0.32</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship III Negh'Var</ClassName>
     <ShipNames>PossibleShipNamesKLING_COMMAND_SHIP_III</ShipNames>
@@ -5768,7 +5768,7 @@
     <Crew>252</Crew>
     <HullStrength>864</HullStrength>
     <ShieldStrength>3456</ShieldStrength>
-    <ShieldRecharge>0.35</ShieldRecharge>
+    <ShieldRecharge>0.17</ShieldRecharge>
     <ShipType>HeavyCruiser</ShipType>
     <ClassName>Tactical Cruiser Feg'lhr</ClassName>
     <ShipNames>PossibleShipNamesKLING_TACTICAL_CRUISER</ShipNames>
@@ -5809,7 +5809,7 @@
     <Crew>41</Crew>
     <HullStrength>50</HullStrength>
     <ShieldStrength>200</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.03</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship I Tal Shiar</ClassName>
     <ShipNames>PossibleShipNamesROM_SPY_SHIP_I</ShipNames>
@@ -5819,7 +5819,7 @@
     <Range>5</Range>
     <Speed>1</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>3</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>30</WorkCapacity>
     <Beam_Count>2</Beam_Count>
@@ -5850,7 +5850,7 @@
     <Crew>84</Crew>
     <HullStrength>100</HullStrength>
     <ShieldStrength>400</ShieldStrength>
-    <ShieldRecharge>0.15</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship II Tal Shiar Omega</ClassName>
     <ShipNames>PossibleShipNamesROM_SPY_SHIP_II</ShipNames>
@@ -5860,7 +5860,7 @@
     <Range>7</Range>
     <Speed>2</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>3</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>40</WorkCapacity>
     <Beam_Count>3</Beam_Count>
@@ -5890,7 +5890,7 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship III Tal Shiar Alpha</ClassName>
     <ShipNames>PossibleShipNamesROM_SPY_SHIP_III</ShipNames>
@@ -5900,7 +5900,7 @@
     <Range>9</Range>
     <Speed>3</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>3</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>50</WorkCapacity>
     <Beam_Count>4</Beam_Count>
@@ -5930,7 +5930,7 @@
     <Crew>34</Crew>
     <HullStrength>40</HullStrength>
     <ShieldStrength>160</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomatic Ship R'Rani</ClassName>
     <ShipNames>PossibleShipNamesROM_DIPLOMATIC_I</ShipNames>
@@ -5971,7 +5971,7 @@
     <Crew>66</Crew>
     <HullStrength>80</HullStrength>
     <ShieldStrength>320</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomatic Ship R'Tol</ClassName>
     <ShipNames>PossibleShipNamesROM_DIPLOMATIC_II</ShipNames>
@@ -6011,7 +6011,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomatic Ship R'Nort</ClassName>
     <ShipNames>PossibleShipNamesROM_DIPLOMATIC_III</ShipNames>
@@ -6051,7 +6051,7 @@
     <Crew>66</Crew>
     <HullStrength>80</HullStrength>
     <ShieldStrength>320</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship I D'Trexor</ClassName>
     <ShipNames>PossibleShipNamesROM_COLONY_SHIP_I</ShipNames>
@@ -6092,7 +6092,7 @@
     <Crew>134</Crew>
     <HullStrength>160</HullStrength>
     <ShieldStrength>640</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship II D'Retex</ClassName>
     <ShipNames>PossibleShipNamesROM_COLONY_SHIP_II</ShipNames>
@@ -6132,7 +6132,7 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship III D'Vetor</ClassName>
     <ShipNames>PossibleShipNamesROM_COLONY_SHIP_III</ShipNames>
@@ -6172,7 +6172,7 @@
     <Crew>59</Crew>
     <HullStrength>70</HullStrength>
     <ShieldStrength>280</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport I R'Deminor</ClassName>
     <ShipNames>PossibleShipNamesROM_TRANSPORT_I</ShipNames>
@@ -6213,7 +6213,7 @@
     <Crew>116</Crew>
     <HullStrength>140</HullStrength>
     <ShieldStrength>560</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport II R'Daran</ClassName>
     <ShipNames>PossibleShipNamesROM_TRANSPORT_II</ShipNames>
@@ -6253,7 +6253,7 @@
     <Crew>234</Crew>
     <HullStrength>280</HullStrength>
     <ShieldStrength>1120</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport III R'Jol</ClassName>
     <ShipNames>PossibleShipNamesROM_TRANSPORT_III</ShipNames>
@@ -6292,7 +6292,7 @@
     <Crew>65</Crew>
     <HullStrength>78</HullStrength>
     <ShieldStrength>310</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Constructor Ehrehin</ClassName>
     <ShipNames>PossibleShipNamesROM_CONSTRUCTION_SHIP</ShipNames>
@@ -6332,7 +6332,7 @@
     <Crew>48</Crew>
     <HullStrength>56</HullStrength>
     <ShieldStrength>225</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Ship Medical I Torvath</ClassName>
     <ShipNames>PossibleShipNamesROM_MEDICAL_SHIP_I</ShipNames>
@@ -6372,7 +6372,7 @@
     <Crew>188</Crew>
     <HullStrength>225</HullStrength>
     <ShieldStrength>900</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Ship Medical II Vralnath</ClassName>
     <ShipNames>PossibleShipNamesROM_MEDICAL_SHIP_II</ShipNames>
@@ -6412,7 +6412,7 @@
     <Crew>31</Crew>
     <HullStrength>38</HullStrength>
     <ShieldStrength>150</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science I D'Raxinor</ClassName>
     <ShipNames>PossibleShipNamesROM_SCIENCE_SHIP_I</ShipNames>
@@ -6453,7 +6453,7 @@
     <Crew>63</Crew>
     <HullStrength>75</HullStrength>
     <ShieldStrength>300</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science II D'Renet</ClassName>
     <ShipNames>PossibleShipNamesROM_SCIENCE_SHIP_II</ShipNames>
@@ -6493,7 +6493,7 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science III D'Rakor</ClassName>
     <ShipNames>PossibleShipNamesROM_SCIENCE_SHIP_III</ShipNames>
@@ -6533,7 +6533,7 @@
     <Crew>31</Crew>
     <HullStrength>38</HullStrength>
     <ShieldStrength>150</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout I R'Mor</ClassName>
     <ShipNames>PossibleShipNamesROM_SCOUT_I</ShipNames>
@@ -6575,7 +6575,7 @@
     <Crew>63</Crew>
     <HullStrength>83</HullStrength>
     <ShieldStrength>330</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout II Apnex</ClassName>
     <ShipNames>PossibleShipNamesROM_SCOUT_II</ShipNames>
@@ -6616,7 +6616,7 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout III R'Kovar</ClassName>
     <ShipNames>PossibleShipNamesROM_SCOUT_III</ShipNames>
@@ -6656,7 +6656,7 @@
     <Crew>63</Crew>
     <HullStrength>75</HullStrength>
     <ShieldStrength>300</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer I D'Lokra</ClassName>
     <ShipNames>PossibleShipNamesROM_DESTROYER_I</ShipNames>
@@ -6698,7 +6698,7 @@
     <Crew>94</Crew>
     <HullStrength>113</HullStrength>
     <ShieldStrength>450</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer II D'Raniden</ClassName>
     <ShipNames>PossibleShipNamesROM_DESTROYER_II</ShipNames>
@@ -6740,7 +6740,7 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer III D'Rutura</ClassName>
     <ShipNames>PossibleShipNamesROM_DESTROYER_III</ShipNames>
@@ -6781,7 +6781,7 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.29</ShieldRecharge>
+    <ShieldRecharge>0.15</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer IV D'Xokra</ClassName>
     <ShipNames>PossibleShipNamesROM_DESTROYER_IV</ShipNames>
@@ -6822,7 +6822,7 @@
     <Crew>188</Crew>
     <HullStrength>225</HullStrength>
     <ShieldStrength>900</ShieldStrength>
-    <ShieldRecharge>0.17</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser I D'Ridrex</ClassName>
     <ShipNames>PossibleShipNamesROM_CRUISER_I</ShipNames>
@@ -6864,7 +6864,7 @@
     <Crew>186</Crew>
     <HullStrength>223</HullStrength>
     <ShieldStrength>891</ShieldStrength>
-    <ShieldRecharge>0.19</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser II D'Renedex</ClassName>
     <ShipNames>PossibleShipNamesROM_CRUISER_II</ShipNames>
@@ -6906,7 +6906,7 @@
     <Crew>188</Crew>
     <HullStrength>225</HullStrength>
     <ShieldStrength>900</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser III R'Derex</ClassName>
     <ShipNames>PossibleShipNamesROM_CRUISER_III</ShipNames>
@@ -6947,7 +6947,7 @@
     <Crew>375</Crew>
     <HullStrength>450</HullStrength>
     <ShieldStrength>1800</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser IV D'Bora</ClassName>
     <ShipNames>PossibleShipNamesROM_CRUISER_IV</ShipNames>
@@ -6988,7 +6988,7 @@
     <Crew>75</Crew>
     <HullStrength>90</HullStrength>
     <ShieldStrength>360</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser I R'Tan</ClassName>
     <ShipNames>PossibleShipNamesROM_STRIKE_CRUISER_I</ShipNames>
@@ -7030,7 +7030,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser II D'Drexon</ClassName>
     <ShipNames>PossibleShipNamesROM_STRIKE_CRUISER_II</ShipNames>
@@ -7071,7 +7071,7 @@
     <Crew>300</Crew>
     <HullStrength>360</HullStrength>
     <ShieldStrength>1440</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser III D'Idricon</ClassName>
     <ShipNames>PossibleShipNamesROM_STRIKE_CRUISER_III</ShipNames>
@@ -7112,7 +7112,7 @@
     <Crew>152</Crew>
     <HullStrength>182</HullStrength>
     <ShieldStrength>728</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship Derext</ClassName>
     <ShipNames>PossibleShipNamesROM_COMMAND_SHIP_I</ShipNames>
@@ -7154,7 +7154,7 @@
     <Crew>460</Crew>
     <HullStrength>606</HullStrength>
     <ShieldStrength>2426</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship D'deridex</ClassName>
     <ShipNames>PossibleShipNamesROM_COMMAND_SHIP_II</ShipNames>
@@ -7195,7 +7195,7 @@
     <Crew>689</Crew>
     <HullStrength>827</HullStrength>
     <ShieldStrength>3308</ShieldStrength>
-    <ShieldRecharge>0.32</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship D'deridex Advanced</ClassName>
     <ShipNames>PossibleShipNamesROM_COMMAND_SHIP_III</ShipNames>
@@ -7235,7 +7235,7 @@
     <Crew>600</Crew>
     <HullStrength>721</HullStrength>
     <ShieldStrength>2882</ShieldStrength>
-    <ShieldRecharge>0.35</ShieldRecharge>
+    <ShieldRecharge>0.17</ShieldRecharge>
     <ShipType>HeavyCruiser</ShipType>
     <ClassName>Tactical Cruiser Norexan</ClassName>
     <ShipNames>PossibleShipNamesROM_TACTICAL_CRUISER</ShipNames>
@@ -7276,7 +7276,7 @@
     <Crew>33</Crew>
     <HullStrength>40</HullStrength>
     <ShieldStrength>160</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.03</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship I NX-Sarajevo</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SPY_SHIP_I</ShipNames>
@@ -7286,7 +7286,7 @@
     <Range>5</Range>
     <Speed>1</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>2</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>30</WorkCapacity>
     <Beam_Count>2</Beam_Count>
@@ -7317,7 +7317,7 @@
     <Crew>67</Crew>
     <HullStrength>80</HullStrength>
     <ShieldStrength>320</ShieldStrength>
-    <ShieldRecharge>0.15</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship II Danube</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SPY_SHIP_II</ShipNames>
@@ -7327,7 +7327,7 @@
     <Range>7</Range>
     <Speed>2</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>6</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>40</WorkCapacity>
     <Beam_Count>3</Beam_Count>
@@ -7357,7 +7357,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Spy</ShipType>
     <ClassName>Spy Ship III Venture</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SPY_SHIP_III</ShipNames>
@@ -7367,7 +7367,7 @@
     <Range>9</Range>
     <Speed>3</Speed>
     <FuelReserve>4</FuelReserve>
-    <Maneuverability>1</Maneuverability>
+    <Maneuverability>7</Maneuverability>
     <EvacuationLimit>4</EvacuationLimit>
     <WorkCapacity>50</WorkCapacity>
     <Beam_Count>4</Beam_Count>
@@ -7397,7 +7397,7 @@
     <Crew>27</Crew>
     <HullStrength>32</HullStrength>
     <ShieldStrength>128</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy I Sarak</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_DIPLOMATIC_I</ShipNames>
@@ -7438,7 +7438,7 @@
     <Crew>53</Crew>
     <HullStrength>64</HullStrength>
     <ShieldStrength>256</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy II Norway</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_DIPLOMATIC_II</ShipNames>
@@ -7478,7 +7478,7 @@
     <Crew>80</Crew>
     <HullStrength>96</HullStrength>
     <ShieldStrength>384</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Diplomatic</ShipType>
     <ClassName>Diplomacy III Bashir</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_DIPLOMATIC_III</ShipNames>
@@ -7518,7 +7518,7 @@
     <Crew>53</Crew>
     <HullStrength>64</HullStrength>
     <ShieldStrength>256</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship I Conestoga</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_COLONY_SHIP_I</ShipNames>
@@ -7559,7 +7559,7 @@
     <Crew>107</Crew>
     <HullStrength>128</HullStrength>
     <ShieldStrength>512</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship II Edwards</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_COLONY_SHIP_II</ShipNames>
@@ -7599,7 +7599,7 @@
     <Crew>200</Crew>
     <HullStrength>240</HullStrength>
     <ShieldStrength>960</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Colony</ShipType>
     <ClassName>Colonyship III Quebec</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_COLONY_SHIP_III</ShipNames>
@@ -7639,7 +7639,7 @@
     <Crew>47</Crew>
     <HullStrength>56</HullStrength>
     <ShieldStrength>224</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport I Sato</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_TRANSPORT_I</ShipNames>
@@ -7680,7 +7680,7 @@
     <Crew>93</Crew>
     <HullStrength>112</HullStrength>
     <ShieldStrength>448</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport II Khan Noonien Singh</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_TRANSPORT_II</ShipNames>
@@ -7720,7 +7720,7 @@
     <Crew>187</Crew>
     <HullStrength>224</HullStrength>
     <ShieldStrength>896</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Transport</ShipType>
     <ClassName>Transport III  Lord Garth</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_TRANSPORT_III</ShipNames>
@@ -7760,7 +7760,7 @@
     <Crew>52</Crew>
     <HullStrength>62</HullStrength>
     <ShieldStrength>248</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Construction Ship I Berlin</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_CONSTRUCTION_SHIP_I</ShipNames>
@@ -7800,7 +7800,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Construction</ShipType>
     <ClassName>Construction Ship II Stuttgart 21</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_CONSTRUCTION_SHIP_II</ShipNames>
@@ -7840,7 +7840,7 @@
     <Crew>38</Crew>
     <HullStrength>45</HullStrength>
     <ShieldStrength>180</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Ship I Daedalus</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_MEDICAL_SHIP_I</ShipNames>
@@ -7880,7 +7880,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Medical</ShipType>
     <ClassName>Medical Ship II Olympic</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_MEDICAL_SHIP_II</ShipNames>
@@ -7920,7 +7920,7 @@
     <Crew>25</Crew>
     <HullStrength>30</HullStrength>
     <ShieldStrength>120</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Ship I Hermes</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SCIENCE_SHIP_I</ShipNames>
@@ -7961,7 +7961,7 @@
     <Crew>50</Crew>
     <HullStrength>60</HullStrength>
     <ShieldStrength>240</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Ship II Oberth</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SCIENCE_SHIP_II</ShipNames>
@@ -8001,7 +8001,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Science</ShipType>
     <ClassName>Science Ship III Nova</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SCIENCE_SHIP_III</ShipNames>
@@ -8041,7 +8041,7 @@
     <Crew>25</Crew>
     <HullStrength>30</HullStrength>
     <ShieldStrength>120</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout I NX-Delta</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SCOUT_I</ShipNames>
@@ -8083,7 +8083,7 @@
     <Crew>50</Crew>
     <HullStrength>60</HullStrength>
     <ShieldStrength>240</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout II Soyuz</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SCOUT_II</ShipNames>
@@ -8124,7 +8124,7 @@
     <Crew>110</Crew>
     <HullStrength>132</HullStrength>
     <ShieldStrength>528</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Scout</ShipType>
     <ClassName>Scout III Saber</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_SCOUT_III</ShipNames>
@@ -8165,7 +8165,7 @@
     <Crew>38</Crew>
     <HullStrength>45</HullStrength>
     <ShieldStrength>180</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate I NX-Enterpirse</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_FRIGATE_I</ShipNames>
@@ -8207,7 +8207,7 @@
     <Crew>75</Crew>
     <HullStrength>90</HullStrength>
     <ShieldStrength>360</ShieldStrength>
-    <ShieldRecharge>0.19</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate II Miranda</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_FRIGATE_II</ShipNames>
@@ -8249,7 +8249,7 @@
     <Crew>124</Crew>
     <HullStrength>149</HullStrength>
     <ShieldStrength>594</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.11</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate III Miranda Refit</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_FRIGATE_III</ShipNames>
@@ -8290,7 +8290,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Frigate IV New Orleans</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_FRIGATE_IV</ShipNames>
@@ -8331,7 +8331,7 @@
     <Crew>45</Crew>
     <HullStrength>54</HullStrength>
     <ShieldStrength>216</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.1</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer I NX-Intrepid</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_DESTROYER_I</ShipNames>
@@ -8373,7 +8373,7 @@
     <Crew>75</Crew>
     <HullStrength>90</HullStrength>
     <ShieldStrength>360</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer II Constellation</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_DESTROYER_II</ShipNames>
@@ -8415,7 +8415,7 @@
     <Crew>100</Crew>
     <HullStrength>120</HullStrength>
     <ShieldStrength>480</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.13</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer III Steamrunner</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_DESTROYER_III</ShipNames>
@@ -8456,7 +8456,7 @@
     <Crew>420</Crew>
     <HullStrength>504</HullStrength>
     <ShieldStrength>2016</ShieldStrength>
-    <ShieldRecharge>0.29</ShieldRecharge>
+    <ShieldRecharge>0.15</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
     <ClassName>Destroyer IV Defiant</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_DESTROYER_IV</ShipNames>
@@ -8497,7 +8497,7 @@
     <Crew>150</Crew>
     <HullStrength>180</HullStrength>
     <ShieldStrength>720</ShieldStrength>
-    <ShieldRecharge>0.17</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser I Constituion</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_CRUISER_I</ShipNames>
@@ -8539,7 +8539,7 @@
     <Crew>225</Crew>
     <HullStrength>270</HullStrength>
     <ShieldStrength>1080</ShieldStrength>
-    <ShieldRecharge>0.19</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser II Constitution Refit</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_CRUISER_II</ShipNames>
@@ -8581,7 +8581,7 @@
     <Crew>330</Crew>
     <HullStrength>396</HullStrength>
     <ShieldStrength>1584</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser III Excelsior</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_CRUISER_III</ShipNames>
@@ -8623,7 +8623,7 @@
     <Crew>405</Crew>
     <HullStrength>486</HullStrength>
     <ShieldStrength>1944</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser IV Intrepid</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_CRUISER_IV</ShipNames>
@@ -8664,7 +8664,7 @@
     <Crew>510</Crew>
     <HullStrength>612</HullStrength>
     <ShieldStrength>2448</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
     <ClassName>Cruiser V Akira</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_CRUISER_V</ShipNames>
@@ -8705,7 +8705,7 @@
     <Crew>60</Crew>
     <HullStrength>72</HullStrength>
     <ShieldStrength>288</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser I Decatur</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_STRIKE_CRUISER_I</ShipNames>
@@ -8747,7 +8747,7 @@
     <Crew>120</Crew>
     <HullStrength>144</HullStrength>
     <ShieldStrength>576</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser II Niagara</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_STRIKE_CRUISER_II</ShipNames>
@@ -8788,7 +8788,7 @@
     <Crew>240</Crew>
     <HullStrength>288</HullStrength>
     <ShieldStrength>1152</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
     <ClassName>Strike Cruiser III Nebula</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_STRIKE_CRUISER_III</ShipNames>
@@ -8829,7 +8829,7 @@
     <Crew>350</Crew>
     <HullStrength>420</HullStrength>
     <ShieldStrength>1676</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship I Ambassador</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_COMMAND_SHIP_I</ShipNames>
@@ -8871,7 +8871,7 @@
     <Crew>405</Crew>
     <HullStrength>595</HullStrength>
     <ShieldStrength>2381</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship II Galaxy</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_COMMAND_SHIP_II</ShipNames>
@@ -8912,7 +8912,7 @@
     <Crew>809</Crew>
     <HullStrength>970</HullStrength>
     <ShieldStrength>3881</ShieldStrength>
-    <ShieldRecharge>0.32</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Command</ShipType>
     <ClassName>Command Ship III Sovereign</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_COMMAND_SHIP_III</ShipNames>
@@ -8952,7 +8952,7 @@
     <Crew>720</Crew>
     <HullStrength>864</HullStrength>
     <ShieldStrength>3456</ShieldStrength>
-    <ShieldRecharge>1.1</ShieldRecharge>
+    <ShieldRecharge>0.35</ShieldRecharge>
     <ShipType>HeavyCruiser</ShipType>
     <ClassName>Tactical Cruiser Prometheus</ClassName>
     <ShipNames>PossibleShipNamesTERRAN_TACTICAL_CRUISER</ShipNames>
@@ -8993,9 +8993,9 @@
     <Crew>118</Crew>
     <HullStrength>140</HullStrength>
     <ShieldStrength>560</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Transport</ShipType>
-    <ClassName>BORG TRANSPORT 01.00</ClassName>
+    <ClassName>BORG TRANSPORT 01.0000</ClassName>
     <ShipNames>PossibleShipNamesBORG_TRANSPORT_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9006,6 +9006,7 @@
     <Maneuverability>3</Maneuverability>
     <EvacuationLimit>8</EvacuationLimit>
     <WorkCapacity>30</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>1</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>50</Damage>
@@ -9034,9 +9035,9 @@
     <Crew>233</Crew>
     <HullStrength>280</HullStrength>
     <ShieldStrength>1120</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Transport</ShipType>
-    <ClassName>BORG TRANSPORT 01.01</ClassName>
+    <ClassName>BORG TRANSPORT 01.0001</ClassName>
     <ShipNames>PossibleShipNamesBORG_TRANSPORT_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9047,6 +9048,7 @@
     <Maneuverability>3</Maneuverability>
     <EvacuationLimit>8</EvacuationLimit>
     <WorkCapacity>40</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>1</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>75</Damage>
@@ -9074,9 +9076,9 @@
     <Crew>468</Crew>
     <HullStrength>560</HullStrength>
     <ShieldStrength>2240</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Transport</ShipType>
-    <ClassName>BORG TRANSPORT 01.10</ClassName>
+    <ClassName>BORG TRANSPORT 01.0010</ClassName>
     <ShipNames>PossibleShipNamesBORG_TRANSPORT_III</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9087,6 +9089,7 @@
     <Maneuverability>3</Maneuverability>
     <EvacuationLimit>8</EvacuationLimit>
     <WorkCapacity>50</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>3</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>88</Damage>
@@ -9104,7 +9107,7 @@
     <Weapons>1</Weapons>
     <PopulationHealth>1</PopulationHealth>
     <IsUniversalyAvailable>false</IsUniversalyAvailable>
-    <UpgradeOption>BORG_CONSTRUCTOR_II</UpgradeOption>
+    <UpgradeOption>BORG_CONSTRUCTION_SHIP_ II</UpgradeOption>
     <ScienceAbility>0.01</ScienceAbility>
     <ScanPower>1</ScanPower>
     <SensorRange>45</SensorRange>
@@ -9114,9 +9117,9 @@
     <Crew>130</Crew>
     <HullStrength>155</HullStrength>
     <ShieldStrength>620</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Construction</ShipType>
-    <ClassName>BORG CONSTRUCTOR 01.00</ClassName>
+    <ClassName>BORG CONSTRUCTOR 01.0011</ClassName>
     <ShipNames>PossibleShipNamesBORG_CONSTRUCTION_SHIP_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9127,6 +9130,7 @@
     <Maneuverability>2</Maneuverability>
     <EvacuationLimit>2</EvacuationLimit>
     <WorkCapacity>250</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>1</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>25</Damage>
@@ -9144,7 +9148,7 @@
     <Weapons>1</Weapons>
     <PopulationHealth>1</PopulationHealth>
     <IsUniversalyAvailable>false</IsUniversalyAvailable>
-    <ObsoletedItem>BORG_CONSTRUCTOR_I</ObsoletedItem>
+    <ObsoletedItem>BORG_CONSTRUCTION_SHIP_I</ObsoletedItem>
     <ScienceAbility>0.02</ScienceAbility>
     <ScanPower>1</ScanPower>
     <SensorRange>60</SensorRange>
@@ -9154,9 +9158,9 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Construction</ShipType>
-    <ClassName>BORG CONSTRUCTOR 01.01</ClassName>
+    <ClassName>BORG CONSTRUCTOR 01.0100</ClassName>
     <ShipNames>PossibleShipNamesBORG_CONSTRUCTION_SHIP_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9167,6 +9171,7 @@
     <Maneuverability>2</Maneuverability>
     <EvacuationLimit>2</EvacuationLimit>
     <WorkCapacity>300</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>2</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>88</Damage>
@@ -9194,9 +9199,9 @@
     <Crew>95</Crew>
     <HullStrength>113</HullStrength>
     <ShieldStrength>450</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Medical</ShipType>
-    <ClassName>BORG MEDICAL 01.00</ClassName>
+    <ClassName>BORG MEDICAL 01.0101</ClassName>
     <ShipNames>PossibleShipNamesBORG_MEDICAL_SHIP_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9207,6 +9212,7 @@
     <Maneuverability>3</Maneuverability>
     <EvacuationLimit>5</EvacuationLimit>
     <WorkCapacity>0</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>1</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>25</Damage>
@@ -9234,9 +9240,9 @@
     <Crew>375</Crew>
     <HullStrength>450</HullStrength>
     <ShieldStrength>1800</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Medical</ShipType>
-    <ClassName>BORG MEDICAL 01.01</ClassName>
+    <ClassName>BORG MEDICAL 01.0110</ClassName>
     <ShipNames>PossibleShipNamesBORG_MEDICAL_SHIP_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9247,6 +9253,7 @@
     <Maneuverability>3</Maneuverability>
     <EvacuationLimit>5</EvacuationLimit>
     <WorkCapacity>0</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>1</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>75</Damage>
@@ -9274,9 +9281,9 @@
     <Crew>63</Crew>
     <HullStrength>75</HullStrength>
     <ShieldStrength>300</ShieldStrength>
-    <ShieldRecharge>0.16</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Science</ShipType>
-    <ClassName>BORG SCIENCE 01.00</ClassName>
+    <ClassName>BORG SCIENCE 01.0111</ClassName>
     <ShipNames>PossibleShipNamesBORG_SCIENCE_SHIP_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9287,6 +9294,7 @@
     <Maneuverability>3</Maneuverability>
     <EvacuationLimit>1</EvacuationLimit>
     <WorkCapacity>0</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>2</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>38</Damage>
@@ -9314,9 +9322,9 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Science</ShipType>
-    <ClassName>BORG SCIENCE 01.01</ClassName>
+    <ClassName>BORG SCIENCE 01.1000</ClassName>
     <ShipNames>PossibleShipNamesBORG_SCIENCE_SHIP_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9327,6 +9335,7 @@
     <Maneuverability>3</Maneuverability>
     <EvacuationLimit>1</EvacuationLimit>
     <WorkCapacity>0</WorkCapacity>
+    <InterceptAbility>0</InterceptAbility>
     <Beam_Count>2</Beam_Count>
     <Refire>0.78</Refire>
     <Damage>88</Damage>
@@ -9354,9 +9363,9 @@
     <Crew>63</Crew>
     <HullStrength>75</HullStrength>
     <ShieldStrength>300</ShieldStrength>
-    <ShieldRecharge>0.12</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Scout</ShipType>
-    <ClassName>BORG SCOUT 01.00</ClassName>
+    <ClassName>BORG SCOUT 01.1001</ClassName>
     <ShipNames>PossibleShipNamesBORG_SCOUT_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9396,9 +9405,9 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>Scout</ShipType>
-    <ClassName>BORG SCOUT 01.01</ClassName>
+    <ClassName>BORG SCOUT 01.1010</ClassName>
     <ShipNames>PossibleShipNamesBORG_SCOUT_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9437,9 +9446,9 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Scout</ShipType>
-    <ClassName>BORG SCOUT 01.10</ClassName>
+    <ClassName>BORG SCOUT 01.1011</ClassName>
     <ShipNames>PossibleShipNamesBORG_SCOUT_III</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9478,9 +9487,9 @@
     <Crew>125</Crew>
     <HullStrength>150</HullStrength>
     <ShieldStrength>600</ShieldStrength>
-    <ShieldRecharge>0.2</ShieldRecharge>
+    <ShieldRecharge>0.05</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
-    <ClassName>BORG PROBE 01.00</ClassName>
+    <ClassName>BORG PROBE 01.1100</ClassName>
     <ShipNames>PossibleShipNamesBORG_PROBE_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9520,9 +9529,9 @@
     <Crew>188</Crew>
     <HullStrength>225</HullStrength>
     <ShieldStrength>900</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
-    <ClassName>BORG PROBE 01.01</ClassName>
+    <ClassName>BORG PROBE 01.1101</ClassName>
     <ShipNames>PossibleShipNamesBORG_PROBE_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9562,9 +9571,9 @@
     <Crew>250</Crew>
     <HullStrength>300</HullStrength>
     <ShieldStrength>1200</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
-    <ClassName>BORG PROBE 01.10</ClassName>
+    <ClassName>BORG PROBE 01.1110</ClassName>
     <ShipNames>PossibleShipNamesBORG_PROBE_III</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9603,9 +9612,9 @@
     <Crew>325</Crew>
     <HullStrength>390</HullStrength>
     <ShieldStrength>1560</ShieldStrength>
-    <ShieldRecharge>0.29</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>FastAttack</ShipType>
-    <ClassName>BORG PROBE 01.11</ClassName>
+    <ClassName>BORG PROBE 01.1111</ClassName>
     <ShipNames>PossibleShipNamesBORG_PROBE_IV</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9643,9 +9652,9 @@
     <Crew>375</Crew>
     <HullStrength>450</HullStrength>
     <ShieldStrength>1800</ShieldStrength>
-    <ShieldRecharge>0.17</ShieldRecharge>
+    <ShieldRecharge>0.04</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
-    <ClassName>BORG SPHERE 01.00</ClassName>
+    <ClassName>BORG SPHERE 10.0000</ClassName>
     <ShipNames>PossibleShipNamesBORG_SPHERE_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9684,9 +9693,9 @@
     <Crew>750</Crew>
     <HullStrength>900</HullStrength>
     <ShieldStrength>3600</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
-    <ClassName>BORG SPHERE 01.01</ClassName>
+    <ClassName>BORG SPHERE 10.0001</ClassName>
     <ShipNames>PossibleShipNamesBORG_SPHERE_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9725,9 +9734,9 @@
     <Crew>975</Crew>
     <HullStrength>1170</HullStrength>
     <ShieldStrength>4680</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Cruiser</ShipType>
-    <ClassName>BORG SPHERE 01.10</ClassName>
+    <ClassName>BORG SPHERE 10.0010</ClassName>
     <ShipNames>PossibleShipNamesBORG_SPHERE_III</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9766,9 +9775,9 @@
     <Crew>300</Crew>
     <HullStrength>360</HullStrength>
     <ShieldStrength>1440</ShieldStrength>
-    <ShieldRecharge>0.22</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
-    <ClassName>BORG STRIKE DIAMOND 01.00</ClassName>
+    <ClassName>BORG STRIKE DIAMOND 10.0011</ClassName>
     <ShipNames>PossibleShipNamesBORG_STRIKE_DIAMOND_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9808,9 +9817,9 @@
     <Crew>600</Crew>
     <HullStrength>720</HullStrength>
     <ShieldStrength>2880</ShieldStrength>
-    <ShieldRecharge>0.26</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
-    <ClassName>BORG STRIKE DIAMOND 01.01</ClassName>
+    <ClassName>BORG STRIKE DIAMOND 10.0100</ClassName>
     <ShipNames>PossibleShipNamesBORG_STRIKE_DIAMOND_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9849,9 +9858,9 @@
     <Crew>1200</Crew>
     <HullStrength>1440</HullStrength>
     <ShieldStrength>5760</ShieldStrength>
-    <ShieldRecharge>0.31</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>StrikeCruiser</ShipType>
-    <ClassName>BORG STRIKE DIAMOND 01.10</ClassName>
+    <ClassName>BORG STRIKE DIAMOND 10.0101</ClassName>
     <ShipNames>PossibleShipNamesBORG_STRIKE_DIAMOND_III</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9890,9 +9899,9 @@
     <Crew>2944</Crew>
     <HullStrength>3536</HullStrength>
     <ShieldStrength>14112</ShieldStrength>
-    <ShieldRecharge>0.25</ShieldRecharge>
+    <ShieldRecharge>0.06</ShieldRecharge>
     <ShipType>Command</ShipType>
-    <ClassName>BORG CUBE 01.00</ClassName>
+    <ClassName>BORG CUBE 10.0110</ClassName>
     <ShipNames>PossibleShipNamesBORG_CUBE_I</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9932,9 +9941,9 @@
     <Crew>2944</Crew>
     <HullStrength>3881</HullStrength>
     <ShieldStrength>15523</ShieldStrength>
-    <ShieldRecharge>0.28</ShieldRecharge>
+    <ShieldRecharge>0.07</ShieldRecharge>
     <ShipType>Command</ShipType>
-    <ClassName>BORG CUBE 01.01</ClassName>
+    <ClassName>BORG CUBE 10.0111</ClassName>
     <ShipNames>PossibleShipNamesBORG_CUBE_II</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -9973,9 +9982,9 @@
     <Crew>5880</Crew>
     <HullStrength>7056</HullStrength>
     <ShieldStrength>28224</ShieldStrength>
-    <ShieldRecharge>0.32</ShieldRecharge>
+    <ShieldRecharge>0.08</ShieldRecharge>
     <ShipType>Command</ShipType>
-    <ClassName>BORG CUBE 01.10</ClassName>
+    <ClassName>BORG CUBE 10.1000</ClassName>
     <ShipNames>PossibleShipNamesBORG_CUBE_III</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>
@@ -10013,9 +10022,9 @@
     <Crew>5760</Crew>
     <HullStrength>6912</HullStrength>
     <ShieldStrength>27648</ShieldStrength>
-    <ShieldRecharge>0.35</ShieldRecharge>
+    <ShieldRecharge>0.09</ShieldRecharge>
     <ShipType>HeavyCruiser</ShipType>
-    <ClassName>BORG TACTICAL CUBE</ClassName>
+    <ClassName>BORG TACTICAL CUBE 10.1001</ClassName>
     <ShipNames>PossibleShipNamesBORG_TACTICAL_CUBE</ShipNames>
     <Dilithium>1</Dilithium>
     <CloakStrength>0</CloakStrength>

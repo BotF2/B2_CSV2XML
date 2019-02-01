@@ -384,7 +384,7 @@ namespace CSV2XML
                     //(only a few)
 
                     rowValue = rowValue.Replace("BORG_CUBE_IIII", "BORG_CUBE_IV");
-                    rowValue = rowValue.Replace("BORG_PROBE_IIII", "BORG_CUBE_IV");
+                    rowValue = rowValue.Replace("BORG_PROBE_IIII", "BORG_PROBE_IV");
                     rowValue = rowValue.Replace("BORG_SCOUT_IIII", "");
                     rowValue = rowValue.Replace("BORG_TACTICAL_CUBE_IIII", "BORG_TACTICAL_CUBE_IV");
                     rowValue = rowValue.Replace("BORG_TRANSPORT_IIII", "");
@@ -408,9 +408,9 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("FED_COLONY_SHIP_IIII", "");
                     rowValue = rowValue.Replace("FED_COMMAND_SHIP_IIII", "");
                     rowValue = rowValue.Replace("FED_CRUISER_IIII", "FED_CRUISER_IV");
-                    rowValue = rowValue.Replace("FED_DESTROYER_IIII", "");
+                    rowValue = rowValue.Replace("FED_DESTROYER_IIII", "FED_DESTROYER_IV");
                     rowValue = rowValue.Replace("FED_DIPLOMATIC_IIII", "");
-                    rowValue = rowValue.Replace("FED_FRIGATE_IIII", "");
+                    rowValue = rowValue.Replace("FED_FRIGATE_IIII", "FED_FRIGATE_IV");
                     rowValue = rowValue.Replace("FED_SCIENCE_SHIP_IIII", "");
                     rowValue = rowValue.Replace("FED_SCIENCE_SHIP_IIII", "");
                     rowValue = rowValue.Replace("FED_SCOUT_IIII", "");
@@ -438,8 +438,8 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("TERRAN_COLONY_SHIP_IIII", "");
                     rowValue = rowValue.Replace("TERRAN_COMMAND_SHIP_IIII", "");
                     rowValue = rowValue.Replace("TERRAN_CRUISER_IIII", "TERRAN_CRUISER_IV");
-                    rowValue = rowValue.Replace("TERRAN_DESTROYER_IIII", "");
-                    rowValue = rowValue.Replace("TERRAN_FRIGATE_IIII", "");
+                    rowValue = rowValue.Replace("TERRAN_DESTROYER_IIII", "TERRAN_DESTROYER_IV");
+                    rowValue = rowValue.Replace("TERRAN_FRIGATE_IIII", "TERRAN_FRIGATE_IV");
                     rowValue = rowValue.Replace("TERRAN_SCOUT_IIII", "");
                     rowValue = rowValue.Replace("TERRAN_SPY_SHIP_IIII", "");
                     rowValue = rowValue.Replace("TERRAN_STRIKE_CRUISER_IIII", "");
@@ -479,6 +479,14 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("HAZARI_ATTACK_SHIPI", "");
                     rowValue = rowValue.Replace("KAZON_ATTACK_SHIPI", "");
                     rowValue = rowValue.Replace("TALAXIAN_ATTACK_SHIPI", "");
+
+
+
+
+
+
+
+
                     #endregion
 
                     #region Shipnames
@@ -1197,7 +1205,7 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SPY_SHIP_II",
                               Environment.NewLine +
                     "        <ShipName> Classified </ShipName>" + Environment.NewLine);
-                    
+
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SPY_SHIP_I",
@@ -1282,7 +1290,7 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("PossibleShipNamesROM_MEDICAL_SHIP_I",
                               Environment.NewLine +
                     "        <ShipName> D'Kaudit </ShipName>" + Environment.NewLine);
-                    
+
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DESTROYER_IV",
@@ -4078,8 +4086,8 @@ namespace CSV2XML
                     "        <ShipName> Construction 2.11011 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Construction 2.11100 </ShipName>" + Environment.NewLine +
                     "        <ShipName> Construction 2.11101 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Construction 2.11110 </ShipName>" + Environment.NewLine); 
-                    
+                    "        <ShipName> Construction 2.11110 </ShipName>" + Environment.NewLine);
+
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTOR_I",
@@ -5411,7 +5419,7 @@ namespace CSV2XML
 
 
 
-                    #endregion
+                    #endregion
 
 
                     rowValue = rowValue.Replace(Environment.NewLine + Environment.NewLine, Environment.NewLine);
