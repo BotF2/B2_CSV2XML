@@ -480,17 +480,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("KAZON_ATTACK_SHIPI", "");
                     rowValue = rowValue.Replace("TALAXIAN_ATTACK_SHIPI", "");
 
-
-
-
-
-
-
-
-
-
-
-
                     #endregion
 
                     #region Shipnames
@@ -504,9 +493,9 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_III",
 
 Environment.NewLine +
-"        <ShipName>	T. NCC-54376	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54377	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54378	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Cochraine B </ShipName>" + Environment.NewLine +
+"        <ShipName>	Khan B </ShipName>" + Environment.NewLine +
+"        <ShipName>	Lord Garth B </ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54379	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54380	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54381	</ShipName>" + Environment.NewLine +
@@ -552,9 +541,9 @@ Environment.NewLine +
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_II",
 Environment.NewLine +
-"        <ShipName>	T. NCC-1395	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1396	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1397	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Cochraine A </ShipName>" + Environment.NewLine +
+"        <ShipName>	Khan A</ShipName>" + Environment.NewLine +
+"        <ShipName>	Lord Garth A</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1398	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1399	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1400	</ShipName>" + Environment.NewLine +
@@ -600,9 +589,9 @@ Environment.NewLine +
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_I",
 Environment.NewLine +
-"        <ShipName>	T. NCC-703	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-704	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-705	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Cochraine </ShipName>" + Environment.NewLine +
+"        <ShipName>	Khan </ShipName>" + Environment.NewLine +
+"        <ShipName>	Lord Garth	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-706	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-707	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-708	</ShipName>" + Environment.NewLine +
@@ -5367,7 +5356,7 @@ Environment.NewLine +
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_III",
 Environment.NewLine +
-"        <ShipName>	T. NCC-54376	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Cochranine B </ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54377	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54378	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54379	</ShipName>" + Environment.NewLine +
@@ -5416,7 +5405,7 @@ Environment.NewLine +
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_II",
 Environment.NewLine +
-"        <ShipName>	T. NCC-1395	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Cochranine A </ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1396	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1397	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1398	</ShipName>" + Environment.NewLine +
@@ -5465,7 +5454,7 @@ Environment.NewLine +
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_I",
 Environment.NewLine +
-"        <ShipName>	T. NCC-703	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Cochranine </ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-704	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-705	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-706	</ShipName>" + Environment.NewLine +
