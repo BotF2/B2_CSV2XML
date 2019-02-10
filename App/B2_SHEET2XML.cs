@@ -4678,7 +4678,7 @@ Environment.NewLine +
 "        <ShipName>	Y'tem	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Buruk	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Korinar	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Bird of Prey K16	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Orantho </ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey K17	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey K18	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey K19	</ShipName>" + Environment.NewLine +
@@ -5114,10 +5114,10 @@ Environment.NewLine +
 "        <ShipName>	Vor'cha	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bortas!	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Qu'Vat!	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Maht-H'a!	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Toh'Kaht!	</ShipName>" + Environment.NewLine +
-"        <ShipName>	QijbaS V1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	QijbaS V2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Maht-H'a! </ShipName>" + Environment.NewLine +
+"        <ShipName>	Toh'Kaht! </ShipName>" + Environment.NewLine +
+"        <ShipName> Drovana </ShipName>" + Environment.NewLine +
+"        <ShipName> Vor'nak </ShipName>" + Environment.NewLine +
 "        <ShipName>	QijbaS V3	</ShipName>" + Environment.NewLine +
 "        <ShipName>	QijbaS V4	</ShipName>" + Environment.NewLine +
 "        <ShipName>	QijbaS V5	</ShipName>" + Environment.NewLine +
@@ -6103,7 +6103,7 @@ Environment.NewLine +
 "        <ShipName>	McCoy	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Crusher	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Pulaski	</ShipName>" + Environment.NewLine +
-"        <ShipName>	NCC-87792	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Chapman	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-87793	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-87794	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-87795	</ShipName>" + Environment.NewLine +
@@ -6389,7 +6389,7 @@ Environment.NewLine +
 Environment.NewLine +
 "        <ShipName>	Bashir	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Carver	</ShipName>" + Environment.NewLine +
-"        <ShipName>	B. NCC-87553	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Vjeko	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87554	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87555	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87556	</ShipName>" + Environment.NewLine +
@@ -10543,7 +10543,7 @@ Environment.NewLine +
 
                     "        <ShipName>	Bashir	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Carver	</ShipName>" + Environment.NewLine +
-"        <ShipName>	B. NCC-87553	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Vjeko	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87554	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87555	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87556	</ShipName>" + Environment.NewLine +
