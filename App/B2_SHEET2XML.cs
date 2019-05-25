@@ -1572,12 +1572,12 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CRUISER_III",
 Environment.NewLine +
 "        <ShipName>	Excelsior	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Enterprise-B!	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Hood	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Berlin	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Cairo	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Charston	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Fearless	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Enterprise-B!	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Livingston	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Malinche	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Kongo	</ShipName>" + Environment.NewLine +
