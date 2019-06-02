@@ -8,37 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 // infile is  "C:/_B2/Balance - Export_New.xml";
 // outfile is "C:/_B2/Balance - Export_New.xml_OUT_SHIPS_TechObjectDatabase.xml" (just added -out.csv.  csv for easy opening in Excel)
-
 /* Description
  
 - in Google Sheet we have ship values (from TechobjectDatabase.xml) with formulas created/modified to determin ship values 
 - we export this to a basic part of TechobjectDatabase.xml - file name is "Balance - Export_New.xml" (Balance = name of File, Export_New is the sheet tab)
 - download the sheet export, do not copy and past.
-
 - this basic we will modify with this code .... e.g. 
 --- modify Percent-Values from "0.12" to "12"
 --- build stuff e.g. for Weapons from cells to XML-Element 
 --- place in Shipnames
 
-
 HOW THIS IS WORKING, HOW THIS IS DONE
-
 - most is done at * ReadCSV *  (sorry, it is copied from another project handling with csv-files). 
 - it is doing a head line and than a cell for each value, and a new line at some place
 - when done it is opening an app, but before it was writing to "outfile" - the app doesn't do anything, but "tells" about being ready and giving a first preview
-
  End of Description */
-
 // old info: (mostly saying the same, bt I wanna keep it)
 // infile is "C:/_B2/Balance - Export_New.xml"
 // how it works
 // reading file, splitting lines into cells by "separator" like ";", writting cells to output file (automatically), showing App (as "is finished and preview".. just close the App
 // head line is separat and done before "all lines"
 // CSV file is to be changed in Excel or anything else
-
 namespace CSV2XML
 {
     public partial class Data : Form
@@ -49,58 +41,44 @@ namespace CSV2XML
             //Size 538 to 308
         }
 
-
         void Clear_all()
         {
             dataGridView1.Columns.Clear();
         }
-
         void OnLoad()
         {
             ReadCSV("filename_is_inside_code.xml");
             //Console.WriteLine("reading filename_is_inside_code.xml");
         }
-
         void SaveCSV(String outfile)
         {
             //try
             //{
-
             //file = "C:/_B2/Data/TechObjectDatabase-new.xml";
             Console.WriteLine("writing " + outfile);
-
             char _separator = ';';
             string _separatorstring = ";";
-
             if (outfile == null)
                 goto WriterClose;
-
             StreamWriter streamWriter = new StreamWriter(outfile);
             String strHeader = "";
-
             for (int i = 0; i < dataGridView1.Columns.Count; i++)
             {
                 strHeader += dataGridView1.Columns[i].HeaderText + _separatorstring;
             }
             strHeader = " ";   // just output an empty line as head line
-
             strHeader = strHeader.TrimEnd(_separator);
-
             streamWriter.WriteLine(strHeader);
-
             for (int m = 0; m < dataGridView1.Rows.Count - 1; m++)
             {
                 string strRowValue = "";
-
                 for (int n = 0; n < dataGridView1.Columns.Count; n++)
                 {
                     strRowValue += dataGridView1.Rows[m].Cells[n].Value + _separatorstring;
                 }
                 strRowValue = strRowValue.TrimEnd(_separator);
                 streamWriter.WriteLine(strRowValue);
-
             }
-
             streamWriter.Close();
         WriterClose:;
             //}
@@ -110,51 +88,37 @@ namespace CSV2XML
             //}
         }
 
-
         void Clean(string text)
         {
             text = text.Replace("?", "");
             return;
         }
-
         private void btn_Open_Click(object sender, EventArgs e)
         {
             ReadCSV("C:/_B2/Balance - Export_New.xml");
             Console.WriteLine("reading C:/_B2/Balance - Export_New.xml by btn_Open_Click");
-
             // other stuff
             //openFileDialog1.ShowDialog();
             //ReadCSV(openFileDialog1.FileName);
-
         }
-
         private void btn_Save_Click(object sender, EventArgs e)
         {
             saveFileDialog1.ShowDialog();
             SaveCSV(saveFileDialog1.FileName);
         }
-
         void ReadCSV(String infile)  // Main code
         {
             //   later: more xml-files ... just use in/out     
             infile = "C:/_B2/in.xml"; // 
-
             infile = "C:/_B2/Balance - Export_New.xml";
-
             if (!System.IO.File.Exists(infile))
                 MessageBox.Show(infile + " ...is missing", "WARNING", MessageBoxButtons.OK);
 
-
             Console.WriteLine("reading " + infile + " by ReadCSV");
 
-
-
             var outfile = infile + "_OUT_SHIPS_TechObjectDatabase.xml";
-
             Clear_all();
-
             int count = 0;  // counting lines
-
             // begin test if file is writeable  (or already opened without write access maybe in Excel)
             try
             {
@@ -163,109 +127,82 @@ namespace CSV2XML
                 streamWriter.WriteLine(strHeader);
                 streamWriter.WriteLine(strHeader);
                 streamWriter.Close();
-
                 //SaveCSV("-xlate-export.csv_autosave.txt");
             }
             catch
             {
                 var result = MessageBox.Show("File is use: " + outfile, "WARNING", MessageBoxButtons.OK);
-
             }
             // End of test
 
-
             String rowValue;
             String[] cellValue;
-
             //string _replace = "";
             //if (_replace == "1234567789")
             //    _replace = "1234567789";
-
             char _separator = ';';   // not used here
             //string _separatorstring = ",";
-
             //string newcellValue;
-
             if (System.IO.File.Exists(infile))
             {
                 Console.WriteLine(infile);
-
                 StreamReader streamReader = new StreamReader(infile, System.Text.Encoding.UTF7);
-
                 #region Headlines for Display
                 // working on head line
                 //for (int i = 0; i <= cellValue.Count() - 1; i++)
-
                 ////////// -> is needed - just removed later the head line
                 for (int i = 0; i < 9; i++)  // nine columns hardcoded
                 {
                     DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
-
                     column.Name = "Column" + i.ToString();
                     column.HeaderText = "Header" + i.ToString();
                     //column.HeaderText = cellValue[i].TrimStart(MyChar);
                     //column.HeaderText = cellValue[i].Replace("?", "");
                     //rowValue = rowValue.Replace("\"", "");
-
                     dataGridView1.Columns.Add(column);
                     //Console.WriteLine(i + column.HeaderText);
                 }
                 // End of working on head line
                 #endregion
-
                 #region EachSingleLine
                 int c = 0;
                 // doing all the lines
                 while (streamReader.Peek() != -1)
                 {
                     c = c + 1;
-
                     Application.DoEvents();  // for avoid error after 60 seconds
-
                     rowValue = streamReader.ReadLine();
-
                     #region Basic Replacements
                     rowValue = rowValue.Replace("<Ship>Ship</Ship>", "");
                     rowValue = rowValue.Replace("<TechRequirements>xx</TechRequirements>", "<TechRequirements>");
                     rowValue = rowValue.Replace("</Weapons>", "</Weapons>" + Environment.NewLine + "    </TechRequirements>");
-
                     //for real it's UpgradeOptions
                     rowValue = rowValue.Replace("<UpgradableDesigns>", "<UpgradeOptions>" + Environment.NewLine + "    <UpgradeOption>");
                     rowValue = rowValue.Replace("</UpgradableDesigns>", "</UpgradeOption>" + Environment.NewLine + "    </UpgradeOptions>");
-
                     rowValue = rowValue.Replace("<ObsoletedDesigns>", "<ObsoletedItems>" + Environment.NewLine + "    <ObsoletedItem>");
                     rowValue = rowValue.Replace("</ObsoletedDesigns>", "</ObsoletedItem>" + Environment.NewLine + "    </ObsoletedItems>");
-
                     rowValue = rowValue.Replace("<PossibleNames>", "<ShipNames>" + Environment.NewLine + Environment.NewLine + "    <ShipName>");
                     rowValue = rowValue.Replace("</PossibleNames>", "</ShipName>" + Environment.NewLine + "    </ShipNames>");
                     rowValue = rowValue.Replace("</ShipName></ShipNames>", "</ShipName>" + Environment.NewLine + "    </ShipNames>");
                     rowValue = rowValue.Replace("<ShipNames><ShipName>", "<ShipNames>" + Environment.NewLine + " <ShipName>");
                     rowValue = rowValue.Replace(" <ShipName>", "      <ShipName>");
-
                     rowValue = rowValue.Replace("CrewSize", "Crew");
                     // no     rowValue = rowValue.Replace("</InterceptAbility>", "%</InterceptAbility>");
-
                     //<BeamType Count="3" Refire="84%" Damage="29" />
                     rowValue = rowValue.Replace("</Beam_Count>", "\" ");  // first this !!
                     rowValue = rowValue.Replace("<Beam_Count>", "<BeamType Count=\"");
-
                     rowValue = rowValue.Replace("</Refire>", "\" ");
                     rowValue = rowValue.Replace("<Refire>", "   Refire=\"");
-
                     rowValue = rowValue.Replace("</Damage>", "\" />");
                     rowValue = rowValue.Replace("<Damage>", "   Damage=\"");
-
                     //<TorpedoType Count="2" Damage="44" />
                     rowValue = rowValue.Replace("</Torpedo_Count>", "\" ");  // first this !!
                     rowValue = rowValue.Replace("<Torpedo_Count>", "<TorpedoType Count=\"");
-
                     // Cleanup NewLines 
                     rowValue = rowValue.Replace(Environment.NewLine + "    Refire", " Refire");
                     rowValue = rowValue.Replace(Environment.NewLine + "   \" Damage", " Damage");
-
                     rowValue = rowValue.Replace("%percent", "%");
                     #endregion
-
                     #region Percent 1 to 99
                     //rowValue = rowValue.Replace("0.00", "0%");
                     rowValue = rowValue.Replace("0.01", "1%");
@@ -277,7 +214,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.07", "7%");
                     rowValue = rowValue.Replace("0.08", "8%");
                     rowValue = rowValue.Replace("0.09", "9%");
-
                     rowValue = rowValue.Replace("0.11", "11%");
                     rowValue = rowValue.Replace("0.12", "12%");
                     rowValue = rowValue.Replace("0.13", "13%");
@@ -288,7 +224,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.18", "18%");
                     rowValue = rowValue.Replace("0.19", "19%");
                     rowValue = rowValue.Replace("0.1", "10%");
-
                     rowValue = rowValue.Replace("0.21", "21%");
                     rowValue = rowValue.Replace("0.22", "22%");
                     rowValue = rowValue.Replace("0.23", "23%");
@@ -299,7 +234,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.28", "28%");
                     rowValue = rowValue.Replace("0.29", "29%");
                     rowValue = rowValue.Replace("0.2", "20%");
-
                     rowValue = rowValue.Replace("0.31", "31%");
                     rowValue = rowValue.Replace("0.32", "32%");
                     rowValue = rowValue.Replace("0.33", "33%");
@@ -310,7 +244,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.38", "38%");
                     rowValue = rowValue.Replace("0.39", "39%");
                     rowValue = rowValue.Replace("0.3", "30%");
-
                     rowValue = rowValue.Replace("0.41", "41%");
                     rowValue = rowValue.Replace("0.42", "42%");
                     rowValue = rowValue.Replace("0.43", "43%");
@@ -321,7 +254,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.48", "48%");
                     rowValue = rowValue.Replace("0.49", "49%");
                     rowValue = rowValue.Replace("0.4", "40%");
-
                     rowValue = rowValue.Replace("0.51", "51%");
                     rowValue = rowValue.Replace("0.52", "52%");
                     rowValue = rowValue.Replace("0.53", "53%");
@@ -332,7 +264,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.58", "58%");
                     rowValue = rowValue.Replace("0.59", "59%");
                     rowValue = rowValue.Replace("0.5", "50%");
-
                     rowValue = rowValue.Replace("0.61", "61%");
                     rowValue = rowValue.Replace("0.62", "62%");
                     rowValue = rowValue.Replace("0.63", "63%");
@@ -343,7 +274,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.68", "68%");
                     rowValue = rowValue.Replace("0.69", "69%");
                     rowValue = rowValue.Replace("0.6", "60%");
-
                     rowValue = rowValue.Replace("0.71", "71%");
                     rowValue = rowValue.Replace("0.72", "72%");
                     rowValue = rowValue.Replace("0.73", "73%");
@@ -354,7 +284,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.78", "78%");
                     rowValue = rowValue.Replace("0.79", "79%");
                     rowValue = rowValue.Replace("0.7", "70%");
-
                     rowValue = rowValue.Replace("0.81", "81%");
                     rowValue = rowValue.Replace("0.82", "82%");
                     rowValue = rowValue.Replace("0.83", "83%");
@@ -365,7 +294,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.88", "88%");
                     rowValue = rowValue.Replace("0.89", "89%");
                     rowValue = rowValue.Replace("0.8", "80%");
-
                     rowValue = rowValue.Replace("0.91", "91%");
                     rowValue = rowValue.Replace("0.92", "92%");
                     rowValue = rowValue.Replace("0.93", "93%");
@@ -376,13 +304,10 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.98", "98%");
                     rowValue = rowValue.Replace("0.99", "99%");
                     rowValue = rowValue.Replace("0.9", "90%");
-
                     //rowValue = rowValue.Replace("1", "100%");
                     #endregion
-
                     #region Type4
                     //(only a few)
-
                     rowValue = rowValue.Replace("BORG_CUBE_IIII", "BORG_CUBE_IV");
                     rowValue = rowValue.Replace("BORG_PROBE_IIII", "BORG_PROBE_IV");
                     rowValue = rowValue.Replace("BORG_SCOUT_IIII", "");
@@ -445,7 +370,6 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("TERRAN_STRIKE_CRUISER_IIII", "");
                     rowValue = rowValue.Replace("TERRAN_TRANSPORT_IIII", "");
                     #endregion
-
                     #region Type4_to_5
                     // real Type 4 -> 5
                     rowValue = rowValue.Replace("BORG_TACTICAL_CUBE_IVI", "BORG_TACTICAL_CUBE_V");
@@ -461,12 +385,10 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("ROM_CRUISER_IVI", "");
                     rowValue = rowValue.Replace("TERRAN_CRUISER_IVI", "TERRAN_CRUISER_V");
                     #endregion
-
                     #region Type5
                     rowValue = rowValue.Replace("FED_CRUISER_VI", "");
                     rowValue = rowValue.Replace("TERRAN_CRUISER_VI", "");
                     #endregion
-
                     #region NoType2
                     // no Type 2
                     rowValue = rowValue.Replace("CARD_CONSTRUCTION_SHIPI", "");
@@ -479,19 +401,10 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("HAZARI_ATTACK_SHIPI", "");
                     rowValue = rowValue.Replace("KAZON_ATTACK_SHIPI", "");
                     rowValue = rowValue.Replace("TALAXIAN_ATTACK_SHIPI", "");
-
                     #endregion
-
                     #region Shipnames
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_III",
-
 Environment.NewLine +
 "        <ShipName>	Cochraine B </ShipName>" + Environment.NewLine +
 "        <ShipName>	Khan B </ShipName>" + Environment.NewLine +
@@ -535,9 +448,6 @@ Environment.NewLine +
 "        <ShipName>	T. NCC-54415	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54416	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54417	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_II",
 Environment.NewLine +
@@ -584,9 +494,6 @@ Environment.NewLine +
 "        <ShipName>	T. NCC-1435	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1436	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_I",
 Environment.NewLine +
 "        <ShipName>	Cochraine </ShipName>" + Environment.NewLine +
@@ -631,8 +538,6 @@ Environment.NewLine +
 "        <ShipName>	T. NCC-742	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-743	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-744	</ShipName>" + Environment.NewLine);
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_STRIKE_CRUISER_III",
 Environment.NewLine +
@@ -679,10 +584,6 @@ Environment.NewLine +
 "        <ShipName>	N. NCC-65602	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-65603	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_STRIKE_CRUISER_II",
 Environment.NewLine +
 "        <ShipName>	Niagara	</ShipName>" + Environment.NewLine +
@@ -727,9 +628,6 @@ Environment.NewLine +
 "        <ShipName>	N. NCC-59836	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-59837	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-59838	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_STRIKE_CRUISER_I",
 Environment.NewLine +
@@ -776,8 +674,6 @@ Environment.NewLine +
 "        <ShipName>	D. NCC-1516	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-1517	</ShipName>" + Environment.NewLine);
 
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SPY_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	V. NCC-98347	</ShipName>" + Environment.NewLine +
@@ -822,8 +718,6 @@ Environment.NewLine +
 "        <ShipName>	V. NCC-98386	</ShipName>" + Environment.NewLine +
 "        <ShipName>	V. NCC-98387	</ShipName>" + Environment.NewLine +
 "        <ShipName>	V. NCC-98388	</ShipName>" + Environment.NewLine);
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SPY_SHIP_II",
 Environment.NewLine +
@@ -870,8 +764,6 @@ Environment.NewLine +
 "        <ShipName>	Runabout VII	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Runabout VIII	</ShipName>" + Environment.NewLine);
 
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SPY_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Sarajevo	</ShipName>" + Environment.NewLine +
@@ -917,12 +809,7 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-505	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-506	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCOUT_III",
-
           Environment.NewLine +
 "        <ShipName>	Saber	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Yeager	</ShipName>" + Environment.NewLine +
@@ -966,12 +853,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-61984	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-61985	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-61986	</ShipName>" + Environment.NewLine);
-
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCOUT_II",
 Environment.NewLine +
@@ -1018,10 +899,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-1980	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-1981	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCOUT_I",
 Environment.NewLine +
 "        <ShipName>	Iceland	</ShipName>" + Environment.NewLine +
@@ -1066,9 +943,6 @@ Environment.NewLine +
 "        <ShipName>	Delta NX-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Delta NX-41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Delta NX-42	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_FRIGATE_IV",
 Environment.NewLine +
@@ -1115,9 +989,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-4265	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-4266	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_FRIGATE_III",
 Environment.NewLine +
 "        <ShipName>	Rutherford	</ShipName>" + Environment.NewLine +
@@ -1162,13 +1033,6 @@ Environment.NewLine +
 "        <ShipName>	M. NCC-1939	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. NCC-1940	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. NCC-1941	</ShipName>" + Environment.NewLine);
-
-
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_FRIGATE_II",
 Environment.NewLine +
@@ -1215,11 +1079,6 @@ Environment.NewLine +
 "        <ShipName>	M. NCC-1161	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. NCC-1162	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_FRIGATE_I",
 Environment.NewLine +
 "        <ShipName>	Enterprise NX-01!	</ShipName>" + Environment.NewLine +
@@ -1264,9 +1123,6 @@ Environment.NewLine +
 "        <ShipName>	NX-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NX-41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NX-42	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_IV",
 Environment.NewLine +
@@ -1313,10 +1169,6 @@ Environment.NewLine +
 "        <ShipName>	D. NCC-74303	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-74304	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_III",
 Environment.NewLine +
 "        <ShipName>	Steamrunner	</ShipName>" + Environment.NewLine +
@@ -1361,11 +1213,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-52168	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-52169	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-52170	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_II",
 Environment.NewLine +
@@ -1412,11 +1259,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-2930	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-2931	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_I",
 Environment.NewLine +
 "        <ShipName>	Intrepid NX-01	</ShipName>" + Environment.NewLine +
@@ -1462,17 +1304,8 @@ Environment.NewLine +
 "        <ShipName>	I. NX-41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	I. NX-42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CRUISER_V",
-
-
-
-                    "        <ShipName>	Akira	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Akira	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Jupiter	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Thunderchild	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Geronimo	</ShipName>" + Environment.NewLine +
@@ -1515,12 +1348,8 @@ Environment.NewLine +
 "        <ShipName>	NCC-79471	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-79472	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CRUISER_IV",
 Environment.NewLine +
-
                   "        <ShipName>	Intrepid	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Warship Voyager!	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Pathfinder	</ShipName>" + Environment.NewLine +
@@ -1563,11 +1392,6 @@ Environment.NewLine +
 "        <ShipName>	I. NCC-74697	</ShipName>" + Environment.NewLine +
 "        <ShipName>	I. NCC-74698	</ShipName>" + Environment.NewLine +
 "        <ShipName>	I. NCC-74699	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CRUISER_III",
 Environment.NewLine +
@@ -1614,11 +1438,6 @@ Environment.NewLine +
 "        <ShipName>	E. NCC-2155	</ShipName>" + Environment.NewLine +
 "        <ShipName>	E. NCC-2156	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CRUISER_II",
 Environment.NewLine +
 "        <ShipName>	Apollo	</ShipName>" + Environment.NewLine +
@@ -1663,11 +1482,6 @@ Environment.NewLine +
 "        <ShipName>	E. NCC-2008	</ShipName>" + Environment.NewLine +
 "        <ShipName>	E. NCC-2009	</ShipName>" + Environment.NewLine +
 "        <ShipName>	E. NCC-2010	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CRUISER_I",
 Environment.NewLine +
@@ -1714,11 +1528,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-1748	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-1749	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CONSTRUCTION_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	B. NCC-2378	</ShipName>" + Environment.NewLine +
@@ -1763,11 +1572,6 @@ Environment.NewLine +
 "        <ShipName>	B. NCC-2417	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-2418	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-2419	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CONSTRUCTION_SHIP_I",
 Environment.NewLine +
@@ -1814,11 +1618,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-887	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-888	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COMMAND_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	Sovereign	</ShipName>" + Environment.NewLine +
@@ -1863,11 +1662,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-97261	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-97262	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-97263	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COMMAND_SHIP_II",
 Environment.NewLine +
@@ -1914,11 +1708,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-8495	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-8496	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COMMAND_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Ambassador	</ShipName>" + Environment.NewLine +
@@ -1963,11 +1752,6 @@ Environment.NewLine +
 "        <ShipName>	A. NCC-3453	</ShipName>" + Environment.NewLine +
 "        <ShipName>	A. NCC-3454	</ShipName>" + Environment.NewLine +
 "        <ShipName>	A. NCC-3455	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COLONY_SHIP_III",
 Environment.NewLine +
@@ -2014,11 +1798,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-3575	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-3576	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COLONY_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Ecuador	</ShipName>" + Environment.NewLine +
@@ -2063,11 +1842,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-2880	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-2881	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-2882	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COLONY_SHIP_I",
 Environment.NewLine +
@@ -2114,11 +1888,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-474	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-475	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_TRANSPORT_III",
 Environment.NewLine +
 "        <ShipName>	D'Gathi	</ShipName>" + Environment.NewLine +
@@ -2163,11 +1932,6 @@ Environment.NewLine +
 "        <ShipName>	D'Gathi 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Gathi 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Gathi 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_TRANSPORT_II",
 Environment.NewLine +
@@ -2214,16 +1978,8 @@ Environment.NewLine +
 "        <ShipName>	Flitali 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Flitali 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_TRANSPORT_I",
-
-
-
-                    "        <ShipName>	R'Deminor 	</ShipName>" + Environment.NewLine +
+"        <ShipName>	R'Deminor 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Deminor 2	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Deminor 3	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Deminor 4	</ShipName>" + Environment.NewLine +
@@ -2265,8 +2021,6 @@ Environment.NewLine +
 "        <ShipName>	R'Deminor 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Deminor 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Deminor 42	</ShipName>" + Environment.NewLine);
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_TACTICAL_CRUISER",
 Environment.NewLine +
@@ -2313,9 +2067,6 @@ Environment.NewLine +
 "        <ShipName>	Norexan 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Norexan 42	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_STRIKE_CRUISER_III",
 Environment.NewLine +
 "        <ShipName>	D'Idricon 	</ShipName>" + Environment.NewLine +
@@ -2360,11 +2111,6 @@ Environment.NewLine +
 "        <ShipName>	D'Idricon 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Idricon 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Idricon 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_STRIKE_CRUISER_II",
 Environment.NewLine +
@@ -2411,11 +2157,6 @@ Environment.NewLine +
 "        <ShipName>	D'Drexon 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Drexon 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_STRIKE_CRUISER_I",
 Environment.NewLine +
 "        <ShipName>	R'Tan 	</ShipName>" + Environment.NewLine +
@@ -2460,11 +2201,6 @@ Environment.NewLine +
 "        <ShipName>	R'Tan 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Tan 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Tan 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SPY_SHIP_III",
 Environment.NewLine +
@@ -2511,12 +2247,8 @@ Environment.NewLine +
 "        <ShipName>	Tal Shiar Alpha 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tal Shiar Alpha 42	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SPY_SHIP_II",
-
-                                                  Environment.NewLine +
+                          Environment.NewLine +
 "        <ShipName>	Tal Shiar  Omega 1	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tal Shiar  Omega 2	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tal Shiar  Omega 3	</ShipName>" + Environment.NewLine +
@@ -2559,8 +2291,6 @@ Environment.NewLine +
 "        <ShipName>	Tal Shiar  Omega 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tal Shiar  Omega 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tal Shiar  Omega 42	</ShipName>" + Environment.NewLine);
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SPY_SHIP_I",
 Environment.NewLine +
@@ -2607,11 +2337,6 @@ Environment.NewLine +
 "        <ShipName>	Tal Shiar  41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tal Shiar  42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SCOUT_III",
 Environment.NewLine +
 "        <ShipName>	R`Kovar	</ShipName>" + Environment.NewLine +
@@ -2656,11 +2381,6 @@ Environment.NewLine +
 "        <ShipName>	R`Kovar 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R`Kovar 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R`Kovar 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SCOUT_II",
 Environment.NewLine +
@@ -2707,11 +2427,6 @@ Environment.NewLine +
 "        <ShipName>	D'Kor 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Kor 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SCOUT_I",
 Environment.NewLine +
 "        <ShipName>	R'Mor 4	</ShipName>" + Environment.NewLine +
@@ -2753,11 +2468,6 @@ Environment.NewLine +
 "        <ShipName>	R'Mor 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Mor 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Mor 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SCIENCE_SHIP_III",
 Environment.NewLine +
@@ -2804,12 +2514,6 @@ Environment.NewLine +
 "        <ShipName>	D`Rakor 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D`Rakor 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SCIENCE_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	D'Renet	</ShipName>" + Environment.NewLine +
@@ -2854,11 +2558,6 @@ Environment.NewLine +
 "        <ShipName>	D'Renet 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Renet 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Renet 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_SCIENCE_SHIP_I",
 Environment.NewLine +
@@ -2905,11 +2604,6 @@ Environment.NewLine +
 "        <ShipName>	DՒaxinor 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	DՒaxinor 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_MEDICAL_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Vralnath	</ShipName>" + Environment.NewLine +
@@ -2954,11 +2648,6 @@ Environment.NewLine +
 "        <ShipName>	Vralnath 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Vralnath 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Vralnath 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_MEDICAL_SHIP_I",
 Environment.NewLine +
@@ -3005,13 +2694,6 @@ Environment.NewLine +
 "        <ShipName>	Torvath 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Torvath 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DESTROYER_IV",
 Environment.NewLine +
 "        <ShipName>	D'Xokra 	</ShipName>" + Environment.NewLine +
@@ -3056,11 +2738,6 @@ Environment.NewLine +
 "        <ShipName>	D'Xokra 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Xokra 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Xokra 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DESTROYER_III",
 Environment.NewLine +
@@ -3107,11 +2784,6 @@ Environment.NewLine +
 "        <ShipName>	D'Rutura 41 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Rutura 42 	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DESTROYER_II",
 Environment.NewLine +
 "        <ShipName>	D'Raniden	</ShipName>" + Environment.NewLine +
@@ -3156,11 +2828,6 @@ Environment.NewLine +
 "        <ShipName>	DՒaniden 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	DՒaniden 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	DՒaniden 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DESTROYER_I",
 Environment.NewLine +
@@ -3207,11 +2874,6 @@ Environment.NewLine +
 "        <ShipName>	D'Lokra 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Lokra 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_CRUISER_IV",
 Environment.NewLine +
 "        <ShipName>	D'Bora 	</ShipName>" + Environment.NewLine +
@@ -3256,11 +2918,6 @@ Environment.NewLine +
 "        <ShipName>	D'Bora 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Bora 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Bora 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_CRUISER_III",
 Environment.NewLine +
@@ -3307,11 +2964,6 @@ Environment.NewLine +
 "        <ShipName>	R'Derex 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Derex 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_CRUISER_II",
 Environment.NewLine +
 "        <ShipName>	D'Renedex 	</ShipName>" + Environment.NewLine +
@@ -3356,11 +3008,6 @@ Environment.NewLine +
 "        <ShipName>	D'Renedex 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Renedex 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Renedex 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_CRUISER_I",
 Environment.NewLine +
@@ -3407,11 +3054,6 @@ Environment.NewLine +
 "        <ShipName>	D'Ridrex 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Ridrex 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_COMMAND_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	Serrola!	</ShipName>" + Environment.NewLine +
@@ -3456,11 +3098,6 @@ Environment.NewLine +
 "        <ShipName>	D'deridex Advanced 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'deridex Advanced 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'deridex Advanced 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_COMMAND_SHIP_II",
 Environment.NewLine +
@@ -3507,11 +3144,6 @@ Environment.NewLine +
 "        <ShipName>	D'deridex 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'deridex 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_COMMAND_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Derext 	</ShipName>" + Environment.NewLine +
@@ -3556,11 +3188,6 @@ Environment.NewLine +
 "        <ShipName>	Derext 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Derext 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Derext 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_COLONY_SHIP_III",
 Environment.NewLine +
@@ -3607,11 +3234,6 @@ Environment.NewLine +
 "        <ShipName>	D'Vetor 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Vetor 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_COLONY_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	D'Retex 	</ShipName>" + Environment.NewLine +
@@ -3656,11 +3278,6 @@ Environment.NewLine +
 "        <ShipName>	D'Retex 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Retex 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Retex 42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesROM_COLONY_SHIP_I",
 Environment.NewLine +
@@ -3707,11 +3324,6 @@ Environment.NewLine +
 "        <ShipName>	D'Trexor 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D'Trexor 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_TRANSPORT_III",
 Environment.NewLine +
 "        <ShipName>	Batris!	</ShipName>" + Environment.NewLine +
@@ -3756,11 +3368,6 @@ Environment.NewLine +
 "        <ShipName>	DojqIvon T40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	DojqIvon T41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	DojqIvon T42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_TRANSPORT_II",
 Environment.NewLine +
@@ -3807,11 +3414,6 @@ Environment.NewLine +
 "        <ShipName>	Korris T41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Korris T42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_TRANSPORT_I",
 Environment.NewLine +
 "        <ShipName>	Qo'lobHa'	</ShipName>" + Environment.NewLine +
@@ -3856,11 +3458,6 @@ Environment.NewLine +
 "        <ShipName>	Bochtev T40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bochtev T41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bochtev T42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_STRIKE_CRUISER_II",
 Environment.NewLine +
@@ -3907,11 +3504,6 @@ Environment.NewLine +
 "        <ShipName>	SeHwI' S40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	SeHwI' S41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_STRIKE_CRUISER_I",
 Environment.NewLine +
 "        <ShipName>	Sunzi 	</ShipName>" + Environment.NewLine +
@@ -3956,11 +3548,6 @@ Environment.NewLine +
 "        <ShipName>	QaDwI' S38	</ShipName>" + Environment.NewLine +
 "        <ShipName>	QaDwI' S39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	QaDwI' S40	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SPY_SHIP_III",
 Environment.NewLine +
@@ -4007,11 +3594,6 @@ Environment.NewLine +
 "        <ShipName>	Duras 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Duras 41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SPY_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Q'Retext 	</ShipName>" + Environment.NewLine +
@@ -4056,11 +3638,6 @@ Environment.NewLine +
 "        <ShipName>	Lursa 39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Lursa 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Lursa 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SPY_SHIP_I",
 Environment.NewLine +
@@ -4107,10 +3684,6 @@ Environment.NewLine +
 "        <ShipName>	B'Etor 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B'Etor 41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCOUT_III",
 Environment.NewLine +
 "        <ShipName>	B'rell	</ShipName>" + Environment.NewLine +
@@ -4155,11 +3728,6 @@ Environment.NewLine +
 "        <ShipName>	Bird of Prey B40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey B41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey B42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCOUT_II",
 Environment.NewLine +
@@ -4206,11 +3774,6 @@ Environment.NewLine +
 "        <ShipName>	Bird of Prey K3-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey K3-41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCOUT_I",
 Environment.NewLine +
 "        <ShipName>	R'Kuf 	</ShipName>" + Environment.NewLine +
@@ -4255,11 +3818,6 @@ Environment.NewLine +
 "        <ShipName>	Bird of Prey R40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey R41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey R42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCIENCE_SHIP_III",
 Environment.NewLine +
@@ -4306,11 +3864,6 @@ Environment.NewLine +
 "        <ShipName>	Nivjech S41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Nivjech S42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCIENCE_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	E3	</ShipName>" + Environment.NewLine +
@@ -4355,11 +3908,6 @@ Environment.NewLine +
 "        <ShipName>	Melota S40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Melota S41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Melota S42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_SCIENCE_SHIP_I",
 Environment.NewLine +
@@ -4406,11 +3954,6 @@ Environment.NewLine +
 "        <ShipName>	M'Char S41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M'Char S42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_MEDICAL_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Fek'La 	</ShipName>" + Environment.NewLine +
@@ -4455,11 +3998,6 @@ Environment.NewLine +
 "        <ShipName>	Nivta' M40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Nivta' M41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Nivta' M42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_MEDICAL_SHIP_I",
 Environment.NewLine +
@@ -4506,11 +4044,6 @@ Environment.NewLine +
 "        <ShipName>	NaSghong M41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NaSghong M42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DIPLOMATIC_III",
 Environment.NewLine +
 "        <ShipName>	Vor'La 	</ShipName>" + Environment.NewLine +
@@ -4555,11 +4088,6 @@ Environment.NewLine +
 "        <ShipName>	Gorkon D39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Gorkon D40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Gorkon D41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DIPLOMATIC_II",
 Environment.NewLine +
@@ -4606,11 +4134,6 @@ Environment.NewLine +
 "        <ShipName>	Qui'Tu D40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Qui'Tu D41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DIPLOMATIC_I",
 Environment.NewLine +
 "        <ShipName>	Qach Na 	</ShipName>" + Environment.NewLine +
@@ -4655,11 +4178,6 @@ Environment.NewLine +
 "        <ShipName>	HoSqempa D39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	HoSqempa D40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	HoSqempa D41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_IV",
 Environment.NewLine +
@@ -4706,11 +4224,6 @@ Environment.NewLine +
 "        <ShipName>	Bird of Prey K41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey K42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_III",
 Environment.NewLine +
 "        <ShipName>	D12 Raubvogel	</ShipName>" + Environment.NewLine +
@@ -4755,11 +4268,6 @@ Environment.NewLine +
 "        <ShipName>	Bird of Prey D39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey D40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bird of Prey D41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_II",
 Environment.NewLine +
@@ -4806,11 +4314,6 @@ Environment.NewLine +
 "        <ShipName>	NivDup D40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NivDup D41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_DESTROYER_I",
 Environment.NewLine +
 "        <ShipName>	Raptor	</ShipName>" + Environment.NewLine +
@@ -4855,11 +4358,6 @@ Environment.NewLine +
 "        <ShipName>	HurghSan R39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	HurghSan R40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	HurghSan R41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_IV",
 Environment.NewLine +
@@ -4906,11 +4404,6 @@ Environment.NewLine +
 "        <ShipName>	JaqwI' K41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	JaqwI' K42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_III",
 Environment.NewLine +
 "        <ShipName>	D7	</ShipName>" + Environment.NewLine +
@@ -4955,11 +4448,6 @@ Environment.NewLine +
 "        <ShipName>	NaSDup D7-36	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NaSDup D7-37	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NaSDup D7-38	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_II",
 Environment.NewLine +
@@ -5006,11 +4494,6 @@ Environment.NewLine +
 "        <ShipName>	SepwI' D6-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	SepwI' D6-41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CRUISER_I",
 Environment.NewLine +
 "        <ShipName>	D4 </ShipName>" + Environment.NewLine +
@@ -5055,11 +4538,6 @@ Environment.NewLine +
 "        <ShipName>	Qo'jot D4-39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Qo'jot D4-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Qo'jot D4-41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COMMAND_SHIP_III",
 Environment.NewLine +
@@ -5106,9 +4584,6 @@ Environment.NewLine +
 "        <ShipName>	Pride of the Empire N41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Pride of the Empire N42	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COMMAND_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Vor'cha	</ShipName>" + Environment.NewLine +
@@ -5153,10 +4628,6 @@ Environment.NewLine +
 "        <ShipName>	QijbaS V35	</ShipName>" + Environment.NewLine +
 "        <ShipName>	QijbaS V36	</ShipName>" + Environment.NewLine +
 "        <ShipName>	QijbaS V37	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COMMAND_SHIP_I",
 Environment.NewLine +
@@ -5203,9 +4674,6 @@ Environment.NewLine +
 "        <ShipName>	J'Ddan D5-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	J'Ddan D5-41	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_TACTICAL_CRUISER",
 Environment.NewLine +
 "        <ShipName>	Feg'lhr	</ShipName>" + Environment.NewLine +
@@ -5250,9 +4718,6 @@ Environment.NewLine +
 "        <ShipName>	Advanced Cruiser F40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Advanced Cruiser F41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Advanced Cruiser F42	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COLONY_SHIP_II",
 Environment.NewLine +
@@ -5299,11 +4764,6 @@ Environment.NewLine +
 "        <ShipName>	Hemlom C41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Hemlom C42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_COLONY_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	BoHcha	</ShipName>" + Environment.NewLine +
@@ -5348,11 +4808,6 @@ Environment.NewLine +
 "        <ShipName>	ChavwI' C40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	ChavwI' C41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	ChavwI' C42	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_III",
 Environment.NewLine +
@@ -5399,10 +4854,6 @@ Environment.NewLine +
 "        <ShipName>	T. NCC-54416	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-54417	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_II",
 Environment.NewLine +
 "        <ShipName>	Cochranine A </ShipName>" + Environment.NewLine +
@@ -5447,10 +4898,6 @@ Environment.NewLine +
 "        <ShipName>	T. NCC-1434	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1435	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-1436	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_I",
 Environment.NewLine +
@@ -5497,10 +4944,6 @@ Environment.NewLine +
 "        <ShipName>	T. NCC-743	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. NCC-744	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_STRIKE_CRUISER_III",
 Environment.NewLine +
 "        <ShipName>	Nebula	</ShipName>" + Environment.NewLine +
@@ -5545,10 +4988,6 @@ Environment.NewLine +
 "        <ShipName>	N. NCC-65601	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-65602	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-65603	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_STRIKE_CRUISER_II",
 Environment.NewLine +
@@ -5595,10 +5034,6 @@ Environment.NewLine +
 "        <ShipName>	N. NCC-59837	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-59838	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_STRIKE_CRUISER_I",
 Environment.NewLine +
 "        <ShipName>	Belknap	</ShipName>" + Environment.NewLine +
@@ -5643,10 +5078,6 @@ Environment.NewLine +
 "        <ShipName>	D. NCC-1515	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-1516	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-1517	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SPY_SHIP_III",
 Environment.NewLine +
@@ -5693,10 +5124,6 @@ Environment.NewLine +
 "        <ShipName>	V. NCC-98387	</ShipName>" + Environment.NewLine +
 "        <ShipName>	V. NCC-98388	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SPY_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Danube	</ShipName>" + Environment.NewLine +
@@ -5741,10 +5168,6 @@ Environment.NewLine +
 "        <ShipName>	Runabout VI	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Runabout VII	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Runabout VIII	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SPY_SHIP_I",
 Environment.NewLine +
@@ -5791,11 +5214,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-505	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-506	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCOUT_III",
 Environment.NewLine +
 "        <ShipName>	Saber	</ShipName>" + Environment.NewLine +
@@ -5840,10 +5258,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-61984	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-61985	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-61986	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCOUT_II",
 Environment.NewLine +
@@ -5890,10 +5304,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-1980	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-1981	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCOUT_I",
 Environment.NewLine +
 "        <ShipName>	Iceland	</ShipName>" + Environment.NewLine +
@@ -5938,10 +5348,6 @@ Environment.NewLine +
 "        <ShipName>	Delta NX-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Delta NX-41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Delta NX-42	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCIENCE_SHIP_III",
 Environment.NewLine +
@@ -5988,11 +5394,6 @@ Environment.NewLine +
 "        <ShipName>	N. NCC-73550	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-73551	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCIENCE_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Oberth	</ShipName>" + Environment.NewLine +
@@ -6037,11 +5438,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-1964	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-1965	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-1966	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCIENCE_SHIP_I",
 Environment.NewLine +
@@ -6088,11 +5484,6 @@ Environment.NewLine +
 "        <ShipName>	H. NCC-697	</ShipName>" + Environment.NewLine +
 "        <ShipName>	H. NCC-698	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_MEDICAL_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Olympic	</ShipName>" + Environment.NewLine +
@@ -6137,11 +5528,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-87823	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-87824	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-87825	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_MEDICAL_SHIP_I",
 Environment.NewLine +
@@ -6188,9 +5574,6 @@ Environment.NewLine +
 "        <ShipName>	D. NCC-984	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-985	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_FRIGATE_IV",
 Environment.NewLine +
 "        <ShipName>	New Orleans	</ShipName>" + Environment.NewLine +
@@ -6235,8 +5618,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-4264	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-4265	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-4266	</ShipName>" + Environment.NewLine);
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_FRIGATE_III",
 Environment.NewLine +
@@ -6283,10 +5664,6 @@ Environment.NewLine +
 "        <ShipName>	M. NCC-1940	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. NCC-1941	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_FRIGATE_II",
 Environment.NewLine +
 "        <ShipName>	Miranda	</ShipName>" + Environment.NewLine +
@@ -6331,10 +5708,6 @@ Environment.NewLine +
 "        <ShipName>	M. NCC-1160	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. NCC-1161	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. NCC-1162	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_FRIGATE_I",
 Environment.NewLine +
@@ -6381,10 +5754,6 @@ Environment.NewLine +
 "        <ShipName>	NX-41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NX-42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DIPLOMATIC_III",
 Environment.NewLine +
 "        <ShipName>	Bashir	</ShipName>" + Environment.NewLine +
@@ -6429,11 +5798,6 @@ Environment.NewLine +
 "        <ShipName>	B. NCC-87590	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87591	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87592	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DIPLOMATIC_II",
 Environment.NewLine +
@@ -6480,11 +5844,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-63590	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-63591	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DIPLOMATIC_I",
 Environment.NewLine +
 "        <ShipName>	Sarek	</ShipName>" + Environment.NewLine +
@@ -6529,9 +5888,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-603	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-604	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-605	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_IV",
 Environment.NewLine +
@@ -6578,8 +5934,6 @@ Environment.NewLine +
 "        <ShipName>	D. NCC-74303	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-74304	</ShipName>" + Environment.NewLine);
 
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_III",
 Environment.NewLine +
 "        <ShipName>	Steamrunner	</ShipName>" + Environment.NewLine +
@@ -6624,10 +5978,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-52168	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-52169	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-52170	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_II",
 Environment.NewLine +
@@ -6674,10 +6024,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-2930	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-2931	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_I",
 Environment.NewLine +
 "        <ShipName>	Intrepid NX-01	</ShipName>" + Environment.NewLine +
@@ -6722,10 +6068,6 @@ Environment.NewLine +
 "        <ShipName>	I. NX-40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	I. NX-41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	I. NX-42	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CRUISER_V",
 Environment.NewLine +
@@ -6772,9 +6114,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-79471	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-79472	</ShipName>" + Environment.NewLine);
 
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CRUISER_IV",
 Environment.NewLine +
 "        <ShipName>	Intrepid	</ShipName>" + Environment.NewLine +
@@ -6819,9 +6158,6 @@ Environment.NewLine +
 "        <ShipName>	I. NCC-74697	</ShipName>" + Environment.NewLine +
 "        <ShipName>	I. NCC-74698	</ShipName>" + Environment.NewLine +
 "        <ShipName>	I. NCC-74699	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CRUISER_III",
 Environment.NewLine +
@@ -6868,10 +6204,6 @@ Environment.NewLine +
 "        <ShipName>	E. NCC-2155	</ShipName>" + Environment.NewLine +
 "        <ShipName>	E. NCC-2156	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CRUISER_II",
 Environment.NewLine +
 "        <ShipName>	Apollo	</ShipName>" + Environment.NewLine +
@@ -6916,10 +6248,6 @@ Environment.NewLine +
 "        <ShipName>	E. NCC-2008	</ShipName>" + Environment.NewLine +
 "        <ShipName>	E. NCC-2009	</ShipName>" + Environment.NewLine +
 "        <ShipName>	E. NCC-2010	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CRUISER_I",
 Environment.NewLine +
@@ -6966,10 +6294,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-1748	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-1749	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CONSTRUCTION_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	B. NCC-2378	</ShipName>" + Environment.NewLine +
@@ -7014,10 +6338,6 @@ Environment.NewLine +
 "        <ShipName>	B. NCC-2417	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-2418	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-2419	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CONSTRUCTION_SHIP_I",
 Environment.NewLine +
@@ -7064,11 +6384,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-887	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-888	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COMMAND_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	Sovereign	</ShipName>" + Environment.NewLine +
@@ -7113,10 +6428,6 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-97261	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-97262	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-97263	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COMMAND_SHIP_II",
 Environment.NewLine +
@@ -7163,10 +6474,6 @@ Environment.NewLine +
 "        <ShipName>	NCC-8495	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-8496	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COMMAND_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Ambassador	</ShipName>" + Environment.NewLine +
@@ -7211,10 +6518,6 @@ Environment.NewLine +
 "        <ShipName>	A. NCC-3453	</ShipName>" + Environment.NewLine +
 "        <ShipName>	A. NCC-3454	</ShipName>" + Environment.NewLine +
 "        <ShipName>	A. NCC-3455	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COLONY_SHIP_III",
 Environment.NewLine +
@@ -7261,10 +6564,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-3575	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-3576	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COLONY_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Ecuador	</ShipName>" + Environment.NewLine +
@@ -7309,10 +6608,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-2880	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-2881	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-2882	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COLONY_SHIP_I",
 Environment.NewLine +
@@ -7359,10 +6654,6 @@ Environment.NewLine +
 "        <ShipName>	C. NCC-474	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. NCC-475	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_TRANSPORT_III",
 Environment.NewLine +
 "        <ShipName> Tr361 </ShipName>" + Environment.NewLine +
@@ -7373,10 +6664,6 @@ Environment.NewLine +
 "        <ShipName> Tr396 </ShipName>" + Environment.NewLine +
 "        <ShipName> Tr397 </ShipName>" + Environment.NewLine +
 "        <ShipName> Tr399 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_TRANSPORT_II",
 Environment.NewLine +
@@ -7392,10 +6679,6 @@ Environment.NewLine +
 "        <ShipName> Tr299 </ShipName>" + Environment.NewLine +
 "        <ShipName> Tr300 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_TRANSPORT_I",
 Environment.NewLine +
 "        <ShipName> Tr114 </ShipName>" + Environment.NewLine +
@@ -7410,8 +6693,6 @@ Environment.NewLine +
 "        <ShipName> Tr170 </ShipName>" + Environment.NewLine +
 "        <ShipName> Tr177 </ShipName>" + Environment.NewLine);
 
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_STRIKE_CRUISER_II",
 Environment.NewLine +
 "        <ShipName> DST217 </ShipName>" + Environment.NewLine +
@@ -7424,8 +6705,6 @@ Environment.NewLine +
 "        <ShipName> DST288 </ShipName>" + Environment.NewLine +
 "        <ShipName> DST289 </ShipName>" + Environment.NewLine +
 "        <ShipName> DST290 </ShipName>" + Environment.NewLine);
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_STRIKE_CRUISER_I",
 Environment.NewLine +
@@ -7440,8 +6719,6 @@ Environment.NewLine +
 "        <ShipName> DST153 </ShipName>" + Environment.NewLine +
 "        <ShipName> DST170 </ShipName>" + Environment.NewLine);
 
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SPY_SHIP_III",
 Environment.NewLine +
 "        <ShipName> SP337 </ShipName>" + Environment.NewLine +
@@ -7449,20 +6726,12 @@ Environment.NewLine +
 "        <ShipName> SP339 </ShipName>" + Environment.NewLine +
 "        <ShipName> SP340 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SPY_SHIP_II",
 Environment.NewLine +
 "        <ShipName> SP207 </ShipName>" + Environment.NewLine +
 "        <ShipName> SP208 </ShipName>" + Environment.NewLine +
 "        <ShipName> SP209 </ShipName>" + Environment.NewLine +
 "        <ShipName> SP210 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SPY_SHIP_I",
 Environment.NewLine +
@@ -7477,10 +6746,6 @@ Environment.NewLine +
 "        <ShipName> SP091 </ShipName>" + Environment.NewLine +
 "        <ShipName> SP099 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCOUT_III",
 Environment.NewLine +
 "        <ShipName> Igata'dak </ShipName>" + Environment.NewLine +
@@ -7493,10 +6758,6 @@ Environment.NewLine +
 "        <ShipName> Sc 881 </ShipName>" + Environment.NewLine +
 "        <ShipName> Sc 965 </ShipName>" + Environment.NewLine +
 "        <ShipName> Sc 991 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCOUT_II",
 Environment.NewLine +
@@ -7511,10 +6772,6 @@ Environment.NewLine +
 "        <ShipName> Sc 795 </ShipName>" + Environment.NewLine +
 "        <ShipName> Sc 799 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCOUT_I",
 Environment.NewLine +
 "        <ShipName> Zadan'kogok </ShipName>" + Environment.NewLine +
@@ -7528,10 +6785,6 @@ Environment.NewLine +
 "        <ShipName> Sc 155 </ShipName>" + Environment.NewLine +
 "        <ShipName> Sc 189 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCIENCE_SHIP_II",
 Environment.NewLine +
 "        <ShipName> 7S063 </ShipName>" + Environment.NewLine +
@@ -7542,10 +6795,6 @@ Environment.NewLine +
 "        <ShipName> 7S098 </ShipName>" + Environment.NewLine +
 "        <ShipName> 7S105 </ShipName>" + Environment.NewLine +
 "        <ShipName> 7S112 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_SCIENCE_SHIP_I",
 Environment.NewLine +
@@ -7558,10 +6807,6 @@ Environment.NewLine +
 "        <ShipName> 7S049 </ShipName>" + Environment.NewLine +
 "        <ShipName> 7S056 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_III",
 Environment.NewLine +
 "        <ShipName> Weyoun 352 </ShipName>" + Environment.NewLine +
@@ -7569,8 +6814,6 @@ Environment.NewLine +
 "        <ShipName> Weyoun 386 </ShipName>" + Environment.NewLine +
 "        <ShipName> Weyoun 390 </ShipName>" + Environment.NewLine +
 "        <ShipName> Weyoun 396 </ShipName>" + Environment.NewLine);
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_II",
 Environment.NewLine +
@@ -7580,8 +6823,6 @@ Environment.NewLine +
 "        <ShipName> Weyoun 240 </ShipName>" + Environment.NewLine +
 "        <ShipName> Weyoun 256 </ShipName>" + Environment.NewLine);
 
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DIPLOMATIC_I",
 Environment.NewLine +
 "        <ShipName> Weyoun 052 </ShipName>" + Environment.NewLine +
@@ -7589,10 +6830,6 @@ Environment.NewLine +
 "        <ShipName> Weyoun 116 </ShipName>" + Environment.NewLine +
 "        <ShipName> Weyoun 120 </ShipName>" + Environment.NewLine +
 "        <ShipName> Weyoun 156 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DESTROYER_IV",
 Environment.NewLine +
@@ -7607,10 +6844,6 @@ Environment.NewLine +
 "        <ShipName> D 4191 </ShipName>" + Environment.NewLine +
 "        <ShipName> D 4309 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DESTROYER_III",
 Environment.NewLine +
 "        <ShipName> Gegnat </ShipName>" + Environment.NewLine +
@@ -7624,10 +6857,6 @@ Environment.NewLine +
 "        <ShipName> D 2610 </ShipName>" + Environment.NewLine +
 "        <ShipName> D 2786 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DESTROYER_II",
 Environment.NewLine +
 "        <ShipName> Nirgod </ShipName>" + Environment.NewLine +
@@ -7639,10 +6868,6 @@ Environment.NewLine +
 "        <ShipName> D 1839 </ShipName>" + Environment.NewLine +
 "        <ShipName> D 1545 </ShipName>" + Environment.NewLine +
 "        <ShipName> D 1617 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_DESTROYER_I",
 Environment.NewLine +
@@ -7656,10 +6881,6 @@ Environment.NewLine +
 "        <ShipName> D 078 </ShipName>" + Environment.NewLine +
 "        <ShipName> D 091 </ShipName>" + Environment.NewLine +
 "        <ShipName> D 099 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CRUISER_III",
 Environment.NewLine +
@@ -7675,10 +6896,6 @@ Environment.NewLine +
 "        <ShipName> C 381 </ShipName>" + Environment.NewLine +
 "        <ShipName> C 390 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CRUISER_II",
 Environment.NewLine +
 "        <ShipName> Dudona'kaned </ShipName>" + Environment.NewLine +
@@ -7692,10 +6909,6 @@ Environment.NewLine +
 "        <ShipName> C 297 </ShipName>" + Environment.NewLine +
 "        <ShipName> C 299 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CRUISER_I",
 Environment.NewLine +
 "        <ShipName> Sakota'dun </ShipName>" + Environment.NewLine +
@@ -7708,10 +6921,6 @@ Environment.NewLine +
 "        <ShipName> C 196 </ShipName>" + Environment.NewLine +
 "        <ShipName> C 197 </ShipName>" + Environment.NewLine +
 "        <ShipName> C 199 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COMMAND_SHIP_III",
 Environment.NewLine +
@@ -7737,10 +6946,6 @@ Environment.NewLine +
 "        <ShipName> COM 338 </ShipName>" + Environment.NewLine +
 "        <ShipName> COM 356 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COMMAND_SHIP_II",
 Environment.NewLine +
 "        <ShipName> Tikug'kletad </ShipName>" + Environment.NewLine +
@@ -7754,10 +6959,6 @@ Environment.NewLine +
 "        <ShipName> COM 296 </ShipName>" + Environment.NewLine +
 "        <ShipName> COM 299 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COMMAND_SHIP_I",
 Environment.NewLine +
 "        <ShipName> Kanud'yiki </ShipName>" + Environment.NewLine +
@@ -7770,10 +6971,6 @@ Environment.NewLine +
 "        <ShipName> COM 96 </ShipName>" + Environment.NewLine +
 "        <ShipName> COM 98 </ShipName>" + Environment.NewLine +
 "        <ShipName> COM 99 </ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COLONY_SHIP_II",
 Environment.NewLine +
@@ -7789,10 +6986,6 @@ Environment.NewLine +
 "        <ShipName> Co 147 </ShipName>" + Environment.NewLine +
 "        <ShipName> Co 154 </ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_COLONY_SHIP_I",
 Environment.NewLine +
 "        <ShipName> Co 007 </ShipName>" + Environment.NewLine +
@@ -7807,12 +7000,6 @@ Environment.NewLine +
 "        <ShipName> Co 070 </ShipName>" + Environment.NewLine +
 "        <ShipName> Co 077 </ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_III",
 Environment.NewLine +
 "        <ShipName>	Bok'Nor 	</ShipName>" + Environment.NewLine +
@@ -7825,43 +7012,38 @@ Environment.NewLine +
 "        <ShipName>	T. III No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. III No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. III No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_II",
 Environment.NewLine +
@@ -7875,43 +7057,38 @@ Environment.NewLine +
 "        <ShipName>	T. II No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. II No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. II No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. II No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. II No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_I",
 Environment.NewLine +
@@ -7925,43 +7102,38 @@ Environment.NewLine +
 "        <ShipName>	T. I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	T. I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	T. I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_STRIKE_CRUISER_II",
 Environment.NewLine +
@@ -7975,43 +7147,38 @@ Environment.NewLine +
 "        <ShipName>	K. Advanced No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	K. Advanced No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	K. Advanced No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. Advanced No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. Advanced No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	K. Advanced No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_STRIKE_CRUISER_I",
 Environment.NewLine +
@@ -8025,42 +7192,38 @@ Environment.NewLine +
 "        <ShipName>	K. No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	K. No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	K. No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	K. No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	K. No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	K. No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SPY_SHIP_III",
 Environment.NewLine +
@@ -8074,43 +7237,38 @@ Environment.NewLine +
 "        <ShipName>	S. III No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SPY_SHIP_II",
 Environment.NewLine +
@@ -8124,43 +7282,38 @@ Environment.NewLine +
 "        <ShipName>	S. II No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SPY_SHIP_I",
 Environment.NewLine +
@@ -8174,43 +7327,38 @@ Environment.NewLine +
 "        <ShipName>	S. I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCOUT_III",
 Environment.NewLine +
@@ -8224,43 +7372,38 @@ Environment.NewLine +
 "        <ShipName>	S. III No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCOUT_II",
 Environment.NewLine +
@@ -8274,43 +7417,38 @@ Environment.NewLine +
 "        <ShipName>	S. II No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCOUT_I",
 Environment.NewLine +
@@ -8324,43 +7462,38 @@ Environment.NewLine +
 "        <ShipName>	S. I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCIENCE_SHIP_III",
 Environment.NewLine +
@@ -8374,43 +7507,38 @@ Environment.NewLine +
 "        <ShipName>	S. III No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCIENCE_SHIP_II",
 Environment.NewLine +
@@ -8424,43 +7552,38 @@ Environment.NewLine +
 "        <ShipName>	S. II No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. II No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCIENCE_SHIP_I",
 Environment.NewLine +
@@ -8474,43 +7597,38 @@ Environment.NewLine +
 "        <ShipName>	S. I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DIPLOMATIC_III",
 Environment.NewLine +
@@ -8524,43 +7642,38 @@ Environment.NewLine +
 "        <ShipName>	D. III No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. III No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. III No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DIPLOMATIC_II",
 Environment.NewLine +
@@ -8574,43 +7687,38 @@ Environment.NewLine +
 "        <ShipName>	D. II No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. II No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. II No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. II No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. II No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DIPLOMATIC_I",
 Environment.NewLine +
@@ -8624,43 +7732,38 @@ Environment.NewLine +
 "        <ShipName>	D. I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_IV",
 Environment.NewLine +
@@ -8674,43 +7777,38 @@ Environment.NewLine +
 "        <ShipName>	D. IV No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. IV No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. IV No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. IV No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. IV No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_III",
 Environment.NewLine +
@@ -8724,43 +7822,38 @@ Environment.NewLine +
 "        <ShipName>	D. H. Type II  No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. H. Type II  No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. H. Type II  No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type II  No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. H. Type II  No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_II",
 Environment.NewLine +
@@ -8774,43 +7867,38 @@ Environment.NewLine +
 "        <ShipName>	D. H. Type I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. H. Type I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. H. Type I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. H. Type I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. H. Type I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_I",
 Environment.NewLine +
@@ -8824,43 +7912,38 @@ Environment.NewLine +
 "        <ShipName>	D. I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CRUISER_IV",
 Environment.NewLine +
@@ -8874,43 +7957,38 @@ Environment.NewLine +
 "        <ShipName>	G. Type III No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type III No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type III No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type III No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CRUISER_III",
 Environment.NewLine +
@@ -8924,43 +8002,38 @@ Environment.NewLine +
 "        <ShipName>	G. Type II No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type II No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type II No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type II No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type II No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type II No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CRUISER_II",
 Environment.NewLine +
@@ -8974,43 +8047,38 @@ Environment.NewLine +
 "        <ShipName>	G. Type I No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type I No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	G. Type I No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	G. Type I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	G. Type I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CRUISER_I",
 Environment.NewLine +
@@ -9024,43 +8092,38 @@ Environment.NewLine +
 "        <ShipName>	D. No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	D. No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CONSTRUCTION_SHIP",
 Environment.NewLine +
@@ -9074,95 +8137,83 @@ Environment.NewLine +
 "        <ShipName>	C. No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COMMAND_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	Ranor 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
+"        <ShipName>	CM.III-No.1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COMMAND_SHIP_II",
 Environment.NewLine +
@@ -9209,11 +8260,6 @@ Environment.NewLine +
 "        <ShipName>	C. II No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. II No. 41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COMMAND_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Monak 	</ShipName>" + Environment.NewLine +
@@ -9258,9 +8304,6 @@ Environment.NewLine +
 "        <ShipName>	C. I No. 39	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. I No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C. I No. 41	</ShipName>" + Environment.NewLine);
-
-
-
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_AUTOMATED_MISSILE",
 Environment.NewLine +
@@ -9307,289 +8350,249 @@ Environment.NewLine +
 "        <ShipName>	ATR-4147	</ShipName>" + Environment.NewLine +
 "        <ShipName>	ATR-4148	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COLONY_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	Kornal 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. III No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
+"        <ShipName>	CM.III-No.1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. III No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	CM.III-No.41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COLONY_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Ranol 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. II No. 41	</ShipName>" + Environment.NewLine);
-
-
-
-
-
+"        <ShipName>	C.II-No.1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No.9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C.II-No.10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. II No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.II-No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_COLONY_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Kureal 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	C. I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	C.I-No.1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	C. I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	C.I-No.41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
+                    // changes 2019 Jun 02: 
+                    // thrown out tab infront of numeric (only done for TAB + "1")
+                    // outcommented all but "10" and "11" which are "Borg binary" - inside code of Shipdesign, at the end is added another 4 numerics.
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_TRANSPORT_III",
 Environment.NewLine +
-
-    "	<ShipName> 	Mu	1	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	2	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	3	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	4	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	5	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	6	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	7	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	8	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	9	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	10	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	11	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	12	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	13	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	14	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	15	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	16	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	17	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	18	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	19	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	20	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	21	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	22	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	23	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Mu	24	</ShipName>" + Environment.NewLine);
-
-
-
+    //"	<ShipName> 	Mu 1	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	2	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	3	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	4	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	5	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	6	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	7	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	8	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	9	</ShipName>" + Environment.NewLine +
+    "	<ShipName> 	Mu 10	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 11	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 12	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 13	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 14	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 15	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 16	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 17	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 18	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu 19	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	20	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	21	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	22	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Mu	23	</ShipName>" + Environment.NewLine +
+    "	<ShipName> 	Mu	11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_TRANSPORT_II",
 Environment.NewLine +
-
-    "	<ShipName> 	Lambda	1	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	2	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	3	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	4	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	5	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	6	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	7	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	8	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	9	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	10	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	11	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	12	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	13	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	14	</ShipName>" + Environment.NewLine +
-    "	<ShipName> 	Lambda	15	</ShipName>" + Environment.NewLine);
-
-
-
-
+    //"	<ShipName> 	Lambda 1	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	2	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	3	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	4	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	5	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	6	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	7	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	8	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda	9	</ShipName>" + Environment.NewLine +
+    "	<ShipName> 	Lambda 10	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda 11	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda 12	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda 13	</ShipName>" + Environment.NewLine +
+    //"	<ShipName> 	Lambda 14	</ShipName>" + Environment.NewLine +
+    "	<ShipName> 	Lambda 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_TRANSPORT_I",
 Environment.NewLine +
-"	<ShipName> 	Kappa	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Kappa	16	</ShipName>" + Environment.NewLine);
-
-
-
-
-
+//"	<ShipName> 	Kappa 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Kappa 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Kappa 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Kappa 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_III",
 Environment.NewLine +
-
-    "	<ShipName> 	Alpha Gamma	1	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	2	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	3	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	4	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	5	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	6	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	7	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	8	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	9	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	10	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	11	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	12	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	13	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	14	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	15	</ShipName>" + Environment.NewLine +
-        "	<ShipName> 	Alpha Gamma	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+        //"	<ShipName> 	Alpha Gamma 1	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	2	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	3	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	4	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	5	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	6	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	7	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	8	</ShipName>" + Environment.NewLine +
+        //    "	<ShipName> 	Alpha Gamma	9	</ShipName>" + Environment.NewLine +
+        "	<ShipName> 	Alpha Gamma 10	</ShipName>" + Environment.NewLine +
+        //"	<ShipName> 	Alpha Gamma 11	</ShipName>" + Environment.NewLine +
+        //"	<ShipName> 	Alpha Gamma 12	</ShipName>" + Environment.NewLine +
+        //"	<ShipName> 	Alpha Gamma 13	</ShipName>" + Environment.NewLine +
+        //"	<ShipName> 	Alpha Gamma 14	</ShipName>" + Environment.NewLine +
+        //"	<ShipName> 	Alpha Gamma 15	</ShipName>" + Environment.NewLine +
+        "	<ShipName> 	Alpha Gamma 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_II",
 Environment.NewLine +
-"	<ShipName> 	Beta	1	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Beta 10	</ShipName>" + Environment.NewLine +
 "	<ShipName> 	Locutus!	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Beta	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Beta	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta	9	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Beta 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Beta 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_CUBE_I",
 Environment.NewLine +
-"	<ShipName> 	Alpha	1	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha 1	</ShipName>" + Environment.NewLine +
 "	<ShipName> 	Alpha	2	</ShipName>" + Environment.NewLine +
 "	<ShipName> 	Alpha	3	</ShipName>" + Environment.NewLine +
 "	<ShipName> 	Alpha	4	</ShipName>" + Environment.NewLine +
@@ -9598,428 +8601,358 @@ Environment.NewLine +
 "	<ShipName> 	Alpha	7	</ShipName>" + Environment.NewLine +
 "	<ShipName> 	Alpha	8	</ShipName>" + Environment.NewLine +
 "	<ShipName> 	Alpha	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha	16	</ShipName>" + Environment.NewLine);
-
-
+"	<ShipName> 	Alpha 10	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha 11	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha 12	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha 13	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha 14	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha 16	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_TACTICAL_CUBE",
 Environment.NewLine +
-"	<ShipName> 	Alpha Omega	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	2	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha Omega 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega	2	</ShipName>" + Environment.NewLine +
 "	<ShipName> 	Queen of Borg!	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Alpha Omega	16	</ShipName>" + Environment.NewLine);
-
-
+//"	<ShipName> 	Alpha Omega	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega	9	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Alpha Omega 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Alpha Omega 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_III",
 Environment.NewLine +
-"	<ShipName> 	Gamma	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Gamma	16	</ShipName>" + Environment.NewLine);
-
-
+//"	<ShipName> 	Gamma 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Gamma 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Gamma 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Gamma 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_II",
 Environment.NewLine +
-"	<ShipName> 	Delta	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Delta	16	</ShipName>" + Environment.NewLine);
-
-
+//"	<ShipName> 	Delta 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Delta 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Delta 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Delta 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_STRIKE_DIAMOND_I",
 Environment.NewLine +
-"	<ShipName> 	Epsilon	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Epsilon	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Epsilon 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Epsilon 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Epsilon 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Epsilon 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCOUT_III",
 Environment.NewLine +
-"	<ShipName> 	Phi	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Phi	16	</ShipName>" + Environment.NewLine);
-
-
+//"	<ShipName> 	Phi 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Phi 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Phi 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Phi 11	</ShipName>" + Environment.NewLine);
 
 
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCOUT_II",
 Environment.NewLine +
-"	<ShipName> 	Upsilon	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Upsilon	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Upsilon 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Upsilon 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Upsilon 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Upsilon 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCOUT_I",
 Environment.NewLine +
-"	<ShipName> 	Tau	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Tau	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Tau 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Tau 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Tau 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Tau 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_MEDICAL_SHIP_II",
 Environment.NewLine +
-"	<ShipName> 	Xi	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Xi	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Xi 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Xi 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Xi 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Xi 16	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_MEDICAL_SHIP_I",
 Environment.NewLine +
-"	<ShipName> 	Nu	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Nu	16	</ShipName>" + Environment.NewLine);
-
-
+//"	<ShipName> 	Nu 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Nu 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Nu 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Nu 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_IV",
 Environment.NewLine +
-"	<ShipName> 	Lota	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Lota	16	</ShipName>" + Environment.NewLine);
-
-
+//"	<ShipName> 	Lota 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Lota 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Lota 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Lota 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_III",
 Environment.NewLine +
-"	<ShipName> 	Omega	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Omega	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Omega 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Omega 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Omega 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Omega 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_II",
 Environment.NewLine +
-"	<ShipName> 	Psi	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Psi	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Psi 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Psi 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Psi 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Psi 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_PROBE_I",
 Environment.NewLine +
-"	<ShipName> 	Chi	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Chi	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Chi 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Chi 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Chi 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Chi 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SPHERE_III",
 Environment.NewLine +
-"	<ShipName> 	Zeta	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Zeta	16	</ShipName>" + Environment.NewLine);
-
-
-
+//"	<ShipName> 	Zeta 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Zeta 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Zeta 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Zeta 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SPHERE_II",
 Environment.NewLine +
-"	<ShipName> 	Eta	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Eta	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Eta 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Eta 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Eta 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Eta 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SPHERE_I",
 Environment.NewLine +
-"	<ShipName> 	Theta	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Theta	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Theta 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Theta 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Theta 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Theta 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTION_SHIP_II",
 Environment.NewLine +
-"	<ShipName> 	Sigma	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Sigma	16	</ShipName>" + Environment.NewLine);
-
-
-
-
+//"	<ShipName> 	Sigma 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Sigma 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Sigma 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Sigma 11	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_CONSTRUCTION_SHIP_I",
 Environment.NewLine +
-"	<ShipName> 	Rho	1	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	2	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	3	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	4	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	5	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	6	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	7	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	8	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	9	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	10	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	11	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	12	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	13	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	14	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	15	</ShipName>" + Environment.NewLine +
-"	<ShipName> 	Rho	16	</ShipName>" + Environment.NewLine);
+//"	<ShipName> 	Rho 1	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	2	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	3	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	4	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	5	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	6	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	7	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	8	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho	9	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Rho 10	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho 11	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho 12	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho 13	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho 14	</ShipName>" + Environment.NewLine +
+//"	<ShipName> 	Rho 15	</ShipName>" + Environment.NewLine +
+"	<ShipName> 	Rho 11	</ShipName>" + Environment.NewLine);
 
-
-
-                    rowValue = rowValue.Replace("</ShipNames>", "    </ShipNames>"); // four more blanks at beginning
-
-
-
-
-
-                    #endregion
-
-
-
-                    #region AdditionalShipnames
 
 
 
@@ -10035,49 +8968,41 @@ Environment.NewLine +
 "        <ShipName>	M. No. 7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. No. 8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. No. 9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M. No. 41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CONSTRUCTION_SHIP",
-
-
+Environment.NewLine +
 "        <ShipName>	C 61	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C 62	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C 63	</ShipName>" + Environment.NewLine +
@@ -10107,16 +9032,8 @@ Environment.NewLine +
 "        <ShipName>	C 87	</ShipName>" + Environment.NewLine +
 "        <ShipName>	C 88	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_II",
-
-
+Environment.NewLine +
 "        <ShipName>	M 261	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M 262	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M 263	</ShipName>" + Environment.NewLine +
@@ -10139,16 +9056,8 @@ Environment.NewLine +
 "        <ShipName>	M 280	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M 292	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_MEDICAL_SHIP_I",
-
-
+Environment.NewLine +
 "        <ShipName>	M 161	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M 162	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M 163	</ShipName>" + Environment.NewLine +
@@ -10173,18 +9082,9 @@ Environment.NewLine +
 "        <ShipName>	M 182	</ShipName>" + Environment.NewLine +
 "        <ShipName>	M 202	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_TACTICAL_CRUISER",
-
-
-
-                    "        <ShipName>	Battleship Prototype	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Battleship Prototype	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B 162	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B 163	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B 164	</ShipName>" + Environment.NewLine +
@@ -10210,16 +9110,9 @@ Environment.NewLine +
 "        <ShipName>	B 184	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B 202	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TACTICAL_CRUISER",
-
-
-
-                    "        <ShipName>	Prometheus	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Prometheus	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Cerberus	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Hercules	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Megalodon	</ShipName>" + Environment.NewLine +
@@ -10262,18 +9155,9 @@ Environment.NewLine +
 "        <ShipName>	P. NCC-74950	</ShipName>" + Environment.NewLine +
 "        <ShipName>	P. NCC-74951	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesKLING_CONSTRUCTION_SHIP",
-
-
-
-                    "        <ShipName>	Chen Qach 	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Chen Qach 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	VaQwI' C1	</ShipName>" + Environment.NewLine +
 "        <ShipName>	VaQwI' C2	</ShipName>" + Environment.NewLine +
 "        <ShipName>	VaQwI' C3	</ShipName>" + Environment.NewLine +
@@ -10283,51 +9167,42 @@ Environment.NewLine +
 "        <ShipName>	VaQwI' C7	</ShipName>" + Environment.NewLine +
 "        <ShipName>	VaQwI' C8	</ShipName>" + Environment.NewLine +
 "        <ShipName>	VaQwI' C9	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C10	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C11	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C12	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	VaQwI' C40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	VaQwI' C40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	VaQwI' C41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_III",
-
-
-
-                    "        <ShipName>	R'Nort 	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	R'Nort 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tomalak!	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tomalak 2	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tomalak 3	</ShipName>" + Environment.NewLine +
@@ -10370,18 +9245,9 @@ Environment.NewLine +
 "        <ShipName>	Tomalak 40	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Tomalak 41	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_II",
-
-
-
-                    "        <ShipName>	R'Tol 	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	R'Tol 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rul 2	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rul 3	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rul 4	</ShipName>" + Environment.NewLine +
@@ -10400,42 +9266,33 @@ Environment.NewLine +
 "        <ShipName>	R'Rul 17	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rul 18	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rul 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rul 41	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rul 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rul 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_DIPLOMATIC_I",
-
-
-
-                    "        <ShipName>	R'Rani 	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	R'Rani 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rani 2	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rani 3	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rani 4	</ShipName>" + Environment.NewLine +
@@ -10454,40 +9311,33 @@ Environment.NewLine +
 "        <ShipName>	R'Rani 17	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rani 18	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rani 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	R'Rani 41	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	R'Rani 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	R'Rani 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesROM_CONSTRUCTION_SHIP",
-
-
-
-                    "        <ShipName>	Ehrehin 	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Ehrehin 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Ehrehin 2	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Ehrehin 3	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Ehrehin 4	</ShipName>" + Environment.NewLine +
@@ -10506,42 +9356,33 @@ Environment.NewLine +
 "        <ShipName>	Ehrehin 17	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Ehrehin 18	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Ehrehin 19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	Ehrehin 41	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	Ehrehin 41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Ehrehin 42	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_III",
-
-
-
-                    "        <ShipName>	Bashir	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Bashir	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Carver	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Vjeko	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87554	</ShipName>" + Environment.NewLine +
@@ -10584,17 +9425,9 @@ Environment.NewLine +
 "        <ShipName>	B. NCC-87591	</ShipName>" + Environment.NewLine +
 "        <ShipName>	B. NCC-87592	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_II",
-
-
-
-                    "        <ShipName>	Norway	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Norway	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Budapest	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Spock	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Soval	</ShipName>" + Environment.NewLine +
@@ -10637,17 +9470,9 @@ Environment.NewLine +
 "        <ShipName>	NCC-63590	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-63591	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_I",
-
-
-
-                    "        <ShipName>	Sarek	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Sarek	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-565	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-566	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-567	</ShipName>" + Environment.NewLine +
@@ -10690,17 +9515,9 @@ Environment.NewLine +
 "        <ShipName>	S. NCC-604	</ShipName>" + Environment.NewLine +
 "        <ShipName>	S. NCC-605	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_II",
-
-
-
-                    "        <ShipName>	Olympic	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Olympic	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Pasteur	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Hope	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Hippocrates	</ShipName>" + Environment.NewLine +
@@ -10743,17 +9560,9 @@ Environment.NewLine +
 "        <ShipName>	NCC-87824	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-87825	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_I",
-
-
-
-                    "        <ShipName>	Deadalus	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Deadalus	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-945	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-946	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-947	</ShipName>" + Environment.NewLine +
@@ -10796,17 +9605,9 @@ Environment.NewLine +
 "        <ShipName>	D. NCC-984	</ShipName>" + Environment.NewLine +
 "        <ShipName>	D. NCC-985	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_III",
-
-
-
-                    "        <ShipName>	Nova	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Nova	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Equinox	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Oppenheimer	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Nash	</ShipName>" + Environment.NewLine +
@@ -10849,17 +9650,9 @@ Environment.NewLine +
 "        <ShipName>	N. NCC-73550	</ShipName>" + Environment.NewLine +
 "        <ShipName>	N. NCC-73551	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_II",
-
-
-
-                    "        <ShipName>	Oberth	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Oberth	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Grissom	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Pegasus	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Biko	</ShipName>" + Environment.NewLine +
@@ -10902,16 +9695,9 @@ Environment.NewLine +
 "        <ShipName>	NCC-1965	</ShipName>" + Environment.NewLine +
 "        <ShipName>	NCC-1966	</ShipName>" + Environment.NewLine);
 
-
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_I",
-
-
-
-                    "        <ShipName>	Hermes	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Hermes	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Copernicus	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Da Vinci	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Sokrates	</ShipName>" + Environment.NewLine +
@@ -10954,15 +9740,9 @@ Environment.NewLine +
 "        <ShipName>	H. NCC-697	</ShipName>" + Environment.NewLine +
 "        <ShipName>	H. NCC-698	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TACTICAL_CRUISER",
-
-
-
-                    "        <ShipName>	Prometheus	</ShipName>" + Environment.NewLine +
+Environment.NewLine +
+"        <ShipName>	Prometheus	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Cerberus	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Hercules	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Rome	</ShipName>" + Environment.NewLine +
@@ -11005,1194 +9785,630 @@ Environment.NewLine +
 "        <ShipName>	P. NCC-74950	</ShipName>" + Environment.NewLine +
 "        <ShipName>	P. NCC-74951	</ShipName>" + Environment.NewLine);
 
-
-
-
-
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_II",
-
-
-
-                    "        <ShipName> Research 2001 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2100 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2101 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2110 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2111 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2200 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2201 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2210 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2211 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 2300 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Research 2301 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Research 2001 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2010 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2100 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2101 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2110 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2200 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2201 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2210 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2300 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 2301 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBORG_SCIENCE_SHIP_I",
-
-
-
-                    "        <ShipName> Research 1001 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1010 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1100 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1101 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1110 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1111 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1200 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1201 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1210 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1211 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1300 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Research 1301 </ShipName>" + Environment.NewLine);
-
-
+Environment.NewLine +
+"        <ShipName> Research 1001 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1010 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1100 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1101 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1110 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1200 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1201 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1210 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1300 </ShipName>" + Environment.NewLine +
+"        <ShipName> Research 1301 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_II",
-
-
-
-                    "        <ShipName> Kankō Maru </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Kanrin Maru  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kankō Maru </ShipName>" + Environment.NewLine +
+"        <ShipName> Kanrin Maru  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesACAMARIAN_RAIDER_I",
-
-
-
-                    "        <ShipName> ACAMARIAN_RAIDER 1 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ACAMARIAN_RAIDER 2  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> ACAMARIAN RAIDER 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> ACAMARIAN RAIDER 2  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesAKRITIRIAN_ATTACK_SHIP",
-
-
-
-                    "        <ShipName> Chōyō </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Kaiyō Maru </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+"        <ShipName> Chōyō </ShipName>" + Environment.NewLine +
+"        <ShipName> Kaiyō Maru </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_II",
-
-                    "        <ShipName> Bis Th'vilross </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Itil Ch'otilreth </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Ryv Ch'qianol </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Osheb Th'erolloq </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Teb Th'othevass </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Bis Th'vilross </ShipName>" + Environment.NewLine +
+"        <ShipName> Itil Ch'otilreth </ShipName>" + Environment.NewLine +
+"        <ShipName> Ryv Ch'qianol </ShipName>" + Environment.NewLine +
+"        <ShipName> Osheb Th'erolloq </ShipName>" + Environment.NewLine +
+"        <ShipName> Teb Th'othevass </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesANDORIAN_CRUISER_I",
-
-
-
-                    "        <ShipName> Kaiten </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Banryu </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kaiten </ShipName>" + Environment.NewLine +
+"        <ShipName> Banryu </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesANGOSIAN_TRANSPORT",
-
-
-
-                    "        <ShipName> Chogei </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Ikavo Ch'veth  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Chogei </ShipName>" + Environment.NewLine +
+"        <ShipName> Ikavo Ch'veth  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesANKARI_CRUISER",
-
-                    "        <ShipName> ANKARI_CRUISER 1 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ANKARI_CRUISER 2 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ANKARI_CRUISER 3 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ANKARI_CRUISER 4 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ANKARI_CRUISER 5 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ANKARI_CRUISER 6  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> ANKARI_CRUISER 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> ANKARI_CRUISER 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> ANKARI_CRUISER 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> ANKARI_CRUISER 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> ANKARI_CRUISER 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> ANKARI_CRUISER 6  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesANKARI_TRANSPORT",
-
-
-
-                    "        <ShipName> ANKARKI_TRANSPORT </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ANKARI_TRANSPORT  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> ANKARKI_TRANSPORT </ShipName>" + Environment.NewLine +
+"        <ShipName> ANKARI_TRANSPORT  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesATREAN_CRUISER",
-
-
-
-                    "        <ShipName> Shinsoku </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Mikaho  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Shinsoku </ShipName>" + Environment.NewLine +
+"        <ShipName> Mikaho  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesAXANAR_DESTROYER",
-
-
-
-                    "        <ShipName> Yoshun ja </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Kasuga  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Yoshun ja </ShipName>" + Environment.NewLine +
+"        <ShipName> Kasuga  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_II",
-
-
-
-                    "        <ShipName> Kira </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Neela </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Ro </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Anara </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Borum </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Li Nalas </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Day </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kira </ShipName>" + Environment.NewLine +
+"        <ShipName> Neela </ShipName>" + Environment.NewLine +
+"        <ShipName> Ro </ShipName>" + Environment.NewLine +
+"        <ShipName> Anara </ShipName>" + Environment.NewLine +
+"        <ShipName> Borum </ShipName>" + Environment.NewLine +
+"        <ShipName> Li Nalas </ShipName>" + Environment.NewLine +
+"        <ShipName> Day </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBAJORAN_ATTACK_SHIP_I",
-
-
-
-                    "        <ShipName> Teibo </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Chiyodagata </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Dohlem </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Furel </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Krim </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Ryujo </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Teibo </ShipName>" + Environment.NewLine +
+"        <ShipName> Chiyodagata </ShipName>" + Environment.NewLine +
+"        <ShipName> Dohlem </ShipName>" + Environment.NewLine +
+"        <ShipName> Furel </ShipName>" + Environment.NewLine +
+"        <ShipName> Krim </ShipName>" + Environment.NewLine +
+"        <ShipName> Ryujo </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBENZITE_EXPLORER",
-
-
-
-                    "        <ShipName> Unyo </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Stadi </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Devinonni Ral </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Nisshin </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Unyo ja  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Unyo </ShipName>" + Environment.NewLine +
+"        <ShipName> Stadi </ShipName>" + Environment.NewLine +
+"        <ShipName> Devinonni Ral </ShipName>" + Environment.NewLine +
+"        <ShipName> Nisshin </ShipName>" + Environment.NewLine +
+"        <ShipName> Unyo ja  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBETAZOID_STARCRUISER",
-
-
-
-                    "        <ShipName> Tam Elbrun </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Suder! </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Kwan </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Panya </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Takao </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tam Elbrun </ShipName>" + Environment.NewLine +
+"        <ShipName> Suder! </ShipName>" + Environment.NewLine +
+"        <ShipName> Kwan </ShipName>" + Environment.NewLine +
+"        <ShipName> Panya </ShipName>" + Environment.NewLine +
+"        <ShipName> Takao </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBILANAIAN_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 9 </ShipName>" + Environment.NewLine +
+//"        <ShipName> BILANAIAN SHIP 11 </ShipName>" + Environment.NewLine +
+//"        <ShipName> BILANAIAN SHIP 12 </ShipName>" + Environment.NewLine +
+//"        <ShipName> BILANAIAN SHIP 13 </ShipName>" + Environment.NewLine +
+//"        <ShipName> BILANAIAN SHIP 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> BILANAIAN SHIP 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> BOLIAN T-II 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 9 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-II 11 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-II 12 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-II 13 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-II 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-II 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBOLIAN_TRANSPORT_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> BOLIAN T-I 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 9 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-I 11 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-I 12 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-I 13 </ShipName>" + Environment.NewLine +
+                    //"        <ShipName> BOLIAN T-I 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> BOLIAN T-I 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBOMAR_COLONY_SHIP",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Bomar Colony  1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bomar Colony  15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Boslic T-II  1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-II  15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBOSLIC_TRANSPORT_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Boslic T-I  1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Boslic T-I  15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBOTHAN_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Bothan Destroyer  1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bothan Destroyer  15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_III",
-
-
-
-                    "        <ShipName> BREEN HEAVY CRUISER  III 1 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 2 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 3 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 4 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 5 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 6 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 7 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 8 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 9 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 10 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 11 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 12 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 13 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER III 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> BREEN HEAVY CRUISER III 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER  III 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 10 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER III 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_II",
-
-
-
-                    "        <ShipName> BREEN HEAVY CRUISER II 1 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 2 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 3 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 4 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 5 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 6 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 7 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 8 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 9 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 10 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 11 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 12 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 13 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER II 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> BREEN HEAVY CRUISER II 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 10 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER II 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBREEN_HEAVY_CRUISER_I",
-
-
-
-                    "        <ShipName> BREEN HEAVY CRUISER I 1 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 2 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 3 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 4 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 5 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 6 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 7 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 8 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 9 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 10 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 11 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 12 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 13 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> BREEN HEAVY CRUISER I 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> BREEN HEAVY CRUISER I 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 10 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> BREEN HEAVY CRUISER I 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBREKKIAN_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Brekkian T 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Brekkian T 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesBYNAR_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Bynar Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Bynar Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCAIRN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Cairn Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Cairn Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCALDONIAN_EXPLORER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Caldonian Explorer 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Caldonian Explorer 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCORIDAN_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Coridan Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Coridan Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCORIDAN_CRUISER_I",
-
-
-
-                    "        <ShipName> CORIDAN 1 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> CORIDAN 2  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> CORIDAN 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> CORIDAN 2  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCORVALLEN_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Destroyer 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCORVALLEN_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Corvallen Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Corvallen Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDELTAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Deltan Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Deltan Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDENOBULAN_FRIGATE",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> Phlox!  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Denobulan Frigate 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Denobulan Frigate 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Phlox!  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDEVORE_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Devore Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDEVORE_HEAVY_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDEVORE_HEAVY_SCOUT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Devore Heavy Scout 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOSI_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Dosi Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOSI_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Dosi Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Dosi Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesELAYSIAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Elaysian Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesENTHARAN_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Entharan Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Entharan Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesEVORA_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Evora Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Evora Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMAQUIS_RAIDER",
-
-
-
-                                        "        <ShipName> Liberty </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Cal Hudstons Ship </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Teero Anydis Ship </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Guingouin </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Cosette </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 1</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 2</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 3</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 4</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Eddingtons Ship! </ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 5</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 6</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 7</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 8</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 9</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 10</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 11</ShipName>" + Environment.NewLine +
-                                        "        <ShipName> Maquis Raider 12</ShipName>" + Environment.NewLine +
-
-                                        "        <ShipName> Maquis Raider 13  </ShipName>" + Environment.NewLine);
-
-
-
+Environment.NewLine +
+"        <ShipName> Liberty </ShipName>" + Environment.NewLine +
+"        <ShipName> Cal Hudstons Ship </ShipName>" + Environment.NewLine +
+"        <ShipName> Teero Anydis Ship </ShipName>" + Environment.NewLine +
+"        <ShipName> Guingouin </ShipName>" + Environment.NewLine +
+"        <ShipName> Cosette </ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 1</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 2</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 3</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 4</ShipName>" + Environment.NewLine +
+"        <ShipName> Eddingtons Ship! </ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 5</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 6</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 7</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 8</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 9</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 10</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 11</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 12</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Raider 13  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_II",
-
-
-
-                    "        <ShipName> Lepak </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Lumba </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Pizar  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Lepak </ShipName>" + Environment.NewLine +
+"        <ShipName> Lumba </ShipName>" + Environment.NewLine +
+"        <ShipName> Pizar  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_DESTROYER_I",
+Environment.NewLine +
 "        <ShipName> Brunt </ShipName>" + Environment.NewLine +
-
-
-                    "        <ShipName> Grood </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Pruna </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+"        <ShipName> Grood </ShipName>" + Environment.NewLine +
+"        <ShipName> Pruna </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER_II",
-
+Environment.NewLine +
 "        <ShipName>	Krayton! 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Kreechta!	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Kurdon! 	</ShipName>" + Environment.NewLine +
@@ -12209,2716 +10425,1640 @@ Environment.NewLine +
 "        <ShipName>	DՋora Marauder 11  </ShipName>" + Environment.NewLine +
 "        <ShipName>	DՋora Marauder 12 </ShipName>" + Environment.NewLine +
 "        <ShipName>	DՋora Marauder 13  </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Perabac </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Xites  </ShipName>" + Environment.NewLine);
-
-
-
-
+"        <ShipName> Perabac </ShipName>" + Environment.NewLine +
+"        <ShipName> Xites  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFERENGI_MARAUDER_I",
+Environment.NewLine +
 "        <ShipName> Zek </ShipName>" + Environment.NewLine +
 "        <ShipName> Gint </ShipName>" + Environment.NewLine +
 "        <ShipName> Lemec </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Perabac </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Troomp  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+"        <ShipName> Perabac </ShipName>" + Environment.NewLine +
+"        <ShipName> Troomp  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_II",
-
-
-
-                    "        <ShipName> Gegin </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Prala  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Gegin </ShipName>" + Environment.NewLine +
+"        <ShipName> Prala  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesGORN_CRUISER_I",
-
-
-
-                    "        <ShipName> Dirad </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Zenog </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Dirad </ShipName>" + Environment.NewLine +
+"        <ShipName> Zenog </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesHAAKONIAN_DESTROYER",
-
-
-
-                    "        <ShipName> Berpax </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Gnarpax  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Berpax </ShipName>" + Environment.NewLine +
+"        <ShipName> Gnarpax  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesHAZARI_ATTACK_SHIP",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Hazari Attacker 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Attacker 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesHAZARI_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Hazari Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hazari Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesHEKARAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hekaran Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_III",
-
-
-
-                    "        <ShipName> Venetic Hunter 1 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Venetic Hunter 2 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Venetic Hunter 3 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Venetic Hunter 4 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Venetic Hunter 5 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Venetic Hunter 6 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Venetic Hunter 7 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Venetic Hunter 8  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Venetic Hunter 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Venetic Hunter 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Venetic Hunter 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Venetic Hunter 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Venetic Hunter 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Venetic Hunter 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Venetic Hunter 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Venetic Hunter 8  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_II",
-
-
-
-                    "        <ShipName> Hunter II 1 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Hunter II 2 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Hunter II 3 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Hunter II 4 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Hunter II 5 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Hunter II 6  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Hunter II 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter II 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter II 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter II 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter II 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter II 6  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesHIROGEN_CRUISER_I",
-
-
-
-                    "        <ShipName> Hunter I 1 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Hunter I 2 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Hunter I 3 </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Hunter I 4 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Hunter I 5  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Hunter I 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter I 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter I 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter I 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Hunter I 5  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesIYAARAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Iyaaran Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesJNAII_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Jnaii Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKAREMMA_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Karemma Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKAREMMA_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Karemma Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Karemma Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKAZON_ATTACK_SHIP",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kazon Attacker 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon Attacker 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kazon HC-II 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-II 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKAZON_HEAVY_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kazon HC-I 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kazon HC-I 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKELLERUN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kellerun Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKESPRYTT_FRIGATE",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kesprytt Frigate 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKLAESTRONIAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Klaestronian Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKRADIN_FIGHTER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kradin Fighter 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kradin Fighter 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKREETASSAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kreetassan Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKRESSARI_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kressari Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kressari Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKRIOSIAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-
-
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Kriosian Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKTARIAN_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-   "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Destroyer 14 </ShipName>" + Environment.NewLine +
+   "        <ShipName> Ktarian Destroyer 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesKTARIAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-   "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ktarian Cruiser 14 </ShipName>" + Environment.NewLine +
+   "        <ShipName> Ktarian Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesLEDOSIAN_SCOUT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-   "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Ledosian Scout 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Scout 14 </ShipName>" + Environment.NewLine +
+   "        <ShipName> Ledosian Scout 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesLEDOSIAN_FRIGATE",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-   "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Ledosian Frigate 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Ledosian Frigate 14 </ShipName>" + Environment.NewLine +
+   "        <ShipName> Ledosian Frigate 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesLISSEPIAN_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Lissepian Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lissepian Transport 14 </ShipName>" + Environment.NewLine +
+    "        <ShipName> Lissepian Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesLOKIRRIM_SCOUT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-            "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Lokirrim Scout 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Scout 14 </ShipName>" + Environment.NewLine +
+            "        <ShipName> Lokirrim Scout 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesLOKIRRIM_LIGHT_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lokirrim Light Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesLURIAN_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Lurian Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Lurian Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMALCORIAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malcorian Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_III",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Malon T-III 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-III 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Malon T-II 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-II 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMALON_TRANSPORT_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Malon T-I 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Malon T-I 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMARKALIAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Markalian Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Markalian Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMIRADORN_FIGHTER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Miradorn Fighter 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Fighter 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMIRADORN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Miradorn Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Mokra D-II  1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-II  15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMOKRA_DESTROYER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Mokra D-I 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Mokra D-I 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesMONEAN_FIGHTER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Monean Fighter 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Monean Fighter 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesNAUSICAAN_FIGHTER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nausicaan Fighter 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesNEZU_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Nezu Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nezu Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Numirir Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesNUMIRIR_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Numirir Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Numirir Cruiser 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesNYRIAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Nyrian Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesORION_SCOUT_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Orion Scout 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesORION_SCOUT_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Orion Scout 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Orion Scout 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesPAKLED_LIGHT_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesPAKLED_LIGHT_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Pakled Light Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesSHELIAK_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Destroyer 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesSHELIAK_HEAVY_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sheliak Heavy Destroyer 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesSONA_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Sona Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesSONA_HEAVY_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Sona Heavy Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesSULIBAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Suliban Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesSULIBAN_LIGHT_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Suliban Light Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTLANI_HEAVY_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTLANI_HEAVY_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tlani Heavy Cruiser 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTROGORAN_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTROGORAN_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trogoran Cruiser 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTAK_TAK_DESTROYER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTAK_TAK_DESTROYER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tak Tak Destroyer 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTALARIAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Talarian Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTALARIAN_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Talarian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talarian Cruiser 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTALAXIAN_ATTACK_SHIP",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Talaxian Attacker 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Attacker 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTALAXIAN_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Talaxian Destroyer 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTAMARIAN_LIGHT_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Light Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTAMARIAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTAMARIAN_COMMAND_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tamarian Command Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTELLARITE_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tellarite Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTELLARITE_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tellarite Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tholian Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTHOLIAN_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Tholian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Tholian Cruiser 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTRABE_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Trabe Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trabe Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTRILL_LIGHT_CRUISER_I",
-
-
-
-                    "        <ShipName> TORIAS SHIP! </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> TORIAS SHIP! </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Trill Light Cruiser 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVAADWAUR_COLONY_SHIP_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Colony 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVAADWAUR_DESTROYER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Destroyer 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVAADWAUR_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaadwaur Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Vidiian Colony 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 215 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Vidiian Colony 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Colony 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVISSIAN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Vissian Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vissian Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVORGON_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vorgon Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVULCAN_SURVEYOR",
-
-
-
-                    "        <ShipName> TՐlana-Hath </ShipName>" + Environment.NewLine +
-                    "        <ShipName> TՖran </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Yarahla </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> TՐlana-Hath </ShipName>" + Environment.NewLine +
+"        <ShipName> TՖran </ShipName>" + Environment.NewLine +
+"        <ShipName> Yarahla </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVULCAN_CRUISER",
-
+Environment.NewLine +
 "        <ShipName> Nyran </ShipName>" + Environment.NewLine +
-                    "        <ShipName> T`Pau </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> Vahklas  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+"        <ShipName> T`Pau </ShipName>" + Environment.NewLine +
+"        <ShipName> Vahklas  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVULCAN_HEAVY_CRUISER",
-
-
-
-                    "        <ShipName> TiՍur </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Seleya </ShipName>" + Environment.NewLine +
-                    "        <ShipName> Vaankara </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> ShՒaan  </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> TiՍur </ShipName>" + Environment.NewLine +
+"        <ShipName> Seleya </ShipName>" + Environment.NewLine +
+"        <ShipName> Vaankara </ShipName>" + Environment.NewLine +
+"        <ShipName> ShՒaan  </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesXANTHAN_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Xanthan Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xanthan Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesXEPOLITE_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xepolite Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesXINDI_SCOUT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Xindi Scout 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Scout 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesXINDI_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Xindi Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xindi Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesXYRILLIAN_SURVEYOR",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Xyrillian Surveyor 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesYRIDIAN_TRANSPORT",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Yridian Transport 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Transport 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesYRIDIAN_SURVEYOR_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Yridian Surveyor 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Yridian Surveyor 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesZAHL_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Zahl Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zahl Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesZAKDORN_CRUISER",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 1 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 2 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 3 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 4 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 5 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 6 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 7 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 8 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 9 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zakdorn Cruiser 15 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesZALKONIAN_CRUISER_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 28 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 29 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 211 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 212 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 213 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 29 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesZALKONIAN_CRUISER_I",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 18 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 19 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 111 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 112 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 113 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zalkonian Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zalkonian Cruiser 19 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesZIBALIAN_TRANSPORT_II",
-
-
-
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
-
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
+Environment.NewLine +
+"        <ShipName> Zibalian Transport 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 28 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 29 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 211 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 212 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 213 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 29 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesZIBALIAN_TRANSPORT_I",
+Environment.NewLine +
+"        <ShipName> Zibalian Transport 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 18 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 19 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 111 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 112 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 113 </ShipName>" + Environment.NewLine +
+//"        <ShipName> Zibalian Transport 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Zibalian Transport 19 </ShipName>" + Environment.NewLine);
 
 
 
-                    "        <ShipName> UNKNOWN SHIP 1 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 2 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 3 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 4 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 5 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 6 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 7 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 8 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 9 </ShipName>" + Environment.NewLine +
+                    rowValue = rowValue.Replace("</ShipNames>", "    </ShipNames>"); // four more blanks at beginning
 
-"        <ShipName> UNKNOWN SHIP 11 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 12 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 13 </ShipName>" + Environment.NewLine +
-"        <ShipName> UNKNOWN SHIP 14 </ShipName>" + Environment.NewLine +
-
-                    "        <ShipName> UNKNOWN SHIP 15 </ShipName>" + Environment.NewLine);
-
-
-
-
-
-
-                    #endregion
-
-
-
-
-
+                    #endregion ShipNames
 
                     rowValue = rowValue.Replace(Environment.NewLine + Environment.NewLine, Environment.NewLine);
-
                     // more in NOTEPAD++
-
                     // replace \r\n\r\n by \r\n (removes empty lines)  // doesn't work: rowValue = rowValue.Replace(Environment.NewLine + Environment.NewLine, Environment.NewLine);
                     // replace \r\n    " by     "   (for Beam/Torpedo: removing new line break) -> each has 4 blank
                     // replace \r\n     Refire by  Refire
                     // replace \r\n    " Damage by " Damage
-
                     //rowValue = rowValue.Replace("  ", " ");  // not for xml !!!
                     rowValue = rowValue.TrimEnd(' ');
-
                     cellValue = rowValue.Split(_separator);   // just one column ??
-
                     //if (rowValue != "ok")
                     //{
                     count = count + 1;
                     dataGridView1.Rows.Add(cellValue);
                     Console.WriteLine(c + ":  " + rowValue);
                     //}
-
                 }
                 #endregion
-
                 streamReader.Close();
-
                 Console.WriteLine("Count: {0}", count.ToString());
-
                 string autosave = infile + "_OUT_SHIPS_TechObjectDatabase.xml";
-
                 Console.WriteLine("AutoSave to: " + autosave);
-
                 SaveCSV(autosave);
-
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
     }
 }
