@@ -6693,6 +6693,21 @@ Environment.NewLine +
 "        <ShipName> Tr170 </ShipName>" + Environment.NewLine +
 "        <ShipName> Tr177 </ShipName>" + Environment.NewLine);
 
+
+                    rowValue = rowValue.Replace("PossibleShipNamesDOM_TACTICAL_BATTLESHIP",
+Environment.NewLine +
+"        <ShipName> TBS217 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS234 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS251 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS268 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS285 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS286 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS287 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS288 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS289 </ShipName>" + Environment.NewLine +
+"        <ShipName> TBS290 </ShipName>" + Environment.NewLine);
+
+
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_STRIKE_CRUISER_II",
 Environment.NewLine +
 "        <ShipName> DST217 </ShipName>" + Environment.NewLine +
@@ -10373,6 +10388,23 @@ Environment.NewLine +
 "        <ShipName> Evora Surveyor 14 </ShipName>" + Environment.NewLine +
 "        <ShipName> Evora Surveyor 15 </ShipName>" + Environment.NewLine);
 
+                    rowValue = rowValue.Replace("PossibleShipNamesMAQUIS_FIGHTER",
+Environment.NewLine +
+"        <ShipName> Maquis Fighter 1</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 2</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 3</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 4</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 5</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 6</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 7</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 8</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 9</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 10</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 11</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 12</ShipName>" + Environment.NewLine +
+"        <ShipName> Maquis Fighter 13  </ShipName>" + Environment.NewLine);
+
+
                     rowValue = rowValue.Replace("PossibleShipNamesMAQUIS_RAIDER",
 Environment.NewLine +
 "        <ShipName> Liberty </ShipName>" + Environment.NewLine +
@@ -11718,6 +11750,40 @@ Environment.NewLine +
 "        <ShipName> Vaadwaur Cruiser 13 </ShipName>" + Environment.NewLine +
 "        <ShipName> Vaadwaur Cruiser 14 </ShipName>" + Environment.NewLine +
 "        <ShipName> Vaadwaur Cruiser 15 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_CRUISER_SHIP_II",
+Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 21 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 22 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 23 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 24 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 25 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 26 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 27 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 28 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 29 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 211 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 212 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 213 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 214 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 215 </ShipName>" + Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_CRUISER_SHIP_I",
+Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 11 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 12 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 13 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 14 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 15 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 16 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 17 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 18 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 19 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 111 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 112 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 113 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 114 </ShipName>" + Environment.NewLine +
+"        <ShipName> Vidiian Cruiser 115 </ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesVIDIIAN_COLONY_SHIP_II",
 Environment.NewLine +
