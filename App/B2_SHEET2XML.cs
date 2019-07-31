@@ -95,7 +95,7 @@ namespace CSV2XML
         }
         private void btn_Open_Click(object sender, EventArgs e)
         {
-            ReadCSV("C:/_B2/Balance - Export_New.xml");
+            ReadCSV("C:/_B2/Balance_Ships_HomeSystems - Export_New.xml");
             Console.WriteLine("reading C:/_B2/Balance - Export_New.xml by btn_Open_Click");
             // other stuff
             //openFileDialog1.ShowDialog();
@@ -110,7 +110,7 @@ namespace CSV2XML
         {
             //   later: more xml-files ... just use in/out     
             infile = "C:/_B2/in.xml"; // 
-            infile = "C:/_B2/Balance - Export_New.xml";
+            infile = "C:/_B2/Balance_Ships_HomeSystems - Export_New.xml";
             if (!System.IO.File.Exists(infile))
                 MessageBox.Show(infile + " ...is missing", "WARNING", MessageBoxButtons.OK);
 
