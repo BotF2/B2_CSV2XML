@@ -409,135 +409,135 @@ Environment.NewLine +
 "        <ShipName>	Cochraine B </ShipName>" + Environment.NewLine +
 "        <ShipName>	Khan B </ShipName>" + Environment.NewLine +
 "        <ShipName>	Lord Garth B </ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54379	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54380	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54381	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54382	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54383	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54384	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54385	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54386	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54387	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54388	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54389	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54390	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54391	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54392	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54393	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54394	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54395	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54396	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54397	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54398	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54399	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54400	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54401	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54402	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54403	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54404	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54405	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54406	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54407	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54408	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54409	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54410	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54411	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54412	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54413	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54414	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54415	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54416	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54417	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-54379	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54380	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54381	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54382	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54383	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54384	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54385	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54386	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54387	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54388	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54389	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54390	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54391	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54392	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54393	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54394	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54395	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54396	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54397	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54398	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54399	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54400	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54401	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54402	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54403	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54404	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54405	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54406	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54407	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54408	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54409	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54410	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54411	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54412	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54413	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54414	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54415	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54416	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54417	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_II",
 Environment.NewLine +
 "        <ShipName>	Cochraine A </ShipName>" + Environment.NewLine +
 "        <ShipName>	Khan A</ShipName>" + Environment.NewLine +
 "        <ShipName>	Lord Garth A</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1398	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1399	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1400	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1401	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1402	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1403	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1404	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1405	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1406	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1407	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1408	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1409	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1410	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1411	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1412	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1413	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1414	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1415	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1416	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1417	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1418	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1419	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1420	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1421	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1422	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1423	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1424	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1425	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1426	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1427	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1428	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1429	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1430	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1431	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1432	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1433	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1434	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1435	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1436	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-1398	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1399	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1400	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1401	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1402	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1403	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1404	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1405	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1406	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1407	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1408	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1409	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1410	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1411	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1412	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1413	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1414	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1415	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1416	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1417	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1418	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1419	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1420	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1421	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1422	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1423	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1424	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1425	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1426	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1427	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1428	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1429	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1430	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1431	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1432	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1433	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1434	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1435	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1436	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_TRANSPORT_I",
 Environment.NewLine +
 "        <ShipName>	Cochraine! </ShipName>" + Environment.NewLine +
 "        <ShipName>	Khan! </ShipName>" + Environment.NewLine +
 "        <ShipName>	Lord Garth!	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-706	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-707	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-708	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-709	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-710	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-711	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-712	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-713	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-714	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-715	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-716	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-717	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-718	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-719	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-720	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-721	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-722	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-723	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-724	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-725	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-726	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-727	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-728	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-729	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-730	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-731	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-732	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-733	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-734	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-735	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-736	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-737	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-738	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-739	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-740	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-741	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-742	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-743	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-744	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-706	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-707	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-708	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-709	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-710	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-711	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-712	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-713	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-714	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-715	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-716	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-717	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-718	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-719	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-720	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-721	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-722	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-723	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-724	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-725	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-726	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-727	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-728	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-729	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-730	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-731	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-732	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-733	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-734	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-735	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-736	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-737	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-738	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-739	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-740	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-741	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-742	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-743	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-744	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_STRIKE_CRUISER_III",
 Environment.NewLine +
@@ -555,34 +555,34 @@ Environment.NewLine +
 "        <ShipName>	Honshu	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Merry Mag	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Monitor	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65576	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65577	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65578	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65579	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65580	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65581	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65582	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65583	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65584	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65585	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65586	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65587	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65588	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65589	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65590	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65591	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65592	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65593	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65594	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65595	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65596	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65597	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65598	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65599	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65600	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65601	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65602	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65603	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-65576	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65577	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65578	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65579	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65580	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65581	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65582	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65583	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65584	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65585	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65586	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65587	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65588	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65589	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65590	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65591	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65592	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65593	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65594	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65595	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65596	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65597	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65598	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65599	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65600	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65601	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65602	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65603	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_STRIKE_CRUISER_II",
 Environment.NewLine +
@@ -593,86 +593,86 @@ Environment.NewLine +
 "        <ShipName>	Wells	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Princeton	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Franking	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59804	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59805	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59806	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59807	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59808	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59809	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59810	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59811	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59812	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59813	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59814	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59815	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59816	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59817	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59818	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59819	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59820	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59821	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59822	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59823	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59824	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59825	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59826	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59827	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59828	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59829	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59830	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59831	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59832	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59833	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59834	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59835	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59836	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59837	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59838	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-59804	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59805	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59806	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59807	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59808	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59809	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59810	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59811	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59812	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59813	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59814	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59815	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59816	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59817	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59818	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59819	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59820	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59821	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59822	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59823	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59824	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59825	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59826	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59827	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59828	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59829	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59830	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59831	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59832	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59833	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59834	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59835	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59836	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-59837	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59838	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_STRIKE_CRUISER_I",
 Environment.NewLine +
 "        <ShipName>	Belknap	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Decatur	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1478	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1479	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1480	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1481	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1482	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1483	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1484	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1485	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1486	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1487	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1488	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1489	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1490	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1491	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1492	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1493	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1494	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1495	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1496	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1497	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1498	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1499	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1500	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1501	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1502	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1503	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1504	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1505	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1506	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1507	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1508	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1509	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1510	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1511	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1512	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1513	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1514	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1515	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1516	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1517	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-1478	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1479	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1480	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1481	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1482	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1483	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1484	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1485	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1486	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1487	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1488	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1489	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1490	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1491	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1492	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1493	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1494	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1495	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1496	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1497	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1498	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1499	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1500	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1501	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1502	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1503	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1504	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1505	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1506	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1507	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1508	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1509	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1510	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1511	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1512	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1513	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1514	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1515	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1516	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1517	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SPY_SHIP_III",
 Environment.NewLine +
@@ -767,137 +767,137 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SPY_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Sarajevo	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-466	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-467	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-468	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-469	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-470	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-471	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-472	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-473	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-474	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-475	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-476	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-477	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-478	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-479	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-480	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-481	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-482	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-483	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-484	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-485	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-486	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-487	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-488	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-489	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-490	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-491	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-492	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-493	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-494	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-495	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-496	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-497	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-498	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-499	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-500	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-501	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-502	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-503	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-504	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-505	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-506	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-466	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-467	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-468	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-469	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-470	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-471	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-472	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-473	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-474	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-475	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-476	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-477	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-478	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-479	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-480	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-481	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-482	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-483	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-484	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-485	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-486	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-487	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-488	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-489	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-490	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-491	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-492	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-493	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-494	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-495	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-496	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-497	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-498	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-499	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-500	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-501	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-502	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-503	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-504	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-505	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-506	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCOUT_III",
           Environment.NewLine +
 "        <ShipName>	Saber	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Yeager	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Proxima	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61948	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61949	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61950	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61951	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61952	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61953	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61954	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61955	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61956	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61957	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61958	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61959	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61960	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61961	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61962	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61963	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61964	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61965	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61966	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61967	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61968	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61969	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61970	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61971	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61972	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61973	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61974	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61975	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61976	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61977	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61978	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61979	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61980	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61981	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61982	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61983	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61984	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61985	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61986	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-61948	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61949	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61950	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61951	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61952	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61953	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61954	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61955	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61956	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61957	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61958	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61959	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61960	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61961	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61962	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61963	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61964	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61965	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61966	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61967	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61968	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61969	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61970	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61971	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61972	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61973	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61974	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61975	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61976	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61977	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61978	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61979	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61980	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61981	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61982	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61983	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61984	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61985	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61986	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCOUT_II",
 Environment.NewLine +
 "        <ShipName>	Soyuz	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bozeman	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1942	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1943	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1944	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1945	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1946	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1947	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1948	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1949	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1950	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1951	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1952	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1953	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1954	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1955	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1956	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1957	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1958	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1959	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1960	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1961	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1962	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1963	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1964	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1965	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1966	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1967	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1968	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1969	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1970	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1971	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1972	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1973	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1974	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1975	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1976	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1977	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1978	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1979	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1980	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1981	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-1942	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1943	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1944	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1945	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1946	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1947	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1948	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1949	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1950	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1951	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1952	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1953	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1954	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1955	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1956	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1957	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1958	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1959	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1960	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1961	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1962	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1963	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1964	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1965	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1966	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1967	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1968	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1969	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1970	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1971	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1972	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1973	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1974	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1975	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1976	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1977	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1978	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1979	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1980	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1981	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCOUT_I",
 Environment.NewLine +
@@ -1144,30 +1144,30 @@ Environment.NewLine +
 "        <ShipName>	Moscito	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Nirvana	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bold	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74281	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74282	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74283	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74284	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74285	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74286	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74287	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74288	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74289	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74290	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74291	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74292	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74293	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74294	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74295	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74296	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74297	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74298	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74299	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74300	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74301	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74302	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74303	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74304	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-74281	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74282	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74283	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74284	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74285	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74286	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74287	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74288	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74289	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74290	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74291	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74292	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74293	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74294	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74295	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74296	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74297	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74298	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74299	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74300	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74301	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74302	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-74303	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74304	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_III",
 Environment.NewLine +
@@ -1180,39 +1180,39 @@ Environment.NewLine +
 "        <ShipName>	Luna	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Apache	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Appalachia  	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52138	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52139	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52140	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52141	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52142	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52143	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52144	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52145	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52146	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52147	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52148	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52149	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52150	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52151	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52152	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52153	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52154	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52155	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52156	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52157	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52158	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52159	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52160	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52161	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52162	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52163	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52164	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52165	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52166	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52167	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52168	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52169	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52170	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-52138	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52139	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52140	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52141	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52142	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52143	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52144	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52145	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52146	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52147	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52148	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52149	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52150	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52151	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52152	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52153	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52154	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52155	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52156	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52157	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52158	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52159	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52160	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52161	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52162	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52163	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52164	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52165	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52166	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52167	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52168	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52169	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52170	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DESTROYER_II",
 Environment.NewLine +
@@ -1575,48 +1575,48 @@ Environment.NewLine +
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_CONSTRUCTION_SHIP_I",
 Environment.NewLine +
-"        <ShipName>	S. NCC-847	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-848	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-849	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-850	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-851	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-852	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-853	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-854	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-855	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-856	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-857	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-858	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-859	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-860	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-861	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-862	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-863	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-864	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-865	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-866	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-867	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-868	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-869	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-870	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-871	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-872	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-873	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-874	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-875	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-876	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-877	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-878	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-879	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-880	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-881	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-882	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-883	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-884	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-885	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-886	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-887	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-888	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-847	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-848	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-849	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-850	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-851	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-852	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-853	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-854	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-855	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-856	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-857	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-858	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-859	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-860	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-861	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-862	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-863	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-864	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-865	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-866	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-867	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-868	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-869	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-870	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-871	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-872	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-873	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-874	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-875	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-876	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-877	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-878	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-879	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-880	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-881	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-882	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-883	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-884	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-885	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-886	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-887	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-888	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COMMAND_SHIP_III",
 Environment.NewLine +
@@ -1642,26 +1642,26 @@ Environment.NewLine +
 "        <ShipName>	Invincible	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Imperial One!	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Monarch	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97244	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97245	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97246	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97247	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97248	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97249	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97250	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97251	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97252	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97253	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97254	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97255	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97256	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97257	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97258	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97259	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97260	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97261	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97262	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97263	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-97244	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97245	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97246	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97247	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97248	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97249	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97250	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97251	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97252	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97253	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97254	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97255	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97256	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97257	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97258	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97259	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97260	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97261	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97262	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97263	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_COMMAND_SHIP_II",
 Environment.NewLine +
@@ -4740,170 +4740,170 @@ Environment.NewLine +
 "        <ShipName>	ChavwI' C11	</ShipName>" + Environment.NewLine +
 "        <ShipName>	ChavwI' C12	</ShipName>" + Environment.NewLine +
 "        <ShipName>	ChavwI' C13	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C14	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C15	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C16	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C17	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C18	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C19	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C20	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C21	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C22	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C23	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C24	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C25	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C26	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C27	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C28	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C29	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C30	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C31	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C32	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C33	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C34	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C35	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C36	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C37	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C38	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C39	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	ChavwI' C41	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C40	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	ChavwI' C41	</ShipName>" + Environment.NewLine +
 "        <ShipName>	ChavwI' C42	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_III",
 Environment.NewLine +
 "        <ShipName>	Cochranine B </ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54377	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54378	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54379	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54380	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54381	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54382	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54383	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54384	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54385	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54386	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54387	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54388	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54389	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54390	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54391	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54392	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54393	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54394	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54395	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54396	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54397	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54398	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54399	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54400	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54401	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54402	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54403	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54404	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54405	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54406	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54407	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54408	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54409	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54410	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54411	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54412	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54413	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54414	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54415	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54416	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-54417	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-54377	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54378	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54379	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54380	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54381	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54382	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54383	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54384	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54385	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54386	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54387	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54388	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54389	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54390	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54391	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54392	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54393	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54394	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54395	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54396	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54397	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54398	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54399	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54400	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54401	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54402	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54403	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54404	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54405	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54406	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54407	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54408	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54409	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54410	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54411	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54412	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54413	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54414	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54415	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-54416	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-54417	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_II",
 Environment.NewLine +
 "        <ShipName>	Cochranine A </ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1396	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1397	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1398	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1399	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1400	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1401	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1402	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1403	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1404	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1405	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1406	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1407	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1408	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1409	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1410	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1411	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1412	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1413	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1414	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1415	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1416	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1417	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1418	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1419	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1420	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1421	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1422	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1423	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1424	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1425	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1426	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1427	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1428	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1429	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1430	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1431	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1432	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1433	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1434	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1435	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-1436	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-1396	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1397	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1398	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1399	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1400	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1401	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1402	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1403	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1404	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1405	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1406	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1407	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1408	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1409	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1410	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1411	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1412	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1413	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1414	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1415	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1416	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1417	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1418	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1419	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1420	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1421	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1422	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1423	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1424	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1425	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1426	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1427	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1428	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1429	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1430	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1431	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1432	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1433	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1434	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-1435	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1436	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_TRANSPORT_I",
 Environment.NewLine +
 "        <ShipName>	Cochranine </ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-704	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-705	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-706	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-707	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-708	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-709	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-710	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-711	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-712	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-713	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-714	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-715	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-716	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-717	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-718	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-719	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-720	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-721	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-722	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-723	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-724	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-725	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-726	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-727	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-728	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-729	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-730	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-731	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-732	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-733	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-734	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-735	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-736	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-737	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-738	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-739	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-740	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-741	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-742	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-743	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. NCC-744	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-704	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-705	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-706	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-707	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-708	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-709	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-710	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-711	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-712	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-713	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-714	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-715	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-716	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-717	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-718	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-719	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-720	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-721	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-722	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-723	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-724	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-725	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-726	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-727	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-728	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-729	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-730	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-731	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-732	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-733	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-734	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-735	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-736	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-737	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-738	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-739	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-740	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-741	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-742	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-743	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-744	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_STRIKE_CRUISER_III",
 Environment.NewLine +
@@ -4921,34 +4921,34 @@ Environment.NewLine +
 "        <ShipName>	Honshu	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Merry Mag	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Monitor	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65576	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65577	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65578	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65579	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65580	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65581	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65582	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65583	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65584	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65585	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65586	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65587	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65588	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65589	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65590	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65591	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65592	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65593	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65594	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65595	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65596	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65597	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65598	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65599	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65600	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65601	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65602	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-65603	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-65576	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65577	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65578	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65579	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65580	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65581	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65582	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65583	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65584	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65585	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65586	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65587	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65588	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65589	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65590	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65591	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65592	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65593	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65594	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65595	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65596	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65597	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65598	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65599	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65600	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65601	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	NCC-65602	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-65603	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_STRIKE_CRUISER_II",
 Environment.NewLine +
@@ -4959,86 +4959,86 @@ Environment.NewLine +
 "        <ShipName>	Wells	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Princeton	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Franking	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59804	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59805	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59806	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59807	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59808	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59809	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59810	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59811	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59812	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59813	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59814	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59815	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59816	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59817	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59818	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59819	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59820	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59821	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59822	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59823	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59824	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59825	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59826	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59827	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59828	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59829	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59830	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59831	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59832	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59833	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59834	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59835	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59836	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59837	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-59838	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-59804	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59805	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59806	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59807	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59808	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59809	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59810	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59811	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59812	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59813	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59814	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59815	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59816	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59817	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59818	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59819	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59820	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59821	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59822	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59823	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59824	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59825	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59826	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59827	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59828	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59829	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59830	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59831	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59832	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59833	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59834	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59835	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59836	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59837	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-59838	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_STRIKE_CRUISER_I",
 Environment.NewLine +
 "        <ShipName>	Belknap	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Decatur	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1478	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1479	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1480	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1481	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1482	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1483	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1484	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1485	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1486	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1487	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1488	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1489	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1490	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1491	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1492	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1493	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1494	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1495	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1496	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1497	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1498	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1499	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1500	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1501	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1502	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1503	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1504	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1505	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1506	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1507	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1508	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1509	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1510	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1511	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1512	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1513	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1514	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1515	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1516	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-1517	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-1478	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1479	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1480	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1481	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1482	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1483	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1484	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1485	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1486	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1487	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1488	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1489	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1490	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1491	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1492	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1493	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1494	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1495	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1496	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1497	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1498	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1499	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1500	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1501	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1502	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1503	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1504	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1505	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1506	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1507	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1508	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1509	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1510	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1511	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1512	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1513	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1514	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1515	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1516	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1517	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SPY_SHIP_III",
 Environment.NewLine +
@@ -5133,137 +5133,137 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SPY_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Sarajevo	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-466	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-467	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-468	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-469	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-470	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-471	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-472	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-473	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-474	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-475	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-476	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-477	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-478	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-479	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-480	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-481	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-482	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-483	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-484	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-485	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-486	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-487	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-488	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-489	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-490	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-491	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-492	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-493	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-494	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-495	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-496	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-497	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-498	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-499	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-500	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-501	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-502	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-503	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-504	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-505	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-506	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-466	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-467	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-468	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-469	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-470	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-471	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-472	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-473	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-474	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-475	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-476	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-477	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-478	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-479	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-480	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-481	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-482	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-483	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-484	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-485	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-486	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-487	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-488	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-489	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-490	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-491	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-492	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-493	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-494	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-495	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-496	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-497	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-498	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-499	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-500	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-501	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-502	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-503	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-504	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-505	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-506	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCOUT_III",
 Environment.NewLine +
 "        <ShipName>	Saber	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Yeager	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Proxima	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61948	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61949	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61950	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61951	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61952	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61953	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61954	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61955	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61956	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61957	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61958	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61959	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61960	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61961	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61962	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61963	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61964	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61965	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61966	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61967	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61968	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61969	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61970	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61971	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61972	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61973	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61974	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61975	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61976	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61977	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61978	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61979	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61980	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61981	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61982	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61983	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61984	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61985	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-61986	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-61948	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61949	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61950	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61951	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61952	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61953	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61954	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61955	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61956	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61957	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61958	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61959	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61960	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61961	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61962	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61963	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61964	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61965	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61966	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61967	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61968	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61969	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61970	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61971	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61972	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61973	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61974	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61975	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61976	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61977	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61978	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61979	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61980	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61981	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61982	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61983	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61984	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61985	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-61986	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCOUT_II",
 Environment.NewLine +
 "        <ShipName>	Soyuz	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bozeman	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1942	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1943	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1944	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1945	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1946	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1947	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1948	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1949	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1950	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1951	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1952	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1953	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1954	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1955	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1956	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1957	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1958	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1959	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1960	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1961	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1962	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1963	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1964	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1965	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1966	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1967	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1968	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1969	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1970	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1971	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1972	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1973	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1974	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1975	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1976	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1977	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1978	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1979	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1980	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-1981	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-1942	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1943	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1944	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1945	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1946	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1947	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1948	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1949	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1950	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1951	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1952	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1953	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1954	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1955	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1956	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1957	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1958	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1959	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1960	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1961	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1962	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1963	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1964	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1965	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1966	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1967	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1968	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1969	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1970	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1971	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1972	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1973	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1974	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1975	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1976	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1977	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1978	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1979	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1980	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-1981	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCOUT_I",
 Environment.NewLine +
@@ -5320,40 +5320,40 @@ Environment.NewLine +
 "        <ShipName>	Musk	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Einstein	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bohr	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73518	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73519	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73520	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73521	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73522	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73523	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73524	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73525	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73526	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73527	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73528	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73529	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73530	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73531	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73532	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73533	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73534	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73535	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73536	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73537	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73538	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73539	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73540	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73541	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73542	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73543	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73544	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73545	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73546	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73547	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73548	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73549	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73550	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73551	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-73518	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73519	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73520	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73521	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73522	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73523	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73524	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73525	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73526	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73527	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73528	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73529	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73530	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73531	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73532	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73533	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73534	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73535	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73536	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73537	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73538	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73539	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73540	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73541	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73542	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73543	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73544	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73545	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73546	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73547	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73548	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73549	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73550	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73551	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_SCIENCE_SHIP_II",
 Environment.NewLine +
@@ -5493,47 +5493,47 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesFED_MEDICAL_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Deadalus	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-945	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-946	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-947	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-948	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-949	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-950	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-951	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-952	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-953	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-954	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-955	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-956	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-957	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-958	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-959	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-960	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-961	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-962	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-963	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-964	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-965	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-966	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-967	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-968	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-969	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-970	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-971	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-972	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-973	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-974	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-975	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-976	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-977	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-978	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-979	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-980	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-981	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-982	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-983	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-984	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-985	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-945	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-946	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-947	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-948	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-949	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-950	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-951	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-952	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-953	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-954	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-955	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-956	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-957	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-958	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-959	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-960	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-961	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-962	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-963	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-964	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-965	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-966	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-967	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-968	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-969	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-970	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-971	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-972	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-973	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-974	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-975	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-976	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-977	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-978	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-979	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-980	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-981	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-982	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-983	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-984	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-985	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_FRIGATE_IV",
 Environment.NewLine +
@@ -5808,47 +5808,47 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DIPLOMATIC_I",
 Environment.NewLine +
 "        <ShipName>	Sarek	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-565	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-566	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-567	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-568	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-569	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-570	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-571	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-572	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-573	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-574	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-575	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-576	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-577	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-578	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-579	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-580	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-581	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-582	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-583	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-584	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-585	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-586	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-587	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-588	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-589	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-590	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-591	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-592	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-593	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-594	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-595	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-596	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-597	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-598	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-599	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-600	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-601	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-602	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-603	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-604	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-605	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-565	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-566	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-567	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-568	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-569	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-570	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-571	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-572	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-573	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-574	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-575	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-576	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-577	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-578	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-579	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-580	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-581	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-582	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-583	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-584	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-585	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-586	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-587	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-588	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-589	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-590	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-591	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-592	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-593	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-594	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-595	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-596	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-597	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-598	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-599	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-600	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-601	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-602	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-603	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-604	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-605	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_IV",
 Environment.NewLine +
@@ -5870,30 +5870,30 @@ Environment.NewLine +
 "        <ShipName>	Moscito	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Nirvana	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bold	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74281	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74282	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74283	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74284	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74285	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74286	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74287	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74288	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74289	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74290	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74291	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74292	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74293	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74294	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74295	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74296	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74297	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74298	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74299	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74300	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74301	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74302	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74303	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-74304	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-74281	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74282	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74283	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74284	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74285	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74286	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74287	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74288	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74289	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74290	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74291	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74292	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74293	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74294	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74295	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74296	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74297	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74298	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74299	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74300	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74301	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74302	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74303	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-74304	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_III",
 Environment.NewLine +
@@ -5906,39 +5906,39 @@ Environment.NewLine +
 "        <ShipName>	Luna	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Apache	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Appalachia  	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52138	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52139	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52140	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52141	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52142	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52143	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52144	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52145	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52146	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52147	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52148	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52149	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52150	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52151	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52152	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52153	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52154	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52155	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52156	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52157	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52158	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52159	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52160	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52161	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52162	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52163	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52164	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52165	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52166	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52167	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52168	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52169	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-52170	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-52138	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52139	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52140	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52141	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52142	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52143	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52144	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52145	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52146	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52147	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52148	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52149	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52150	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52151	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52152	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52153	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52154	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52155	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52156	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52157	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52158	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52159	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52160	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52161	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52162	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52163	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52164	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52165	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52166	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52167	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52168	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52169	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-52170	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_DESTROYER_II",
 Environment.NewLine +
@@ -6302,48 +6302,48 @@ Environment.NewLine +
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_CONSTRUCTION_SHIP_I",
 Environment.NewLine +
-"        <ShipName>	S. NCC-847	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-848	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-849	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-850	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-851	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-852	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-853	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-854	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-855	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-856	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-857	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-858	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-859	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-860	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-861	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-862	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-863	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-864	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-865	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-866	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-867	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-868	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-869	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-870	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-871	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-872	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-873	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-874	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-875	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-876	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-877	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-878	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-879	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-880	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-881	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-882	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-883	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-884	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-885	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-886	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-887	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-888	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-847	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-848	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-849	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-850	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-851	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-852	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-853	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-854	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-855	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-856	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-857	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-858	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-859	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-860	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-861	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-862	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-863	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-864	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-865	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-866	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-867	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-868	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-869	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-870	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-871	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-872	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-873	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-874	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-875	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-876	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-877	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-878	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-879	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-880	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-881	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-882	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-883	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-884	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-885	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-886	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-887	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-888	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COMMAND_SHIP_III",
 Environment.NewLine +
@@ -6368,27 +6368,27 @@ Environment.NewLine +
 "        <ShipName>	Goliath	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Invincible	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Destiny	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97243	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97244	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97245	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97246	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97247	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97248	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97249	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97250	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97251	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97252	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97253	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97254	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97255	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97256	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97257	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97258	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97259	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97260	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97261	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97262	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-97263	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-97243	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97244	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97245	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97246	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97247	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97248	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97249	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97250	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97251	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97252	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97253	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97254	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97255	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97256	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97257	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97258	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97259	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97260	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97261	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97262	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-97263	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesFED_COMMAND_SHIP_II",
 Environment.NewLine +
@@ -6980,136 +6980,136 @@ Environment.NewLine +
 Environment.NewLine +
 "        <ShipName>	Bok'Nor 	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Groumall!	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. III No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. III No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	III No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_II",
 Environment.NewLine +
 "        <ShipName>	Toran 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. II No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. II No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	II No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_TRANSPORT_I",
 Environment.NewLine +
 "        <ShipName>	Arimat 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	T. I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	T. I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	I No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_STRIKE_CRUISER_II",
 Environment.NewLine +
@@ -7204,722 +7204,722 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SPY_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	Tain!	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	III No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SPY_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Garak!	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	II No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SPY_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Obsidian 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	I No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCOUT_III",
 Environment.NewLine +
 "        <ShipName>	Tra'Kor 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	III No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCOUT_II",
 Environment.NewLine +
 "        <ShipName>	Komax 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	II No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCOUT_I",
 Environment.NewLine +
 "        <ShipName>	Drexoran 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	I No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCIENCE_SHIP_III",
 Environment.NewLine +
 "        <ShipName>	Praxon 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. III No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. III No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	III No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCIENCE_SHIP_II",
 Environment.NewLine +
 "        <ShipName>	Dorza 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. II No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. II No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	II No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_SCIENCE_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Nerevok 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	S. I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	I No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DIPLOMATIC_III",
 Environment.NewLine +
 "        <ShipName> 	Tora Ziyal 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. III No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. III No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	III No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	III No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	III No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DIPLOMATIC_II",
 Environment.NewLine +
 "        <ShipName>	Dukat 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. II No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. II No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	II No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	II No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	II No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DIPLOMATIC_I",
 Environment.NewLine +
 "        <ShipName>	Evek	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	I No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_IV",
 Environment.NewLine +
 "        <ShipName>	Jurdek 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. IV No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. IV No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	IV No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	IV No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	IV No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_III",
 Environment.NewLine +
 "        <ShipName>	Hideki Type II	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type II  No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type II  No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	H. Type II  No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type II  No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type II  No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_II",
 Environment.NewLine +
 "        <ShipName>	Hideki Type I	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. H. Type I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. H. Type I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	H. Type I No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	H. Type I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	H. Type I No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_DESTROYER_I",
 Environment.NewLine +
 "        <ShipName>	Ari	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. I No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. I No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	I No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	I No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	I No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CRUISER_IV",
 Environment.NewLine +
@@ -8059,47 +8059,47 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CRUISER_I",
 Environment.NewLine +
 "        <ShipName>	Dolak 	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 1	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 2	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 3	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 4	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 5	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 6	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 7	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 8	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 9	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 10	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 11	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 12	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 13	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 14	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 15	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 16	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 17	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 18	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 19	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 20	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 21	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 22	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 23	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 24	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 25	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 26	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 27	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 28	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 29	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 30	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 31	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 32	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 33	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 34	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 35	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 36	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 37	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 38	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 39	</ShipName>" + Environment.NewLine +
-//"        <ShipName>	D. No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. No. 41	</ShipName>" + Environment.NewLine);
+"        <ShipName>	No. 1	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	No. 40	</ShipName>" + Environment.NewLine +
+"        <ShipName>	No. 41	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesCARD_CONSTRUCTION_SHIP",
 Environment.NewLine +
@@ -9449,47 +9449,47 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_DIPLOMATIC_I",
 Environment.NewLine +
 "        <ShipName>	Sarek	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-565	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-566	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-567	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-568	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-569	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-570	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-571	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-572	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-573	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-574	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-575	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-576	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-577	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-578	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-579	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-580	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-581	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-582	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-583	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-584	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-585	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-586	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-587	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-588	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-589	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-590	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-591	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-592	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-593	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-594	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-595	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-596	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-597	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-598	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-599	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-600	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-601	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-602	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-603	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-604	</ShipName>" + Environment.NewLine +
-"        <ShipName>	S. NCC-605	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-565	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-566	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-567	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-568	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-569	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-570	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-571	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-572	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-573	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-574	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-575	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-576	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-577	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-578	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-579	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-580	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-581	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-582	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-583	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-584	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-585	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-586	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-587	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-588	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-589	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-590	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-591	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-592	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-593	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-594	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-595	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-596	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-597	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-598	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-599	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-600	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-601	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-602	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-603	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-604	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-605	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_II",
 Environment.NewLine +
@@ -9539,47 +9539,47 @@ Environment.NewLine +
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_MEDICAL_SHIP_I",
 Environment.NewLine +
 "        <ShipName>	Deadalus	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-945	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-946	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-947	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-948	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-949	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-950	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-951	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-952	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-953	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-954	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-955	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-956	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-957	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-958	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-959	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-960	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-961	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-962	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-963	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-964	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-965	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-966	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-967	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-968	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-969	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-970	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-971	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-972	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-973	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-974	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-975	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-976	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-977	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-978	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-979	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-980	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-981	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-982	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-983	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-984	</ShipName>" + Environment.NewLine +
-"        <ShipName>	D. NCC-985	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-945	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-946	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-947	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-948	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-949	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-950	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-951	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-952	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-953	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-954	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-955	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-956	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-957	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-958	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-959	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-960	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-961	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-962	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-963	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-964	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-965	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-966	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-967	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-968	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-969	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-970	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-971	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-972	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-973	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-974	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-975	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-976	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-977	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-978	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-979	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-980	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-981	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-982	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-983	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-984	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-985	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_III",
 Environment.NewLine +
@@ -9591,40 +9591,40 @@ Environment.NewLine +
 "        <ShipName>	Musk	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Einstein	</ShipName>" + Environment.NewLine +
 "        <ShipName>	Bohr	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73518	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73519	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73520	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73521	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73522	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73523	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73524	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73525	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73526	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73527	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73528	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73529	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73530	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73531	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73532	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73533	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73534	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73535	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73536	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73537	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73538	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73539	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73540	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73541	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73542	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73543	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73544	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73545	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73546	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73547	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73548	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73549	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73550	</ShipName>" + Environment.NewLine +
-"        <ShipName>	N. NCC-73551	</ShipName>" + Environment.NewLine);
+"        <ShipName>	NCC-73518	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73519	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73520	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73521	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73522	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73523	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73524	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73525	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73526	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73527	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73528	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73529	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73530	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73531	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73532	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73533	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73534	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73535	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73536	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73537	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73538	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73539	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73540	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73541	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73542	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73543	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73544	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73545	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73546	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73547	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73548	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73549	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73550	</ShipName>" + Environment.NewLine +
+"        <ShipName>	NCC-73551	</ShipName>" + Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesTERRAN_SCIENCE_SHIP_II",
 Environment.NewLine +
