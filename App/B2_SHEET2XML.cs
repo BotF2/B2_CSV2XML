@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+
 // infile is  "C:/_B2/Balance - Export_New.xml";
 // outfile is "C:/_B2/Balance - Export_New.xml_OUT_SHIPS_TechObjectDatabase.xml" (just added -out.cs csv for easy opening in Excel)
 /* Description
@@ -172,6 +173,8 @@ namespace CSV2XML
                     c = c + 1;
                     Application.DoEvents();  // for avoid error after 60 seconds
                     rowValue = streamReader.ReadLine();
+
+
                     #region Basic Replacements
                     rowValue = rowValue.Replace("<Ship>Ship</Ship>", "");
                     rowValue = rowValue.Replace("<TechRequirements>xx</TechRequirements>", "<TechRequirements>");
@@ -306,6 +309,17 @@ namespace CSV2XML
                     rowValue = rowValue.Replace("0.9", "90%");
                     //rowValue = rowValue.Replace("1", "100%");
                     #endregion
+
+
+                    if (rowValue.Contains('.') && !rowValue.Contains("ScienceAbility"))
+                    {
+                        MessageBox.Show("line contains a dot" + Environment.NewLine + Environment.NewLine + rowValue
+                            + Environment.NewLine + Environment.NewLine + "check GoogleSheet for round to full int value"
+                            + Environment.NewLine + Environment.NewLine + "în Visual Studio open Output at the bottom"
+                            , "WARNING");
+                    }
+
+
                     #region Type4
                     //(only a few)
                     rowValue = rowValue.Replace("BORG_CUBE_IIII", "BORG_CUBE_IV");
