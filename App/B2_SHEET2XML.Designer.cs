@@ -46,7 +46,7 @@
             this.btn_Open.TabIndex = 0;
             this.btn_Open.Text = "Open";
             this.btn_Open.UseVisualStyleBackColor = true;
-            this.btn_Open.Click += new System.EventHandler(this.btn_Open_Click);
+            this.btn_Open.Click += new System.EventHandler(this.Btn_Open_Click);
             // 
             // btn_Save
             // 
@@ -57,7 +57,7 @@
             this.btn_Save.TabIndex = 1;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            this.btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // openFileDialog1
             // 
@@ -73,7 +73,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(576, 393);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // Data
             // 
@@ -86,7 +86,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Data";
             this.Text = "B2_SHEET2XML";
-            this.Load += new System.EventHandler(this.btn_Open_Click);
+            this.Load += new System.EventHandler(this.Btn_Open_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-// infile is  "C:/_B2/Balance - Export_New.xml";
-// outfile is "C:/_B2/Balance - Export_New.xml_OUT_SHIPS_TechObjectDatabase.xml" (just added -out.cs csv for easy opening in Excel)
+// infile is  "C:/_B2/Balance_Ships_HomeSystems - Export.xml;
+// outfile is "C:/_B2/Balance_Ships_HomeSystems - Export.xml_OUT_SHIPS_TechObjectDatabase.xml" (just added -out.cs csv for easy opening in Excel)
 /* Description
  
 - in Google Sheet we have ship values (from TechobjectDatabase.xml) with formulas created/modified to determin ship values 
@@ -46,11 +40,11 @@ namespace CSV2XML
         {
             dataGridView1.Columns.Clear();
         }
-        void OnLoad()
-        {
-            ReadCSV("filename_is_inside_code.xml");
-            //Console.WriteLine("reading filename_is_inside_code.xml");
-        }
+        //void OnLoad()
+        //{
+        //    ReadCSV("filename_is_inside_code.xml");
+        //    //Console.WriteLine("reading filename_is_inside_code.xml");
+        //}
         void SaveCSV(String outfile)
         {
             //try
@@ -89,20 +83,20 @@ namespace CSV2XML
             //}
         }
 
-        void Clean(string text)
-        {
-            text = text.Replace("?", "");
-            return;
-        }
-        private void btn_Open_Click(object sender, EventArgs e)
+        //void Clean(string text)
+        //{
+        //    text = text.Replace("?", "");
+        //    return;
+        //}
+        private void Btn_Open_Click(object sender, EventArgs e)
         {
             ReadCSV("C:/_B2/Balance_Ships_HomeSystems - Export_New.xml");
-            Console.WriteLine("reading C:/_B2/Balance - Export_New.xml by btn_Open_Click");
+            Console.WriteLine("reading C:/_B2/Balance_Ships_HomeSystems - Export.xml by btn_Open_Click");
             // other stuff
             //openFileDialog1.ShowDialog();
             //ReadCSV(openFileDialog1.FileName);
         }
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void Btn_Save_Click(object sender, EventArgs e)
         {
             saveFileDialog1.ShowDialog();
             SaveCSV(saveFileDialog1.FileName);
@@ -110,8 +104,8 @@ namespace CSV2XML
         void ReadCSV(String infile)  // Main code
         {
             //   later: more xml-files ... just use in/out     
-            infile = "C:/_B2/in.xml"; // 
-            infile = "C:/_B2/Balance_Ships_HomeSystems - Export_New.xml";
+            // infile = "C:/_B2/in.xml"; // 
+            infile = "C:/_B2/Balance_Ships_HomeSystems - Export.xml";
             if (!System.IO.File.Exists(infile))
                 MessageBox.Show(infile + " ...is missing", "WARNING", MessageBoxButtons.OK);
 
@@ -132,7 +126,7 @@ namespace CSV2XML
             }
             catch
             {
-                var result = MessageBox.Show("File is use: " + outfile, "WARNING", MessageBoxButtons.OK);
+                _ = MessageBox.Show("File is use: " + outfile, "WARNING", MessageBoxButtons.OK);
             }
             // End of test
 
@@ -154,9 +148,11 @@ namespace CSV2XML
                 ////////// -> is needed - just removed later the head line
                 for (int i = 0; i < 9; i++)  // nine columns hardcoded
                 {
-                    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
-                    column.Name = "Column" + i.ToString();
-                    column.HeaderText = "Header" + i.ToString();
+                    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn
+                    {
+                        Name = "Column" + i.ToString(),
+                        HeaderText = "Header" + i.ToString()
+                    };
                     //column.HeaderText = cellValue[i].TrimStart(MyChar);
                     //column.HeaderText = cellValue[i].Replace("?", "");
                     //rowValue = rowValue.Replace("\"", "");
@@ -170,7 +166,7 @@ namespace CSV2XML
                 // doing all the lines
                 while (streamReader.Peek() != -1)
                 {
-                    c = c + 1;
+                    c += 1;
                     Application.DoEvents();  // for avoid error after 60 seconds
                     rowValue = streamReader.ReadLine();
 
@@ -406,7 +402,7 @@ namespace CSV2XML
                     #region NoType2
                     // no Type 2
                     rowValue = rowValue.Replace("CARD_CONSTRUCTION_SHIPI", "");
-                    rowValue = rowValue.Replace("CARD_MEDICAL_SHIPI", "");
+                    //rowValue = rowValue.Replace("CARD_MEDICAL_SHIPI", "");
                     rowValue = rowValue.Replace("DOM_CONSTRUCTION_SHIPI", "");
                     rowValue = rowValue.Replace("KLING_CONSTRUCTION_SHIPI", "");
                     rowValue = rowValue.Replace("ROM_CONSTRUCTION_SHIPI", "");
@@ -8989,7 +8985,52 @@ Environment.NewLine +
 //"        <ShipName>	M. No. 38	</ShipName>" + Environment.NewLine +
 //"        <ShipName>	M. No. 39	</ShipName>" + Environment.NewLine +
 //"        <ShipName>	M. No. 40	</ShipName>" + Environment.NewLine +
-"        <ShipName>	M. No. 41	</ShipName>" + Environment.NewLine);
+/*"        <ShipName>	M. No. 41	</ShipName>" + */Environment.NewLine);
+
+                    rowValue = rowValue.Replace("PossibleShipNamesCARD_MEDICAL_SHIP_II",
+Environment.NewLine +
+"        <ShipName>	Kivirok 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	Crell Moset! 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 2	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 3	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 4	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 5	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 6	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 7	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 8	</ShipName>" + Environment.NewLine +
+"        <ShipName>	M. No. 9	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 10	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 11	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 12	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 13	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 14	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 15	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 16	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 17	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 18	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 19	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 20	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 21	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 22	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 23	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 24	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 25	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 26	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 27	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 28	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 29	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 30	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 31	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 32	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 33	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 34	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 35	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 36	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 37	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 38	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 39	</ShipName>" + Environment.NewLine +
+//"        <ShipName>	M. No. 40	</ShipName>" + Environment.NewLine +
+/*"        <ShipName>	M. No. 41	</ShipName>" + */Environment.NewLine);
 
                     rowValue = rowValue.Replace("PossibleShipNamesDOM_CONSTRUCTION_SHIP",
 Environment.NewLine +
@@ -12121,7 +12162,7 @@ Environment.NewLine +
                     cellValue = rowValue.Split(_separator);   // just one column ??
                     //if (rowValue != "ok")
                     //{
-                    count = count + 1;
+                    count += 1;
                     dataGridView1.Rows.Add(cellValue);
                     Console.WriteLine(c + ":  " + rowValue);
                     //}
@@ -12134,7 +12175,7 @@ Environment.NewLine +
                 SaveCSV(autosave);
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
     }
